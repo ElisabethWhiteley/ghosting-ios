@@ -11,18 +11,7 @@ import SwiftUI
 struct GreenEggsApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-                    .navigationTitle("Green Eggs")
-                    .navigationBarItems(
-                                        trailing:
-                                            NavigationLink(destination: Users()) {
-                                                Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 40))
-                                            }
-                                            
-                                    )
-            }
-            
+            ContentView()
         }
     }
 }

@@ -1,0 +1,26 @@
+//
+//  Main.swift
+//  Shared
+//
+//  Created by Elisabeth Whiteley on 29/08/2020.
+//
+
+import SwiftUI
+
+
+struct Main: View {
+    
+    @Binding var showMenu: Bool
+    @State private var searchText = ""
+    
+    var body: some View {
+        HStack() {
+            VStack(alignment: .leading) {
+                SearchBar(text: $searchText)
+                    .padding(.top, 10)
+                FoodList(searchText: searchText).padding(-10)
+            }
+        }        
+    }
+}
+
