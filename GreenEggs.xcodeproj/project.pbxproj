@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		746C370824FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
+		746C370924FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
+		746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370A24FB9C46007B76D4 /* FoodList.swift */; };
+		746C370C24FB9C46007B76D4 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370A24FB9C46007B76D4 /* FoodList.swift */; };
+		746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370D24FBB990007B76D4 /* FoodDetails.swift */; };
+		746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370D24FBB990007B76D4 /* FoodDetails.swift */; };
+		746C371124FBC280007B76D4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371024FBC280007B76D4 /* Users.swift */; };
+		746C371224FBC280007B76D4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371024FBC280007B76D4 /* Users.swift */; };
+		746C371424FBC302007B76D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371324FBC302007B76D4 /* User.swift */; };
+		746C371524FBC302007B76D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371324FBC302007B76D4 /* User.swift */; };
 		74ADA41424FAADD900E06479 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41324FAADD900E06479 /* Tests_iOS.swift */; };
 		74ADA41F24FAADD900E06479 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41E24FAADD900E06479 /* Tests_macOS.swift */; };
 		74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */; };
@@ -35,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		746C370724FB9AAE007B76D4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		746C370A24FB9C46007B76D4 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		746C370D24FBB990007B76D4 /* FoodDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetails.swift; sourceTree = "<group>"; };
+		746C371024FBC280007B76D4 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		746C371324FBC302007B76D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsApp.swift; sourceTree = "<group>"; };
 		74ADA3F924FAADD800E06479 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74ADA3FA24FAADD800E06479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +116,11 @@
 				74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */,
 				74ADA3F924FAADD800E06479 /* ContentView.swift */,
 				74ADA3FA24FAADD800E06479 /* Assets.xcassets */,
+				746C370724FB9AAE007B76D4 /* Search.swift */,
+				746C370A24FB9C46007B76D4 /* FoodList.swift */,
+				746C370D24FBB990007B76D4 /* FoodDetails.swift */,
+				746C371024FBC280007B76D4 /* Users.swift */,
+				746C371324FBC302007B76D4 /* User.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -308,8 +328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
+				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
+				746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74ADA42324FAADD900E06479 /* ContentView.swift in Sources */,
+				746C371124FBC280007B76D4 /* Users.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				746C371424FBC302007B76D4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
+				746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */,
+				746C370C24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
+				746C371224FBC280007B76D4 /* Users.swift in Sources */,
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				746C371524FBC302007B76D4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
