@@ -16,11 +16,19 @@ struct Main: View {
     var body: some View {
         HStack() {
             VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    NavigationLink(destination: AddFood()) {
+                    Image(systemName: "plus.circle.fill").foregroundColor(.green)
+                        .font(.system(size: 50)).padding(.top, 10)
+                    }
+                    Spacer()
+                }
+               
                 SearchBar(text: $searchText)
                     .padding(.top, 10)
-                FoodList(searchText: searchText).padding(-10)
+                FoodList(searchText: searchText).padding(-30)
             }
         }        
     }
 }
-

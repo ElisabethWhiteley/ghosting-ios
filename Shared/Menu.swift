@@ -12,15 +12,28 @@ struct Menu: View {
     var body: some View {
         VStack(alignment: .leading) {
                     HStack {
-                        NavigationLink(destination: Achievements()) {
-                            
-                        }
-                        Text("Achievements")
+                        Text("All")
                             .foregroundColor(.gray)
                             .font(.headline)
                     }
                     .padding(.top, 60)
-            
+            HStack {
+                Text("Recent")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            HStack {
+                Text("New")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .padding(.top, 12)
+            HStack {
+                Text("Most liked")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .padding(.top, 12)
                     HStack {
                         Text("Categories")
                             .foregroundColor(.gray)
@@ -30,7 +43,7 @@ struct Menu: View {
                             .foregroundColor(.gray)
                             .imageScale(.large)
                     }
-                    .padding(.top, 12.0)
+                    .padding(.top, 12)
             
             ForEach(categories) { category in
                            Text(category.name)

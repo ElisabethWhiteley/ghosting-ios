@@ -33,6 +33,10 @@
 		74ADA42424FAADD900E06479 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F924FAADD800E06479 /* ContentView.swift */; };
 		74ADA42524FAADD900E06479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ADA3FA24FAADD800E06479 /* Assets.xcassets */; };
 		74ADA42624FAADD900E06479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ADA3FA24FAADD800E06479 /* Assets.xcassets */; };
+		74E5683F25000C4A00733C32 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5683E25000C4A00733C32 /* AddFood.swift */; };
+		74E5684025000C4A00733C32 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5683E25000C4A00733C32 /* AddFood.swift */; };
+		74E56842250026EA00733C32 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E56841250026EA00733C32 /* Rating.swift */; };
+		74E56843250026EA00733C32 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E56841250026EA00733C32 /* Rating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,8 @@
 		74ADA41A24FAADD900E06479 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ADA41E24FAADD900E06479 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		74ADA42024FAADD900E06479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E5683E25000C4A00733C32 /* AddFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFood.swift; sourceTree = "<group>"; };
+		74E56841250026EA00733C32 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,8 @@
 				746C371924FBF61E007B76D4 /* Main.swift */,
 				746C371C24FC0A87007B76D4 /* Category.swift */,
 				746C371F24FC0F2C007B76D4 /* Achievements.swift */,
+				74E5683E25000C4A00733C32 /* AddFood.swift */,
+				74E56841250026EA00733C32 /* Rating.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -345,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
+				74E5683F25000C4A00733C32 /* AddFood.swift in Sources */,
 				746C371D24FC0A87007B76D4 /* Category.swift in Sources */,
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
@@ -355,6 +364,7 @@
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C371424FBC302007B76D4 /* User.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
+				74E56842250026EA00733C32 /* Rating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
+				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
 				746C371E24FC0A87007B76D4 /* Category.swift in Sources */,
 				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
 				746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */,
@@ -373,6 +384,7 @@
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C371524FBC302007B76D4 /* User.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
+				74E56843250026EA00733C32 /* Rating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
