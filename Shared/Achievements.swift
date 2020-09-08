@@ -11,7 +11,7 @@ struct Achievements: View {
     
     var body: some View {
         VStack {
-            Text(modelData.first!.name).font(.largeTitle).bold().padding(.bottom, 1)
+            Text("awdaw").font(.largeTitle).bold().padding(.bottom, 1)
           
             Image(systemName: "plus.circle.fill").foregroundColor(.green)
                 .font(.system(size: 30))
@@ -19,10 +19,6 @@ struct Achievements: View {
         }.navigationBarTitle("User", displayMode: .inline)
     }
     
-    let modelData: [User] = [
-        User(name: "Alex"),
-        User(name: "Amelia")
-    ]
 }
 
 struct Achievements_Previews: PreviewProvider {
