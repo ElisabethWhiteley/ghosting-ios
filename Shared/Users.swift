@@ -9,40 +9,83 @@ import SwiftUI
  
 struct Users: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: User.entity(), sortDescriptors: []) private var user: FetchedResults<User>
-    @FetchRequest(entity: CurrentUser.entity(), sortDescriptors: []) private var currentUser: FetchedResults<CurrentUser>
-    var name: String?
-    var theme: String?
+    @FetchRequest(entity: UserData.entity(), sortDescriptors: []) private var users: FetchedResults<UserData>
+    @FetchRequest(entity: CurrentUserData.entity(), sortDescriptors: []) private var currentUser: FetchedResults<CurrentUserData>
+    @State private var name: String = ""
+    @State private var theme: String = ""
     @State private var value = 0
     var body: some View {
         VStack {
             if currentUser.first?.userId != nil {
-                let currentUserId = user.first(where: {
-                    let bla = $0
-                   return $0.name == currentUser.first?.userId ?? ""
+                let currentUserId = users.first(where: {
+                  
+                   return $0.userId == (currentUser.first?.userId ?? 0)
                     
-                })
-                Text(user.first?.name ?? "Blurb").font(.largeTitle).bold().padding(.bottom, 1)
+                })?.userId ?? 0
+               
+                let currentUserName = users.filter({ $0.userId == currentUserId }).first?.name
+                Image(systemName: "person.circle").foregroundColor(.green)
+                    .font(.system(size: 80)).padding(.top, 10)
+                
+                Spacer()
+                Text(currentUserName ?? "").font(.largeTitle).bold().padding(.bottom, 1)
+               
             } else {
                 Text("No current user").font(.largeTitle).bold().padding(.bottom, 1)
             }
-            
-            Button(action: {
-                addUser(name: "wefse", theme: "Testy")
-            }) {
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
-                    .padding(.trailing, 8)
-            }
            
+            Picker(selection: $theme, label: Text("Change theme")) {
+                Text("Green").tag("green")
+                Text("Black").tag("black")
+                Text("Blue").tag("blue")
+            }
+            
+            
             Picker(selection: $value, label: Text("Choose user")) {
-                ForEach(user, id: \.id)
-                               { user in
-                    Text(user.name ?? "Unknown").tag(user.id)
+                ForEach(0..<users.count)
+                               {
+                    Text(users[$0].name ?? "").tag(users[$0].userId)
                                }
                
             }
-            Spacer()
+            
+            
+            VStack {
+                Form {
+                    Section {
+                        HStack {
+                            Text("Name: ")
+                            TextField("E.g. The Dude", text: $name)
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                        }
+                        Picker(selection: $theme, label: Text("Choose theme")) {
+                            Text("Green").tag("green")
+                            Text("Black").tag("black")
+                            Text("Blue").tag("blue")
+                        }
+                
+                        }
+                    }
+                }
+                Button(action: {
+                    addUser(name: name, theme: theme)
+
+                }) {
+                    Text("Add user")
+                        .fontWeight(.bold)
+                        .font(.title)
+                        .padding(.horizontal, 25)
+                        .padding(.vertical, 10)
+                        .background(Color.green)
+                        .cornerRadius(40)
+                        .foregroundColor(.black)
+                        
+                }
+     
+            
+
         }.navigationBarTitle("User", displayMode: .inline)
     }
     
@@ -62,7 +105,7 @@ struct Users: View {
    // saveContext()
        
       // 1
-      let newUser = User(context: managedObjectContext)
+      let newUser = UserData(context: managedObjectContext)
        
       // 2
         newUser.name = name
@@ -71,18 +114,18 @@ struct Users: View {
       // 3
       saveContext()
         
-        if user.count == 1 {
-            if let id = user.first?.objectID.description {
+        if users.count == 1 {
+            if let id = users.first?.userId {
                 changeCurrentUser(id: id)
             }
         }
     }
     
-    func changeCurrentUser(id: String) {
+    func changeCurrentUser(id: Int16) {
             if currentUser.first != nil {
                 currentUser.first?.setValue(id, forKey: "userId")
             } else {
-                let newCurrentUser = CurrentUser(context: managedObjectContext)
+                let newCurrentUser = CurrentUserData(context: managedObjectContext)
                 newCurrentUser.userId = id
             }
         

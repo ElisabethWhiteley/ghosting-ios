@@ -8,11 +8,11 @@
 import SwiftUI
  
 struct FoodDetails: View {
-    var food: Food
+    var food: FoodData
     
     var body: some View {
         VStack {
-            Text(food.name).font(.largeTitle).bold().padding(.bottom, 1)
+            Text(food.name ?? "").font(.largeTitle).bold().padding(.bottom, 1)
             HStack {
                 ForEach(0..<5) { starNumber in
                     let image = starNumber < food.rating ? "star.fill" : "star"
@@ -28,11 +28,5 @@ struct FoodDetails: View {
                 .font(.system(size: 30))
             Spacer()
         }.navigationBarTitle("Food Details", displayMode: .inline)
-    }
-}
-
-struct FoodDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetails(food: Food(name: "Mango", category: "Fruit", attempts: 5, rating: 4))
     }
 }

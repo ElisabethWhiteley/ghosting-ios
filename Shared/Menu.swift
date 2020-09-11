@@ -44,14 +44,6 @@ struct Menu: View {
                             .imageScale(.large)
                     }
                     .padding(.top, 12)
-            
-            ForEach(categories) { category in
-                           Text(category.name)
-                            .padding(.top, 2)
-                            .foregroundColor(.gray)
-                            .font(.subheadline)
-                              
-                       }
                      
         Spacer()
         }.padding()
@@ -60,14 +52,6 @@ struct Menu: View {
                     .edgesIgnoringSafeArea(.all)
 
         }
-    
-    let categories: [Category] = [
-        Category(name: "Fruit"),
-        Category(name: "Vegetable"),
-        Category(name: "Meat"),
-        Category(name: "Fish"),
-        Category(name: "Dish")
-    ]
     }
 
 struct Menu_Previews: PreviewProvider {

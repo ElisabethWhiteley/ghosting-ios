@@ -8,7 +8,7 @@
 import SwiftUI
  
 struct Rating: View {
-    @Binding var rating: Int
+    @Binding var rating: Int16
 
     var label = ""
 
@@ -26,8 +26,9 @@ struct Rating: View {
                 Text(label)
             }
 
-            ForEach(1..<maximumRating + 1) { number in
-                self.image(for: number)
+            ForEach(1..<maximumRating + 1) { num in
+                let number = Int16(num)
+                self.image(for: Int(number))
                     .foregroundColor(number > self.rating ? self.offColor : self.onColor)
                     .onTapGesture {
                         self.rating = number
