@@ -7,29 +7,20 @@
 
 import SwiftUI
 
-
-struct Food: Identifiable {
-    var id = UUID()
-    var name: String
-    var category: String
-    var attempts: Int
-    var rating: Int
-}
-
 struct ContentView: View {
     init(){
         UITableView.appearance().backgroundColor = .clear
-        
     }
     @State var showMenu = false
-    
+    var greenEggsClient: GreenEggsClient!
+    @State private var usersData = [User]()
     var body: some View {
     
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
                     withAnimation {
-                        self.showMenu = false
+                        showMenu = false
                     }
                 }
             }
@@ -38,10 +29,10 @@ struct ContentView: View {
             
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    Main(showMenu: self.$showMenu)
+                    Main(showMenu: $showMenu, users: $usersData)
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(x: self.showMenu ? geometry.size.width/3 : 0)
-                        .disabled(self.showMenu ? true : false)
+                        .offset(x: showMenu ? geometry.size.width/3 : 0)
+                        .disabled(showMenu ? true : false)
                     
                     if self.showMenu {
                         Menu()
@@ -52,7 +43,7 @@ struct ContentView: View {
                 .navigationTitle("Green Eggs")
                 .navigationBarItems(leading: Button(action: {
                     withAnimation {
-                        self.showMenu.toggle()
+                        showMenu.toggle()
                     }
                 }) {
                     Image(systemName: "line.horizontal.3").foregroundColor(.blue).font(.system(size: 20))
@@ -64,7 +55,7 @@ struct ContentView: View {
                 
                 )
             } .navigationBarTitle("Side Menu", displayMode: .inline)
-        }
+        }.onAppear(perform: getUserData)
         
         
         
@@ -72,7 +63,20 @@ struct ContentView: View {
         
     }
     
-    
+    func getUserData() {
+        DispatchQueue.main.async {
+        greenEggsClient?.getUsers(success: { users in
+                 // self.systemStatus = systemStatus
+                //  self.buildSystemStatusSection()@
+           
+            usersData = users ?? []
+            
+              }, failure: { (error, _) in
+                 // do nothing like a putz
+              })
+        }
+    }
+   
 }
 
 struct ContentView_Previews: PreviewProvider {

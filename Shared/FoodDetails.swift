@@ -8,7 +8,7 @@
 import SwiftUI
  
 struct FoodDetails: View {
-    var food: FoodData
+    var food: Food
     
     var body: some View {
         VStack {

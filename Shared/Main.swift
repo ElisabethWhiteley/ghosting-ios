@@ -12,6 +12,7 @@ struct Main: View {
     
     @Binding var showMenu: Bool
     @State private var searchText = ""
+    @Binding var users: [User]
     
     var body: some View {
         HStack() {
@@ -27,7 +28,7 @@ struct Main: View {
                
                 SearchBar(text: $searchText)
                     .padding(.top, 10)
-                FoodList(searchText: searchText).padding(-30)
+                FoodList(users: $users, searchText: searchText).padding(-30)
             }
         }        
     }

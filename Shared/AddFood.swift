@@ -11,6 +11,8 @@ import SwiftUI
 struct AddFood: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: FoodData.entity(), sortDescriptors: []) private var foodList: FetchedResults<FoodData>
+    var food: Food?
+   
     var defaultCategories = ["Dairy", "Dessert", "Dish", "Drinks", "Fish", "Fruit", "Meat", "Snacks", "Vegetables"]
      var categories: Array<String> {
         get {
@@ -28,7 +30,7 @@ struct AddFood: View {
             Form {
                 Section {
                     HStack {
-                        Text("Name: ")
+                        Text(food?.name ?? "")
                         TextField("E.g. Apple", text: $foodName)
                         Spacer()
                         Spacer()
@@ -97,15 +99,15 @@ struct AddFood: View {
         }
     }
     
+   
     func addFood(name: String, category: String, selectedCategory: Int, attempted: Bool, rating: Int16) {
-        
+    
         // managedObjectContext.delete(user.first!)
         // saveContext()
         if !foodList.contains(where: { $0.name == name }) {
             let newFood = FoodData(context: managedObjectContext)
             
             newFood.name = name
-            let bla =  categories[selectedCategory]
             newFood.category = categories[selectedCategory]
             newFood.attempts = attempted ? 1 : 0
             newFood.rating = rating
@@ -131,6 +133,6 @@ struct AddFood: View {
 
 struct AddFood_Previews: PreviewProvider {
     static var previews: some View {
-        AddFood()
+        AddFood(food: nil)
     }
 }
