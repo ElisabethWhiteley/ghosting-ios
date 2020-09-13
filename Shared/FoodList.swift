@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct FoodList: View {
-    @Binding var users: [User]
+    @EnvironmentObject var data: Data
     var searchText: String
     
     var body: some View {
-        if let filteredFood = users.first?.food.filter({ searchText.isEmpty ? true : $0.name.lowercased().contains(searchText.lowercased()) }) {
-            List(filteredFood) { food in
+        if let filteredFood = data.users.first?.food.filter({ searchText.isEmpty ? true : $0.name.lowercased().contains(searchText.lowercased()) }) {
+            List(0..<filteredFood.count) { index in
         
-                    NavigationLink(destination: FoodDetails(food: food)) {
+                NavigationLink(destination: FoodDetails(food: filteredFood[index], userId: data.users.first?.id ?? "")) {
                         HStack {
                             HStack() {
                                 Image("category-icon-meat")
                                 .resizable()
                                 .frame(width: 36.0, height: 36.0)
-                                VStack {
-                                    Text(food.name)
+                                VStack(alignment: .leading) {
+                                    Text(filteredFood[index].name)
                                         .font(.title)
                                     Spacer()
                                     HStack {
                                         ForEach(0..<5) { starNumber in
-                                            let image = starNumber < food.rating ? "star.fill" : "star"
+                                            let image = starNumber < filteredFood[index].rating ? "star.fill" : "star"
                                             
                                             Image(systemName: image).foregroundColor(.yellow)
                                                 .frame(width: 12, height: 10, alignment: .leading)
@@ -37,7 +37,7 @@ struct FoodList: View {
                                 }
                               
                             Spacer()
-                                   // Text(String(food.attempts) + "/15")
+                                Text(String(filteredFood[index].attempts) + "/15")
                             }
                         }
                     }

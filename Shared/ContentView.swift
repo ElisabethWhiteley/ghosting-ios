@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    init(){
+   init(){
         UITableView.appearance().backgroundColor = .clear
     }
     @State var showMenu = false
-    var greenEggsClient: GreenEggsClient!
-    @State private var usersData = [User]()
+    //var greenEggsClient: GreenEggsClient!
+    @EnvironmentObject var data: Data
     var body: some View {
     
         let drag = DragGesture()
@@ -29,7 +29,7 @@ struct ContentView: View {
             
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    Main(showMenu: $showMenu, users: $usersData)
+                    Main(showMenu: $showMenu)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(x: showMenu ? geometry.size.width/3 : 0)
                         .disabled(showMenu ? true : false)
@@ -64,17 +64,16 @@ struct ContentView: View {
     }
     
     func getUserData() {
-        DispatchQueue.main.async {
-        greenEggsClient?.getUsers(success: { users in
+        GreenEggsClient.getUsers(success: { users in
                  // self.systemStatus = systemStatus
                 //  self.buildSystemStatusSection()@
-           
-            usersData = users ?? []
-            
+            DispatchQueue.main.async {
+                  data.users = users ?? []
+            }
               }, failure: { (error, _) in
                  // do nothing like a putz
               })
-        }
+        
     }
    
 }

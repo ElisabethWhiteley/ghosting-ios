@@ -8,16 +8,16 @@
 import Foundation
 
 struct User: Codable {
-    var food: [Food]
-    var id: String
-    var name: String
+    var food: [Food] = []
+    var id: String = ""
+    var name: String = ""
+    var theme: String?
 }
 
-struct Food: Codable, Identifiable {
-    var id: Int
-    
-    var name: String
-    var rating: Int
-    var attempts: Int
-    var totalAttempts: Int
+struct Food: Codable {
+    var name: String = ""
+    var rating: Int = 0
+    var maxRating: Int = 0
+    var attempts: Int = 0
+    var totalAttempts: Int = 0
 }

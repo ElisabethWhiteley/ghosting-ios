@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7446453725056FDD00648631 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7446453425056FDD00648631 /* Model.xcdatamodeld */; };
-		744645392505707000648631 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744645382505707000648631 /* PersistenceManager.swift */; };
-		7446453A2505707000648631 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744645382505707000648631 /* PersistenceManager.swift */; };
 		746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024EA250D57A600D38456 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E9250D57A600D38456 /* UserResponse.swift */; };
@@ -37,6 +34,7 @@
 		74ADA42524FAADD900E06479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ADA3FA24FAADD800E06479 /* Assets.xcassets */; };
 		74ADA42624FAADD900E06479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ADA3FA24FAADD800E06479 /* Assets.xcassets */; };
 		74B7D1A2250814C1002E138C /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 7446453425056FDD00648631 /* Model.xcdatamodeld */; };
+		74DAE6D5250E4EBA0054EFD6 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 7446453425056FDD00648631 /* Model.xcdatamodeld */; };
 		74E5683F25000C4A00733C32 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5683E25000C4A00733C32 /* AddFood.swift */; };
 		74E5684025000C4A00733C32 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5683E25000C4A00733C32 /* AddFood.swift */; };
 		74E56842250026EA00733C32 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E56841250026EA00733C32 /* Rating.swift */; };
@@ -53,6 +51,8 @@
 		74EDB38D250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */; };
 		74EDB38E250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */; };
 		74EDB38F250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */; };
+		74F5AD54250EA34300D695FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F5AD53250EA34300D695FE /* Data.swift */; };
+		74F5AD55250EA34300D695FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F5AD53250EA34300D695FE /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,6 @@
 
 /* Begin PBXFileReference section */
 		7446453525056FDD00648631 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		744645382505707000648631 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		746024E3250D305E00D38456 /* GreenEggsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsClient.swift; sourceTree = "<group>"; };
 		746024E9250D57A600D38456 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		746C370724FB9AAE007B76D4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		74EDB381250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentUserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		74F5AD53250EA34300D695FE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +174,9 @@
 				74E5683E25000C4A00733C32 /* AddFood.swift */,
 				74E56841250026EA00733C32 /* Rating.swift */,
 				7446453425056FDD00648631 /* Model.xcdatamodeld */,
-				744645382505707000648631 /* PersistenceManager.swift */,
 				746024E3250D305E00D38456 /* GreenEggsClient.swift */,
 				746024E9250D57A600D38456 /* UserResponse.swift */,
+				74F5AD53250EA34300D695FE /* Data.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -360,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DAE6D5250E4EBA0054EFD6 /* Model.xcdatamodeld in Resources */,
 				74ADA42624FAADD900E06479 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,12 +387,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
-				744645392505707000648631 /* PersistenceManager.swift in Sources */,
 				74EDB38E250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */,
 				74E5683F25000C4A00733C32 /* AddFood.swift in Sources */,
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				74EDB384250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */,
+				74F5AD54250EA34300D695FE /* Data.swift in Sources */,
 				746C371724FBF3A2007B76D4 /* Menu.swift in Sources */,
 				746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74EDB388250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */,
@@ -415,11 +416,10 @@
 				74EDB385250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */,
 				74EDB383250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */,
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
-				7446453725056FDD00648631 /* Model.xcdatamodeld in Sources */,
-				7446453A2505707000648631 /* PersistenceManager.swift in Sources */,
 				74EDB38D250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */,
 				746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
+				74F5AD55250EA34300D695FE /* Data.swift in Sources */,
 				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
 				74EDB389250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */,
 				746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */,

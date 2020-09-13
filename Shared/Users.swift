@@ -8,31 +8,29 @@
 import SwiftUI
  
 struct Users: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: UserData.entity(), sortDescriptors: []) private var users: FetchedResults<UserData>
-    @FetchRequest(entity: CurrentUserData.entity(), sortDescriptors: []) private var currentUser: FetchedResults<CurrentUserData>
+    @EnvironmentObject var data: Data
     @State private var name: String = ""
     @State private var theme: String = ""
     @State private var value = 0
+    var currentUser: String = ""
+    
     var body: some View {
         VStack {
-            if currentUser.first?.userId != nil {
-                let currentUserId = users.first(where: {
-                  
-                   return $0.userId == (currentUser.first?.userId ?? 0)
-                    
-                })?.userId ?? 0
-               
-                let currentUserName = users.filter({ $0.userId == currentUserId }).first?.name
+            
+            if currentUser == "" {
+                
+            }
+      
+            let currentUserName = data.users.filter({ $0.id == currentUser }).first?.name
                 Image(systemName: "person.circle").foregroundColor(.green)
                     .font(.system(size: 80)).padding(.top, 10)
                 
                 Spacer()
                 Text(currentUserName ?? "").font(.largeTitle).bold().padding(.bottom, 1)
                
-            } else {
+      
                 Text("No current user").font(.largeTitle).bold().padding(.bottom, 1)
-            }
+            
            
             Picker(selection: $theme, label: Text("Change theme")) {
                 Text("Green").tag("green")
@@ -42,9 +40,9 @@ struct Users: View {
             
             
             Picker(selection: $value, label: Text("Choose user")) {
-                ForEach(0..<users.count)
+                ForEach(0..<data.users.count)
                                {
-                    Text(users[$0].name ?? "").tag(users[$0].userId)
+                    Text(data.users[$0].name ?? "").tag(data.users[$0].id)
                                }
                
             }
@@ -87,54 +85,28 @@ struct Users: View {
             
 
         }.navigationBarTitle("User", displayMode: .inline)
+        .onAppear(perform: getCurrentUser)
+    
     }
-    
-   
-    
-    func saveContext() {
-      do {
-        try managedObjectContext.save()
-      } catch {
-        print("Error saving managed object context: \(error)")
-      }
+    func getCurrentUser() {
+        UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? ""
     }
     
     func addUser(name: String, theme: String) {
   
-       // managedObjectContext.delete(user.first!)
-   // saveContext()
+     
+        var newUser = User()
        
-      // 1
-      let newUser = UserData(context: managedObjectContext)
-       
-      // 2
+     
         newUser.name = name
         newUser.theme = theme
-
-      // 3
-      saveContext()
-        
-        if users.count == 1 {
-            if let id = users.first?.userId {
-                changeCurrentUser(id: id)
-            }
-        }
     }
     
-    func changeCurrentUser(id: Int16) {
-            if currentUser.first != nil {
-                currentUser.first?.setValue(id, forKey: "userId")
-            } else {
-                let newCurrentUser = CurrentUserData(context: managedObjectContext)
-                newCurrentUser.userId = id
-            }
-        
-        saveContext()
-           
-        
-       
+    func changeCurrentUser(id: String) {
+        UserDefaults.standard.set(id, forKey: "CurrentUser")
     }
 }
+
 /*
 struct Users_Previews: PreviewProvider {
     static var previews: some View {

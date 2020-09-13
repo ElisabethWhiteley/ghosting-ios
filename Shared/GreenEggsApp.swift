@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct GreenEggsApp: App {
-    let persistenceManager = PersistenceManager()
+    var data = Data()
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, persistenceManager.persistentContainer.viewContext)
+            ContentView().environmentObject(data)
         }
     }
 }

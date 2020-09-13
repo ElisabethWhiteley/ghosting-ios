@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct AddFood: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: FoodData.entity(), sortDescriptors: []) private var foodList: FetchedResults<FoodData>
-    var food: Food?
-   
+    @EnvironmentObject var data: Data
+    
     var defaultCategories = ["Dairy", "Dessert", "Dish", "Drinks", "Fish", "Fruit", "Meat", "Snacks", "Vegetables"]
      var categories: Array<String> {
         get {
@@ -23,20 +21,20 @@ struct AddFood: View {
     @State private var foodName: String = ""
     @State private var category: String = ""
     @State private var triedFood: Bool = false
-    @State private var rating: Int16 = 0
+    @State private var rating: Int = 0
     
     var body: some View {
         VStack {
             Form {
                 Section {
                     HStack {
-                        Text(food?.name ?? "")
+                        Text("Name:")
                         TextField("E.g. Apple", text: $foodName)
                         Spacer()
                         Spacer()
                         Spacer()
                     }
-                    Picker(selection: $selectedCategory, label: Text("Choose category")) {
+                    Picker(selection: $selectedCategory, label: Text("Category:")) {
                         TextField("New category", text: $category).tag(-1)
                             .background(
                                 Color.gray
@@ -67,7 +65,7 @@ struct AddFood: View {
                 }
             }
             Button(action: {
-                addFood(name: foodName, category: category, selectedCategory: selectedCategory, attempted: triedFood, rating: rating)
+                addFood(name: foodName, selectedCategory: selectedCategory, attempted: triedFood, rating: rating)
                 
             }) {
                 Text("Add")
@@ -90,41 +88,38 @@ struct AddFood: View {
             Spacer()
         }.navigationBarTitle("Add food", displayMode: .inline)
     }
-    
-    func saveContext() {
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Error saving managed object context: \(error)")
-        }
-    }
-    
    
-    func addFood(name: String, category: String, selectedCategory: Int, attempted: Bool, rating: Int16) {
+    func addFood(name: String, selectedCategory: Int, attempted: Bool, rating: Int) {
     
         // managedObjectContext.delete(user.first!)
         // saveContext()
-        if !foodList.contains(where: { $0.name == name }) {
-            let newFood = FoodData(context: managedObjectContext)
+        if !(data.users.first?.food.contains(where: { $0.name == name }) ?? true) {
+        var newFood = Food()
             
             newFood.name = name
-            newFood.category = categories[selectedCategory]
+           // newFood.category = categories[selectedCategory]
             newFood.attempts = attempted ? 1 : 0
             newFood.rating = rating
             
-            saveContext()
-        } 
+            GreenEggsClient.addFood(food: newFood, userId: data.users.first?.id ?? "", success: { users in
+                
+                
+                  }, failure: { (error, _) in
+                  
+                     // do nothing like a putz
+                  })
+        }
     }
     
    
     func getCategories() -> Array<String> {
         var categoriesList = defaultCategories
-        
+        /*
         foodList.forEach {
             if !categoriesList.contains($0.category ?? "") {
                 categoriesList.append($0.category ?? "")
             }
-        }
+        }*/
         return categoriesList
     }
 }
@@ -133,6 +128,6 @@ struct AddFood: View {
 
 struct AddFood_Previews: PreviewProvider {
     static var previews: some View {
-        AddFood(food: nil)
+        AddFood()
     }
 }
