@@ -22,6 +22,9 @@ struct Main: View {
                     Image(systemName: "plus.circle.fill").foregroundColor(.green)
                         .font(.system(size: 50)).padding(.top, 10)
                     }
+                    NavigationLink(destination: Users()) {
+                        Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 30))
+                    }
                     Spacer()
                 }
                

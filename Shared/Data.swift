@@ -9,4 +9,5 @@ import Foundation
 
 class Data: ObservableObject {
     @Published var users: [User] = []
+    @Published var currentUser: User? = nil
 }

@@ -6,100 +6,86 @@
 //
 
 import SwiftUI
- 
+
 struct Users: View {
     @EnvironmentObject var data: Data
     @State private var name: String = ""
     @State private var theme: String = ""
     @State private var value = 0
-    var currentUser: String = ""
     
     var body: some View {
         VStack {
-            
-            if currentUser == "" {
+            ZStack {
+                HStack(alignment: .top) {
+                   
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    NavigationLink(destination: AddUser()) {
+                        Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 30))
+
+                    }
+                }
                 
+                HStack {
+                    Spacer()
+                    Image(systemName: "person.circle").foregroundColor(.blue)
+                        .font(.system(size: 80)).padding(.top, 20)
+                   Spacer()
+                }
             }
-      
-            let currentUserName = data.users.filter({ $0.id == currentUser }).first?.name
-                Image(systemName: "person.circle").foregroundColor(.green)
-                    .font(.system(size: 80)).padding(.top, 10)
-                
-                Spacer()
-                Text(currentUserName ?? "").font(.largeTitle).bold().padding(.bottom, 1)
-               
-      
-                Text("No current user").font(.largeTitle).bold().padding(.bottom, 1)
             
            
-            Picker(selection: $theme, label: Text("Change theme")) {
-                Text("Green").tag("green")
-                Text("Black").tag("black")
-                Text("Blue").tag("blue")
+            
+            if (data.currentUser == nil) {
+                Text("No current user").font(.largeTitle).bold()
+            } else {
+                let currentUserName = data.currentUser!.name
+                Text(currentUserName)
+                    .font(.largeTitle)
+                    .bold()
+                   
             }
             
+            /*
+             Picker(selection: $theme, label: Text("Change theme")) {
+             Text("Green").tag("green")
+             Text("Black").tag("black")
+             Text("Blue").tag("blue")
+             } */
+            
+          
             
             Picker(selection: $value, label: Text("Choose user")) {
                 ForEach(0..<data.users.count)
-                               {
-                    Text(data.users[$0].name ?? "").tag(data.users[$0].id)
-                               }
-               
+                {
+                    Text(data.users[$0].name).tag(data.users[$0].id)
+                }
             }
-            
-            
-            VStack {
-                Form {
-                    Section {
-                        HStack {
-                            Text("Name: ")
-                            TextField("E.g. The Dude", text: $name)
-                            Spacer()
-                            Spacer()
-                            Spacer()
-                        }
-                        Picker(selection: $theme, label: Text("Choose theme")) {
-                            Text("Green").tag("green")
-                            Text("Black").tag("black")
-                            Text("Blue").tag("blue")
-                        }
+            Button(action: {
+                changeCurrentUser(id: data.users[value].id)
                 
-                        }
-                    }
-                }
-                Button(action: {
-                    addUser(name: name, theme: theme)
-
-                }) {
-                    Text("Add user")
-                        .fontWeight(.bold)
-                        .font(.title)
-                        .padding(.horizontal, 25)
-                        .padding(.vertical, 10)
-                        .background(Color.green)
-                        .cornerRadius(40)
-                        .foregroundColor(.black)
-                        
-                }
-     
-            
-
+            }) {
+                Text("Change current user")
+            }
+            Spacer()
         }.navigationBarTitle("User", displayMode: .inline)
-        .onAppear(perform: getCurrentUser)
-    
-    }
-    func getCurrentUser() {
-        UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? ""
     }
     
     func addUser(name: String, theme: String) {
-  
-     
         var newUser = User()
-       
-     
         newUser.name = name
         newUser.theme = theme
+        
+        GreenEggsClient.addUser(user: newUser, success: { users in
+            DispatchQueue.main.async {
+                data.users = users ?? []
+            }
+            
+        }, failure: { (error, _) in
+            
+            // do nothing like a putz
+        })
     }
     
     func changeCurrentUser(id: String) {
@@ -108,9 +94,15 @@ struct Users: View {
 }
 
 /*
+ struct Users_Previews: PreviewProvider {
+ static var previews: some View {
+ Users()
+ }
+ }
+ */
+
 struct Users_Previews: PreviewProvider {
     static var previews: some View {
-        Users()
+        Users().environmentObject(Data())
     }
 }
-*/

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FoodDetails: View {
+    @EnvironmentObject var data: Data
     var food: Food
-    var userId: String
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct FoodDetails: View {
             .resizable()
             .frame(width: 64.0, height: 64.0)
             .padding(24)
-            Text(food.name ?? "").font(.largeTitle).bold().padding(.bottom, 1)
+            Text(food.name).font(.largeTitle).bold().padding(.bottom, 1)
             HStack {
                 ForEach(0..<5) { starNumber in
                     let image = starNumber < food.rating ? "star.fill" : "star"
@@ -45,11 +45,18 @@ struct FoodDetails: View {
         var updatedFood = food
         updatedFood.attempts = food.attempts + 1
         
-        GreenEggsClient.addFood(food: updatedFood, userId: userId, success: { users in
-          
+        if let currentUser = data.currentUser {
+            GreenEggsClient.addFood(food: updatedFood, userId: currentUser.id, success: { food in
+                DispatchQueue.main.async {
+                    var users = data.users
+                    let index = users.firstIndex(where: {$0.id == currentUser.id})
+                    users[index!].food = food!
+                    data.users = users
+                }
+               
+            }, failure: { (error, _) in
             
-        }, failure: { (error, _) in
-        
-        })
+            })
+        }
     }
 }

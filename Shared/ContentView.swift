@@ -15,7 +15,7 @@ struct ContentView: View {
     //var greenEggsClient: GreenEggsClient!
     @EnvironmentObject var data: Data
     var body: some View {
-    
+    /*
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
@@ -23,10 +23,10 @@ struct ContentView: View {
                         showMenu = false
                     }
                 }
-            }
+            } */
         NavigationView {
-            
-            
+            Main(showMenu: $showMenu)
+            /*
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     Main(showMenu: $showMenu)
@@ -53,9 +53,11 @@ struct ContentView: View {
                         Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 30))
                     }
                 
-                )
-            } .navigationBarTitle("Side Menu", displayMode: .inline)
+                )*/
+          //  } .navigationBarTitle("Side Menu", displayMode: .inline)
+           
         }.onAppear(perform: getUserData)
+        .navigationBarTitle("Side Menu", displayMode: .inline)
         
         
         
@@ -69,17 +71,28 @@ struct ContentView: View {
                 //  self.buildSystemStatusSection()@
             DispatchQueue.main.async {
                   data.users = users ?? []
+                let bla = data.users
+                data.currentUser = getCurrentUser()
+                let blo = data.currentUser
             }
               }, failure: { (error, _) in
                  // do nothing like a putz
               })
         
     }
+    
+    func getCurrentUser() -> User? {
+       let currentUserId = UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? data.users.first?.id ?? ""
+        if let index = data.users.firstIndex(where: {$0.id == currentUserId}) {
+            return data.users[index]
+        }
+        return data.users.first ?? nil
+    }
    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Data())
     }
 }

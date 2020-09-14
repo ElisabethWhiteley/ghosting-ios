@@ -90,10 +90,10 @@ struct AddFood: View {
     }
    
     func addFood(name: String, selectedCategory: Int, attempted: Bool, rating: Int) {
-    
-        // managedObjectContext.delete(user.first!)
-        // saveContext()
-        if !(data.users.first?.food.contains(where: { $0.name == name }) ?? true) {
+        let currentUser = UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? ""
+        let index = data.users.firstIndex(where: {$0.id == currentUser})
+        
+        if !(data.users[index!].food.contains(where: { $0.name == name })) {
         var newFood = Food()
             
             newFood.name = name
@@ -101,8 +101,13 @@ struct AddFood: View {
             newFood.attempts = attempted ? 1 : 0
             newFood.rating = rating
             
-            GreenEggsClient.addFood(food: newFood, userId: data.users.first?.id ?? "", success: { users in
-                
+            GreenEggsClient.addFood(food: newFood, userId: currentUser, success: { food in
+                DispatchQueue.main.async {
+                    
+                    var users = data.users
+                    users[index!].food = food!
+                    data.users = users
+                }
                 
                   }, failure: { (error, _) in
                   
