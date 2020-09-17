@@ -57,6 +57,7 @@ struct ContentView: View {
           //  } .navigationBarTitle("Side Menu", displayMode: .inline)
            
         }.onAppear(perform: getUserData)
+        .onAppear(perform: getCategories)
         .navigationBarTitle("Side Menu", displayMode: .inline)
         
         
@@ -67,13 +68,20 @@ struct ContentView: View {
     
     func getUserData() {
         GreenEggsClient.getUsers(success: { users in
-                 // self.systemStatus = systemStatus
-                //  self.buildSystemStatusSection()@
             DispatchQueue.main.async {
                   data.users = users ?? []
-                let bla = data.users
                 data.currentUser = getCurrentUser()
-                let blo = data.currentUser
+            }
+              }, failure: { (error, _) in
+                 // do nothing like a putz
+              })
+        
+    }
+    
+    func getCategories() {
+        GreenEggsClient.getCategories(success: { categories in
+            DispatchQueue.main.async {
+                data.categories = categories
             }
               }, failure: { (error, _) in
                  // do nothing like a putz

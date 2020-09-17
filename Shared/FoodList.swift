@@ -19,7 +19,8 @@ struct FoodList: View {
                 NavigationLink(destination: FoodDetails(food: filteredFood[index])) {
                     HStack {
                         HStack() {
-                            Image("category-icon-meat")
+                            Image(getCategoryIcon(categoryId: filteredFood[index].categoryId)
+                                  )
                                 .resizable()
                                 .frame(width: 36.0, height: 36.0)
                             VStack(alignment: .leading) {
@@ -44,6 +45,12 @@ struct FoodList: View {
                 }
             }
         }
+    }
+    
+    
+    func getCategoryIcon(categoryId: String) -> String {
+       let bla =  data.categories?[categoryId]?.icon
+        return bla ?? "category-icon-various"
     }
 }
 

@@ -42,15 +42,17 @@ struct FoodDetails: View {
     
     
     func updateAttempts() {
-        var updatedFood = food
+        let updatedFood = food
         updatedFood.attempts = food.attempts + 1
         
         if let currentUser = data.currentUser {
-            GreenEggsClient.addFood(food: updatedFood, userId: currentUser.id, success: { food in
+            GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
                 DispatchQueue.main.async {
                     var users = data.users
                     let index = users.firstIndex(where: {$0.id == currentUser.id})
-                    users[index!].food = food!
+                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
+                    
+                    users[index!].food[foodIndex!] = food
                     data.users = users
                 }
                

@@ -10,4 +10,5 @@ import Foundation
 class Data: ObservableObject {
     @Published var users: [User] = []
     @Published var currentUser: User? = nil
+    @Published var categories: [String: Category]? = nil
 }

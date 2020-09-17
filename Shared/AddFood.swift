@@ -105,7 +105,8 @@ struct AddFood: View {
                 DispatchQueue.main.async {
                     
                     var users = data.users
-                    users[index!].food = food!
+                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
+                    users[index!].food[foodIndex!] = food
                     data.users = users
                 }
                 
