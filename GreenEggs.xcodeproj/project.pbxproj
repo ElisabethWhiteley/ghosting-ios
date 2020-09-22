@@ -11,6 +11,10 @@
 		746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024EA250D57A600D38456 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E9250D57A600D38456 /* UserResponse.swift */; };
 		746024EB250D57A600D38456 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E9250D57A600D38456 /* UserResponse.swift */; };
+		74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE0251A8EB200BFF779 /* ChangeUser.swift */; };
+		74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE0251A8EB200BFF779 /* ChangeUser.swift */; };
+		74696EE8251A8EBC00BFF779 /* DeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE7251A8EBC00BFF779 /* DeleteUser.swift */; };
+		74696EE9251A8EBC00BFF779 /* DeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE7251A8EBC00BFF779 /* DeleteUser.swift */; };
 		746C370824FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
 		746C370924FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
 		746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370A24FB9C46007B76D4 /* FoodList.swift */; };
@@ -78,6 +82,8 @@
 		7446453525056FDD00648631 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		746024E3250D305E00D38456 /* GreenEggsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsClient.swift; sourceTree = "<group>"; };
 		746024E9250D57A600D38456 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		74696EE0251A8EB200BFF779 /* ChangeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUser.swift; sourceTree = "<group>"; };
+		74696EE7251A8EBC00BFF779 /* DeleteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUser.swift; sourceTree = "<group>"; };
 		746C370724FB9AAE007B76D4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		746C370A24FB9C46007B76D4 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
 		746C370D24FBB990007B76D4 /* FoodDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetails.swift; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 				746024E3250D305E00D38456 /* GreenEggsClient.swift */,
 				746024E9250D57A600D38456 /* UserResponse.swift */,
 				74F5AD53250EA34300D695FE /* Data.swift */,
+				74696EE0251A8EB200BFF779 /* ChangeUser.swift */,
+				74696EE7251A8EBC00BFF779 /* DeleteUser.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -402,12 +410,14 @@
 				74FDB0CB250FFCA500A84805 /* AddUser.swift in Sources */,
 				74EDB388250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */,
 				74ADA42324FAADD900E06479 /* ContentView.swift in Sources */,
+				74696EE8251A8EBC00BFF779 /* DeleteUser.swift in Sources */,
 				746024EA250D57A600D38456 /* UserResponse.swift in Sources */,
 				746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				74EDB38C250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */,
 				746C371124FBC280007B76D4 /* Users.swift in Sources */,
 				74EDB382250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				74EDB386250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */,
 				74E56842250026EA00733C32 /* Rating.swift in Sources */,
@@ -430,12 +440,14 @@
 				74FDB0CC250FFCA500A84805 /* AddUser.swift in Sources */,
 				746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				746C371824FBF3A2007B76D4 /* Menu.swift in Sources */,
+				74696EE9251A8EBC00BFF779 /* DeleteUser.swift in Sources */,
 				746C370C24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
 				746C371224FBC280007B76D4 /* Users.swift in Sources */,
 				74EDB38F250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */,
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
+				74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				74E56843250026EA00733C32 /* Rating.swift in Sources */,
 				74EDB387250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */,
 				746024EB250D57A600D38456 /* UserResponse.swift in Sources */,

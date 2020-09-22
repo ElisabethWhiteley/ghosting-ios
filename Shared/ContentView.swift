@@ -58,7 +58,7 @@ struct ContentView: View {
            
         }.onAppear(perform: getUserData)
         .onAppear(perform: getCategories)
-        .navigationBarTitle("Side Menu", displayMode: .inline)
+        .navigationBarTitle("Side Menu")
         
         
         

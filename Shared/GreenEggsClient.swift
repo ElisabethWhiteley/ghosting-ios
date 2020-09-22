@@ -30,7 +30,7 @@ class GreenEggsClient {
     }
     
     static func getCategories(
-        success: @escaping ([String:Category]?) -> Void,
+        success: @escaping ([Category]) -> Void,
         failure: @escaping (Error?, String?) -> Void) {
         guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/categories") else {
             return
@@ -40,19 +40,35 @@ class GreenEggsClient {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let response = try decoder.decode([String:Category].self, from: data)
-                    print(response)
-                } catch {
-                    print(error)
-                }
-                if let categoryResponse = try? JSONDecoder().decode([String:Category].self, from: data) {
+                if let categoryResponse = try? JSONDecoder().decode([Category].self, from: data) {
                     success(categoryResponse)
                 } else {
                     failure(nil,
                             "Could not decode response to [Category]")
+                }
+            }
+        }.resume()
+    }
+    
+    static func addCategory(
+                        category: Category,
+                        success: @escaping ([Category]) -> Void,
+                        failure: @escaping (Error?, String?) -> Void) {
+        guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/categories") else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let body = try? JSONEncoder().encode(category)
+        request.httpBody = body
+       
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let categoryResponse = try? JSONDecoder().decode([Category].self, from: data) {
+                    success(categoryResponse)
+                } else {
+                    failure(nil,
+                            "Could not decode response to [User]")
                 }
             }
         }.resume()

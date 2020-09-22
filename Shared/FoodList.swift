@@ -19,6 +19,7 @@ struct FoodList: View {
                 NavigationLink(destination: FoodDetails(food: filteredFood[index])) {
                     HStack {
                         HStack() {
+                            let bla = filteredFood[index]
                             Image(getCategoryIcon(categoryId: filteredFood[index].categoryId)
                                   )
                                 .resizable()
@@ -43,14 +44,22 @@ struct FoodList: View {
                         }
                     }
                 }
-            }
+            }.padding(.horizontal, 40)
+            
         }
     }
     
-    
     func getCategoryIcon(categoryId: String) -> String {
-       let bla =  data.categories?[categoryId]?.icon
-        return bla ?? "category-icon-various"
+        if let category = data.categories.first(where: { $0.id == categoryId } ) {
+            return category.icon
+        }
+        return "category-icon-various"
     }
 }
 
+
+struct FoodList_Previews: PreviewProvider {
+    static var previews: some View {
+FoodList(searchText: "")
+    }
+}

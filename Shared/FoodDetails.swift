@@ -10,8 +10,19 @@ import SwiftUI
 struct FoodDetails: View {
     @EnvironmentObject var data: Data
     var food: Food
-    
+    let strings = ["1234", "5678"]
     var body: some View {
+      
+        List{
+            ForEach(0..<30)
+            {_ in
+                HStack(spacing: 0)
+                {
+                    Text("2qeae")
+                }.padding(.horizontal, 100)
+            }
+        
+               }
         VStack {
             Image("category-icon-meat")
             .resizable()

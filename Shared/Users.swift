@@ -12,29 +12,22 @@ struct Users: View {
     @State private var name: String = ""
     @State private var theme: String = ""
     @State private var value = 0
+    @State private var showDeleteUserModal = false
     
     var body: some View {
         VStack {
-            ZStack {
-                HStack(alignment: .top) {
-                   
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    NavigationLink(destination: AddUser()) {
-                        Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 30))
-
-                    }
-                }
+           
+              
                 
                 HStack {
                     Spacer()
                     Image(systemName: "person.circle").foregroundColor(.blue)
-                        .font(.system(size: 80)).padding(.top, 20)
+                        .font(.system(size: 100)).padding(.top, 20)
+                        .padding(.bottom, 10)
                    Spacer()
                 }
-            }
             
+           
            
             
             if (data.currentUser == nil) {
@@ -46,6 +39,36 @@ struct Users: View {
                     .bold()
                    
             }
+            
+
+            HStack() {
+               Spacer()
+                NavigationLink(destination: AddUser()) {
+                    Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 53))
+                }
+                Spacer()
+                NavigationLink(destination: ChangeUser()) {
+                    Image(systemName: "person.2.fill").foregroundColor(.white).font(.system(size: 30)).padding(.horizontal, 10)
+                        .padding(.vertical, 16)
+                        .background(Color.blue)
+                        .cornerRadius(50)
+                        .foregroundColor(.black)
+                }
+                Spacer()
+                
+                Button(action: {
+                    self.showDeleteUserModal.toggle()
+                    
+                }) {
+                    Image(systemName: "person.crop.circle.fill.badge.xmark").foregroundColor(.red).font(.system(size: 53))
+                }.sheet(isPresented: $showDeleteUserModal) {
+                    DeleteUser(showModal: self.$showDeleteUserModal)
+                }
+               
+               
+                Spacer()
+               
+            }.padding(.top, 35)
             
             /*
              Picker(selection: $theme, label: Text("Change theme")) {

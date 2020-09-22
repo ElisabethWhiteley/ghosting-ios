@@ -11,13 +11,13 @@ import SwiftUI
 struct AddFood: View {
     @EnvironmentObject var data: Data
     
-    var defaultCategories = ["Dairy", "Dessert", "Dish", "Drinks", "Fish", "Fruit", "Meat", "Snacks", "Vegetables"]
-     var categories: Array<String> {
+    var defaultCategories = ["Dairy", "Dessert", "Dish", "Drinks", "Fish", "Fruit", "Meat", "Snacks", "Vegetables", "Various"]
+    /* var categories: Array<String> {
         get {
             return getCategories()
-        }
-       }
-    @State private var selectedCategory = 0
+        }}*/
+       
+    @State private var selectedCategory = ""
     @State private var foodName: String = ""
     @State private var category: String = ""
     @State private var triedFood: Bool = false
@@ -35,7 +35,7 @@ struct AddFood: View {
                         Spacer()
                     }
                     Picker(selection: $selectedCategory, label: Text("Category:")) {
-                        TextField("New category", text: $category).tag(-1)
+                        TextField("New category", text: $category).tag("")
                             .background(
                                 Color.gray
                                     .brightness(0.4)
@@ -44,12 +44,14 @@ struct AddFood: View {
                             .padding(.trailing, 100)
                         
                         
-                        
-                        ForEach(0 ..< categories.count) {
-                            
-                            Text(self.categories[$0]).tag($0)
-                            
+                        ForEach(0..<data.categories.count) { index in
+                            Text(data.categories[index].name).tag(data.categories[index].id)
                         }
+                       
+                         
+                        
+                        
+                       
                     }
                     // TextField("Or create new category", text: $category)
                     Toggle(isOn: $triedFood) {
@@ -89,15 +91,15 @@ struct AddFood: View {
         }.navigationBarTitle("Add food", displayMode: .inline)
     }
    
-    func addFood(name: String, selectedCategory: Int, attempted: Bool, rating: Int) {
+    func addFood(name: String, selectedCategory: String, attempted: Bool, rating: Int) {
         let currentUser = UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? ""
         let index = data.users.firstIndex(where: {$0.id == currentUser})
         
         if !(data.users[index!].food.contains(where: { $0.name == name })) {
-        var newFood = Food()
+            let newFood = Food()
             
             newFood.name = name
-           // newFood.category = categories[selectedCategory]
+            newFood.categoryId = selectedCategory
             newFood.attempts = attempted ? 1 : 0
             newFood.rating = rating
             
@@ -105,28 +107,14 @@ struct AddFood: View {
                 DispatchQueue.main.async {
                     
                     var users = data.users
-                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
-                    users[index!].food[foodIndex!] = food
+                    users[index!].food.append(food)
                     data.users = users
                 }
                 
                   }, failure: { (error, _) in
-                  
                      // do nothing like a putz
                   })
         }
-    }
-    
-   
-    func getCategories() -> Array<String> {
-        var categoriesList = defaultCategories
-        /*
-        foodList.forEach {
-            if !categoriesList.contains($0.category ?? "") {
-                categoriesList.append($0.category ?? "")
-            }
-        }*/
-        return categoriesList
     }
 }
 

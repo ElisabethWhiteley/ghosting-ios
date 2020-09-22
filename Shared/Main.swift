@@ -18,13 +18,20 @@ struct Main: View {
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()
+                
                     NavigationLink(destination: AddFood()) {
-                    Image(systemName: "plus.circle.fill").foregroundColor(.green)
-                        .font(.system(size: 50)).padding(.top, 10)
-                    }
-                    NavigationLink(destination: Users()) {
-                        Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 30))
-                    }
+                        Text("I've tasted something new!")
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 25)
+                            .padding(.vertical, 15)
+                            .background(Color.green)
+                            .cornerRadius(40)
+                            .foregroundColor(.black)
+                            
+                    }.padding(.vertical, 10)
+                   
+                    
+                   
                     Spacer()
                 }
                
@@ -32,6 +39,11 @@ struct Main: View {
                     .padding(.top, 10)
                 FoodList(searchText: searchText).padding(-30)
             }
-        }        
+        }.navigationBarTitle("Green Eggs")
+        .navigationBarItems(trailing:
+                                NavigationLink(destination: Users()) {
+                                    Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 45))
+                                }
+                    )
     }
 }
