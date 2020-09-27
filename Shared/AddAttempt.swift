@@ -1,13 +1,13 @@
 //
-//  DeleteUser.swift
+//  AddAttempt.swift
 //  GreenEggs
 //
-//  Created by Elisabeth Whiteley on 22/09/2020.
+//  Created by Elisabeth Whiteley on 27/09/2020.
 //
 
 import SwiftUI
 
-struct DeleteUser: View {
+struct AddAttempt: View {
     @Binding var showModal: Bool
     @State var userHasBeenDeleted: Bool = false
     var userId: String

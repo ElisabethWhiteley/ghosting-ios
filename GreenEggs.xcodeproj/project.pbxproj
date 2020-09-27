@@ -15,6 +15,8 @@
 		74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE0251A8EB200BFF779 /* ChangeUser.swift */; };
 		74696EE8251A8EBC00BFF779 /* DeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE7251A8EBC00BFF779 /* DeleteUser.swift */; };
 		74696EE9251A8EBC00BFF779 /* DeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696EE7251A8EBC00BFF779 /* DeleteUser.swift */; };
+		74696F2D252129B100BFF779 /* AddAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696F2C252129B100BFF779 /* AddAttempt.swift */; };
+		74696F2E252129B100BFF779 /* AddAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74696F2C252129B100BFF779 /* AddAttempt.swift */; };
 		746C370824FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
 		746C370924FB9AAE007B76D4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370724FB9AAE007B76D4 /* Search.swift */; };
 		746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C370A24FB9C46007B76D4 /* FoodList.swift */; };
@@ -43,18 +45,6 @@
 		74E5684025000C4A00733C32 /* AddFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5683E25000C4A00733C32 /* AddFood.swift */; };
 		74E56842250026EA00733C32 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E56841250026EA00733C32 /* Rating.swift */; };
 		74E56843250026EA00733C32 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E56841250026EA00733C32 /* Rating.swift */; };
-		74EDB382250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB37E250A6E78004614E5 /* UserData+CoreDataClass.swift */; };
-		74EDB383250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB37E250A6E78004614E5 /* UserData+CoreDataClass.swift */; };
-		74EDB384250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB37F250A6E78004614E5 /* UserData+CoreDataProperties.swift */; };
-		74EDB385250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB37F250A6E78004614E5 /* UserData+CoreDataProperties.swift */; };
-		74EDB386250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB380250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift */; };
-		74EDB387250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB380250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift */; };
-		74EDB388250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB381250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift */; };
-		74EDB389250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB381250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift */; };
-		74EDB38C250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */; };
-		74EDB38D250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */; };
-		74EDB38E250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */; };
-		74EDB38F250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */; };
 		74F5AD54250EA34300D695FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F5AD53250EA34300D695FE /* Data.swift */; };
 		74F5AD55250EA34300D695FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F5AD53250EA34300D695FE /* Data.swift */; };
 		74FDB0CB250FFCA500A84805 /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDB0CA250FFCA500A84805 /* AddUser.swift */; };
@@ -84,6 +74,7 @@
 		746024E9250D57A600D38456 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		74696EE0251A8EB200BFF779 /* ChangeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUser.swift; sourceTree = "<group>"; };
 		74696EE7251A8EBC00BFF779 /* DeleteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUser.swift; sourceTree = "<group>"; };
+		74696F2C252129B100BFF779 /* AddAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttempt.swift; sourceTree = "<group>"; };
 		746C370724FB9AAE007B76D4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		746C370A24FB9C46007B76D4 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
 		746C370D24FBB990007B76D4 /* FoodDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetails.swift; sourceTree = "<group>"; };
@@ -107,12 +98,6 @@
 		74ADA42024FAADD900E06479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E5683E25000C4A00733C32 /* AddFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFood.swift; sourceTree = "<group>"; };
 		74E56841250026EA00733C32 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
-		74EDB37E250A6E78004614E5 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		74EDB37F250A6E78004614E5 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		74EDB380250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentUserData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		74EDB381250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentUserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		74F5AD53250EA34300D695FE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		74FDB0CA250FFCA500A84805 /* AddUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,12 +137,6 @@
 		74ADA3F224FAADD800E06479 = {
 			isa = PBXGroup;
 			children = (
-				74EDB38A250A8466004614E5 /* FoodData+CoreDataClass.swift */,
-				74EDB38B250A8466004614E5 /* FoodData+CoreDataProperties.swift */,
-				74EDB37E250A6E78004614E5 /* UserData+CoreDataClass.swift */,
-				74EDB37F250A6E78004614E5 /* UserData+CoreDataProperties.swift */,
-				74EDB380250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift */,
-				74EDB381250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift */,
 				74ADA3F724FAADD800E06479 /* Shared */,
 				74ADA40124FAADD800E06479 /* iOS */,
 				74ADA40824FAADD800E06479 /* macOS */,
@@ -189,6 +168,7 @@
 				74F5AD53250EA34300D695FE /* Data.swift */,
 				74696EE0251A8EB200BFF779 /* ChangeUser.swift */,
 				74696EE7251A8EBC00BFF779 /* DeleteUser.swift */,
+				74696F2C252129B100BFF779 /* AddAttempt.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -399,28 +379,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
-				74EDB38E250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */,
 				74E5683F25000C4A00733C32 /* AddFood.swift in Sources */,
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
-				74EDB384250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */,
 				74F5AD54250EA34300D695FE /* Data.swift in Sources */,
 				746C371724FBF3A2007B76D4 /* Menu.swift in Sources */,
 				746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74FDB0CB250FFCA500A84805 /* AddUser.swift in Sources */,
-				74EDB388250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */,
 				74ADA42324FAADD900E06479 /* ContentView.swift in Sources */,
 				74696EE8251A8EBC00BFF779 /* DeleteUser.swift in Sources */,
 				746024EA250D57A600D38456 /* UserResponse.swift in Sources */,
 				746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */,
-				74EDB38C250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */,
 				746C371124FBC280007B76D4 /* Users.swift in Sources */,
-				74EDB382250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
-				74EDB386250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */,
 				74E56842250026EA00733C32 /* Rating.swift in Sources */,
+				74696F2D252129B100BFF779 /* AddAttempt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74EDB385250A6E78004614E5 /* UserData+CoreDataProperties.swift in Sources */,
-				74EDB383250A6E78004614E5 /* UserData+CoreDataClass.swift in Sources */,
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
-				74EDB38D250A8466004614E5 /* FoodData+CoreDataClass.swift in Sources */,
 				746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
 				74F5AD55250EA34300D695FE /* Data.swift in Sources */,
 				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
-				74EDB389250A6E78004614E5 /* CurrentUserData+CoreDataProperties.swift in Sources */,
 				74FDB0CC250FFCA500A84805 /* AddUser.swift in Sources */,
 				746C370F24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				746C371824FBF3A2007B76D4 /* Menu.swift in Sources */,
@@ -444,13 +415,12 @@
 				746C370C24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
 				746C371224FBC280007B76D4 /* Users.swift in Sources */,
-				74EDB38F250A8466004614E5 /* FoodData+CoreDataProperties.swift in Sources */,
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				74E56843250026EA00733C32 /* Rating.swift in Sources */,
-				74EDB387250A6E78004614E5 /* CurrentUserData+CoreDataClass.swift in Sources */,
 				746024EB250D57A600D38456 /* UserResponse.swift in Sources */,
+				74696F2E252129B100BFF779 /* AddAttempt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

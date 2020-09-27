@@ -144,4 +144,25 @@ class GreenEggsClient {
             }
         }.resume()
     }
+    
+    static func deleteUser(userId: String,
+                        success: @escaping () -> Void,
+                        failure: @escaping (Error?, String?) -> Void) {
+        guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/persons/\(userId)") else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+       
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 204 {
+                    success()
+                }
+            } else {
+                    failure(nil,
+                            "Could not decode response to [User]")
+                }
+        }.resume()
+    }
 }

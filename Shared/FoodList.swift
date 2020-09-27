@@ -10,20 +10,21 @@ import SwiftUI
 struct FoodList: View {
     @EnvironmentObject var data: Data
     var searchText: String
-    
+    @State var dataState: Data?
     
     var body: some View {
         if let filteredFood = data.currentUser?.food.filter({ searchText.isEmpty ? true : $0.name.lowercased().contains(searchText.lowercased()) }) {
-            List(0..<filteredFood.count) { index in
-                
+          
+            List(0..<filteredFood.count, id: \.self) { index in
                 NavigationLink(destination: FoodDetails(food: filteredFood[index])) {
-                    HStack {
+               
                         HStack() {
-                            let bla = filteredFood[index]
                             Image(getCategoryIcon(categoryId: filteredFood[index].categoryId)
                                   )
                                 .resizable()
-                                .frame(width: 36.0, height: 36.0)
+                                .frame(width: 42.0, height: 42.0)
+                            .padding(.leading, 10)
+                            .padding(.vertical, 6)
                             VStack(alignment: .leading) {
                                 Text(filteredFood[index].name)
                                     .font(.title)
@@ -37,14 +38,20 @@ struct FoodList: View {
                                     }
                                 }
                                 
-                            }
+                            }.padding(.vertical, 6)
                             
                             Spacer()
-                            Text(String(filteredFood[index].attempts) + "/15")
+                            Text(String(filteredFood[index].attempts) + "/15").padding(.trailing, 6)
                         }
-                    }
+                    
                 }
-            }.padding(.horizontal, 40)
+            }
+            .onReceive(data.objectWillChange, perform: { _ in
+                let dat = data
+                dataState = data
+            let bla = dataState?.currentUser
+            let dwad = 123
+             })
             
         }
     }

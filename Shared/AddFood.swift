@@ -34,6 +34,7 @@ struct AddFood: View {
                         Spacer()
                         Spacer()
                     }
+                    
                     Picker(selection: $selectedCategory, label: Text("Category:")) {
                         TextField("New category", text: $category).tag("")
                             .background(
@@ -47,12 +48,8 @@ struct AddFood: View {
                         ForEach(0..<data.categories.count) { index in
                             Text(data.categories[index].name).tag(data.categories[index].id)
                         }
-                       
-                         
-                        
-                        
-                       
                     }
+                    
                     // TextField("Or create new category", text: $category)
                     Toggle(isOn: $triedFood) {
                         Text("I have already tried this")
@@ -106,9 +103,10 @@ struct AddFood: View {
             GreenEggsClient.addFood(food: newFood, userId: currentUser, success: { food in
                 DispatchQueue.main.async {
                     
-                    var users = data.users
-                    users[index!].food.append(food)
-                    data.users = users
+                    var user = data.users[index!]
+                    user.food.append(food)
+                    data.users[index!] = user
+                    data.currentUser = user
                 }
                 
                   }, failure: { (error, _) in

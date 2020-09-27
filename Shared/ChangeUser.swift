@@ -9,36 +9,26 @@ import SwiftUI
 
 struct ChangeUser: View {
     @EnvironmentObject var data: Data
-    @State private var name: String = ""
-    @State private var theme: String = ""
-    @State private var makeCurrentUser: Bool = true
+    @State private var userId: String = ""
     
     var body: some View {
         VStack {
             Form {
                 Section {
-                    HStack {
-                        Text("Name: ")
-                        TextField("E.g. The Dude", text: $name)
-                    }
-                    Picker(selection: $theme, label: Text("Choose theme")) {
-                        Text("Green").tag("green")
-                        Text("Black").tag("black")
-                        Text("Blue").tag("blue")
-                    }
-                    Toggle(isOn: $makeCurrentUser) {
-                        Text("Switch to new user")
-                    }
-                    
+                    Picker(selection: $userId, label: Text("Current user:")) {
+                        ForEach(0..<data.users.count) { index in
+                            Text(data.users[index].name).tag(data.users[index].id)
+                        }
+                }
                 }
             }.frame(height: 200)
             
             Button(action: {
-                addUser(name: name, theme: theme)
+                changeCurrentUser()
             }) { HStack {
                 Image(systemName: "plus.circle.fill")
                     .font(.title)
-                Text("Create user")
+                Text("Change user")
                     .fontWeight(.semibold)
                     .font(.title)
             }
@@ -54,28 +44,14 @@ struct ChangeUser: View {
             
   Spacer()
             
-        }.navigationBarTitle("Add User", displayMode: .inline)
+        }.navigationBarTitle("Change User", displayMode: .inline)
     }
     
-    func addUser(name: String, theme: String) {
-        var newUser = User()
-        newUser.name = name
-        newUser.theme = theme
-        
-        GreenEggsClient.addUser(user: newUser, success: { users in
-            DispatchQueue.main.async {
-                data.users = users ?? []
-            }
-            
-        }, failure: { (error, _) in
-            
-            // do nothing like a putz
-        })
-    }
-}
-
-struct ChangeUser_Previews: PreviewProvider {
-    static var previews: some View {
-        ChangeUser()
+    func changeCurrentUser() {
+        UserDefaults.standard.set(userId, forKey: "CurrentUser")
+        let blerg = data.currentUser
+        data.currentUser = data.users.first(where: { $0.id == userId })
+        let bla = data.currentUser
+        let dwad = 2
     }
 }

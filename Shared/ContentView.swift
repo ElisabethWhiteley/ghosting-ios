@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
    init(){
         UITableView.appearance().backgroundColor = .clear
+    UITableView.appearance().separatorStyle = .none
     }
     @State var showMenu = false
     //var greenEggsClient: GreenEggsClient!
     @EnvironmentObject var data: Data
+    @State var dataState: Data?
     var body: some View {
     /*
         let drag = DragGesture()
@@ -56,8 +58,14 @@ struct ContentView: View {
                 )*/
           //  } .navigationBarTitle("Side Menu", displayMode: .inline)
            
-        }.onAppear(perform: getUserData)
+        }
+        .onAppear(perform: getUserData)
         .onAppear(perform: getCategories)
+        .onReceive(data.objectWillChange, perform: { _ in
+                  dataState = data
+            let bla = dataState?.currentUser
+            let dwad = 123
+               })
         .navigationBarTitle("Side Menu")
         
         
@@ -69,8 +77,9 @@ struct ContentView: View {
     func getUserData() {
         GreenEggsClient.getUsers(success: { users in
             DispatchQueue.main.async {
-                  data.users = users ?? []
+                data.users = users ?? []
                 data.currentUser = getCurrentUser()
+                dataState = data
             }
               }, failure: { (error, _) in
                  // do nothing like a putz
@@ -82,6 +91,7 @@ struct ContentView: View {
         GreenEggsClient.getCategories(success: { categories in
             DispatchQueue.main.async {
                 data.categories = categories
+                dataState?.categories = categories
             }
               }, failure: { (error, _) in
                  // do nothing like a putz

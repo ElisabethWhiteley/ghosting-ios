@@ -16,9 +16,6 @@ struct Users: View {
     
     var body: some View {
         VStack {
-           
-              
-                
                 HStack {
                     Spacer()
                     Image(systemName: "person.circle").foregroundColor(.blue)
@@ -44,15 +41,25 @@ struct Users: View {
             HStack() {
                Spacer()
                 NavigationLink(destination: AddUser()) {
-                    Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 53))
+                    VStack {
+                        Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 53))
+                        Text("Add user")
+                            .padding(.top, 5)
+                            .foregroundColor(.black)
+                    }
+                    
                 }
                 Spacer()
                 NavigationLink(destination: ChangeUser()) {
-                    Image(systemName: "person.2.fill").foregroundColor(.white).font(.system(size: 30)).padding(.horizontal, 10)
-                        .padding(.vertical, 16)
-                        .background(Color.blue)
-                        .cornerRadius(50)
-                        .foregroundColor(.black)
+                    VStack {
+                        Image(systemName: "person.2.fill").foregroundColor(.white).font(.system(size: 30)).padding(.horizontal, 10)
+                            .padding(.vertical, 16)
+                            .background(Color.blue)
+                            .cornerRadius(50)
+                            .foregroundColor(.black)
+                        Text("Change user").foregroundColor(.black)
+                    }
+                   
                 }
                 Spacer()
                 
@@ -60,9 +67,15 @@ struct Users: View {
                     self.showDeleteUserModal.toggle()
                     
                 }) {
-                    Image(systemName: "person.crop.circle.fill.badge.xmark").foregroundColor(.red).font(.system(size: 53))
+                    VStack {
+                        Image(systemName: "person.crop.circle.fill.badge.xmark").foregroundColor(.red).font(.system(size: 53))
+                        Text("Delete user")
+                            .padding(.top, 5)
+                            .foregroundColor(.black)
+                    }
+                    
                 }.sheet(isPresented: $showDeleteUserModal) {
-                    DeleteUser(showModal: self.$showDeleteUserModal)
+                    DeleteUser(showModal: self.$showDeleteUserModal, userId: data.currentUser!.id)
                 }
                
                
@@ -70,27 +83,7 @@ struct Users: View {
                
             }.padding(.top, 35)
             
-            /*
-             Picker(selection: $theme, label: Text("Change theme")) {
-             Text("Green").tag("green")
-             Text("Black").tag("black")
-             Text("Blue").tag("blue")
-             } */
-            
-          
-            
-            Picker(selection: $value, label: Text("Choose user")) {
-                ForEach(0..<data.users.count)
-                {
-                    Text(data.users[$0].name).tag(data.users[$0].id)
-                }
-            }
-            Button(action: {
-                changeCurrentUser(id: data.users[value].id)
-                
-            }) {
-                Text("Change current user")
-            }
+           
             Spacer()
         }.navigationBarTitle("User", displayMode: .inline)
     }
@@ -109,10 +102,6 @@ struct Users: View {
             
             // do nothing like a putz
         })
-    }
-    
-    func changeCurrentUser(id: String) {
-        UserDefaults.standard.set(id, forKey: "CurrentUser")
     }
 }
 

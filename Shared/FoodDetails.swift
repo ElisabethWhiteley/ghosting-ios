@@ -13,36 +13,49 @@ struct FoodDetails: View {
     let strings = ["1234", "5678"]
     var body: some View {
       
-        List{
-            ForEach(0..<30)
-            {_ in
-                HStack(spacing: 0)
-                {
-                    Text("2qeae")
-                }.padding(.horizontal, 100)
-            }
-        
-               }
         VStack {
-            Image("category-icon-meat")
+            Image(getCategory()?.icon ?? "category-icon-various")
             .resizable()
             .frame(width: 64.0, height: 64.0)
             .padding(24)
-            Text(food.name).font(.largeTitle).bold().padding(.bottom, 1)
+            Text(food.name).font(.largeTitle).bold().padding(.bottom, 36)
             HStack {
-                ForEach(0..<5) { starNumber in
-                    let image = starNumber < food.rating ? "star.fill" : "star"
-                    
-                    Image(systemName: image).foregroundColor(.yellow)
-                        .frame(width: 12, height: 10, alignment: .leading)
-                    
-                }
-                
-            }
-            Text("Attempts: " + String(food.attempts) + "/15").padding(.vertical, 10)
+                Text("Attempts:")
+                    .padding(.leading, 12)
+                Spacer()
+                Text(String(food.attempts) + "/15")
+                    .padding(.trailing, 24)
+            }.padding(.vertical, 10)
+            .background(Color.gray)
+            
+            HStack {
+                Text("Rating:")
+                    .padding(.leading, 12)
+                Spacer()
+                HStack {
+                    ForEach(0..<5) { starNumber in
+                        let image = starNumber < food.rating ? "star.fill" : "star"
+                        
+                        Image(systemName: image).foregroundColor(.yellow)
+                            .frame(width: 12, height: 10, alignment: .leading)
+                    }
+                } .padding(.trailing, 24)
+            }.padding(.vertical, 10)
+           
+            HStack {
+                Text("Category:")
+                    .padding(.leading, 12)
+                Spacer()
+                Text(String(getCategory()?.name ?? "Various"))
+                    .padding(.trailing, 24)
+            }.padding(.vertical, 10)
+            .background(Color.gray)
+            
+            
             Button(action: {
                 updateAttempts()
             }) {
+                Text("Add attempt: ")
                 Image(systemName: "plus.circle.fill").foregroundColor(.green)
                     .font(.system(size: 30))
             }
@@ -51,7 +64,12 @@ struct FoodDetails: View {
         }.navigationBarTitle("Food Details", displayMode: .inline)
     }
     
-    
+    func getCategory() -> Category? {
+        if let category = data.categories.first(where: { $0.id == food.categoryId } ) {
+            return category
+        }
+        return nil
+    }
     func updateAttempts() {
         let updatedFood = food
         updatedFood.attempts = food.attempts + 1
