@@ -27,7 +27,7 @@ struct ContentView: View {
                 }
             } */
         NavigationView {
-            Main(showMenu: $showMenu)
+            Main()
             /*
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {

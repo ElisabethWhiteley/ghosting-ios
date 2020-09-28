@@ -16,16 +16,13 @@ struct Users: View {
     
     var body: some View {
         VStack {
-                HStack {
-                    Spacer()
-                    Image(systemName: "person.circle").foregroundColor(.blue)
-                        .font(.system(size: 100)).padding(.top, 20)
-                        .padding(.bottom, 10)
-                   Spacer()
-                }
-            
-           
-           
+            HStack {
+                Spacer()
+                Image(systemName: "person.circle").foregroundColor(.blue)
+                    .font(.system(size: 100)).padding(.top, 20)
+                    .padding(.bottom, 10)
+                Spacer()
+            }
             
             if (data.currentUser == nil) {
                 Text("No current user").font(.largeTitle).bold()
@@ -34,19 +31,17 @@ struct Users: View {
                 Text(currentUserName)
                     .font(.largeTitle)
                     .bold()
-                   
             }
             
-
             HStack() {
-               Spacer()
+                Spacer()
                 NavigationLink(destination: AddUser()) {
                     VStack {
                         Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 53))
                         Text("Add user")
                             .padding(.top, 5)
                             .foregroundColor(.black)
-                    }
+                    }.frame(width: 100.0, height: 100.0)
                     
                 }
                 Spacer()
@@ -58,8 +53,8 @@ struct Users: View {
                             .cornerRadius(50)
                             .foregroundColor(.black)
                         Text("Change user").foregroundColor(.black)
-                    }
-                   
+                    }.frame(width: 100.0, height: 100.0)
+                    
                 }
                 Spacer()
                 
@@ -72,18 +67,18 @@ struct Users: View {
                         Text("Delete user")
                             .padding(.top, 5)
                             .foregroundColor(.black)
-                    }
+                    }.frame(width: 100.0, height: 100.0)
                     
                 }.sheet(isPresented: $showDeleteUserModal) {
                     DeleteUser(showModal: self.$showDeleteUserModal, userId: data.currentUser!.id)
                 }
-               
-               
+                
+                
                 Spacer()
-               
+                
             }.padding(.top, 35)
             
-           
+            
             Spacer()
         }.navigationBarTitle("User", displayMode: .inline)
     }

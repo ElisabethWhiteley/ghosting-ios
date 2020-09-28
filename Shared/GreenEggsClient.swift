@@ -30,7 +30,7 @@ class GreenEggsClient {
     }
     
     static func getCategories(
-        success: @escaping ([Category]) -> Void,
+        success: @escaping ([FoodCategory]) -> Void,
         failure: @escaping (Error?, String?) -> Void) {
         guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/categories") else {
             return
@@ -40,7 +40,7 @@ class GreenEggsClient {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let categoryResponse = try? JSONDecoder().decode([Category].self, from: data) {
+                if let categoryResponse = try? JSONDecoder().decode([FoodCategory].self, from: data) {
                     success(categoryResponse)
                 } else {
                     failure(nil,
@@ -51,8 +51,8 @@ class GreenEggsClient {
     }
     
     static func addCategory(
-                        category: Category,
-                        success: @escaping ([Category]) -> Void,
+                        category: FoodCategory,
+                        success: @escaping ([FoodCategory]) -> Void,
                         failure: @escaping (Error?, String?) -> Void) {
         guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/categories") else {
             return
@@ -64,7 +64,7 @@ class GreenEggsClient {
        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let categoryResponse = try? JSONDecoder().decode([Category].self, from: data) {
+                if let categoryResponse = try? JSONDecoder().decode([FoodCategory].self, from: data) {
                     success(categoryResponse)
                 } else {
                     failure(nil,

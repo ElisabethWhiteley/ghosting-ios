@@ -21,7 +21,7 @@ class Data: ObservableObject {
             objectWillChange.send()
         }
     }
-    @Published var categories: [Category] = [] {
+    @Published var categories: [FoodCategory] = [] {
         didSet {
             objectWillChange.send()
         }

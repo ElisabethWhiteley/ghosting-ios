@@ -9,18 +9,20 @@ import SwiftUI
 
 struct AddAttempt: View {
     @Binding var showModal: Bool
-    @State var userHasBeenDeleted: Bool = false
-    var userId: String
-    @State var deletionText: String = "User has been deleted"
+    @State var attemptRegistered: Bool = false
+    @State var attemptResponseText: String = "Attempt recorded!"
+    var food: Food
+    @EnvironmentObject var data: Data
+    @State private var rating: Int = 0
     
     var body: some View {
-        if userHasBeenDeleted {
+        if attemptRegistered {
             VStack {
-                Text(deletionText)
+                Text(attemptResponseText)
                     .padding()
                 HStack {
                     Spacer()
-                    Button("Ok") {
+                    Button("OK") {
                         self.showModal.toggle()
                     }
                     Spacer()
@@ -28,12 +30,23 @@ struct AddAttempt: View {
             }
         } else {
             VStack {
-                Text("Are you sure you want to delete this user?")
+                Text("New attempt")
                     .padding()
+                Form {
+                    Section {
+                        HStack {
+                            Text("Rate it:")
+                            Spacer()
+                            Rating(rating: $rating)
+                        }
+                       
+                        
+                    }
+                }.frame(height: 200)
                 HStack {
                     Spacer()
-                    Button("Yes, I'm sure") {
-                        deleteUser()
+                    Button("Register new attempt") {
+                        updateAttempts()
                     }
                     Spacer()
                     Button("Go back") {
@@ -45,19 +58,34 @@ struct AddAttempt: View {
         }
     }
     
-    func deleteUser() {
-        GreenEggsClient.deleteUser(userId: self.userId, success: {
-            DispatchQueue.main.async {
-                self.deletionText = "User has been deleted woo"
-                self.userHasBeenDeleted = true
-            }
-            
-        }, failure: { (error, _) in
-            DispatchQueue.main.async {
-                self.deletionText = "Failed to delete user. Try again later."
-                self.userHasBeenDeleted = true
-            }
-        })
+    func updateAttempts() {
+        let updatedFood = food
+        updatedFood.attempts = food.attempts + 1
+        updatedFood.rating = rating
+        
+        if let currentUser = data.currentUser {
+            GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
+                DispatchQueue.main.async {
+                    var users = data.users
+                    let index = users.firstIndex(where: {$0.id == currentUser.id})
+                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
+                    
+                    users[index!].food[foodIndex!] = food
+                    data.users = users
+                    
+                    DispatchQueue.main.async {
+                        self.attemptResponseText = "Attempt recorded!"
+                        self.attemptRegistered = true
+                    }
+                }
+               
+            }, failure: { (error, _) in
+                DispatchQueue.main.async {
+                    self.attemptResponseText = "Failed to register attempt. Try again later."
+                    self.attemptRegistered = true
+                }
+            })
+        }
     }
     
 }

@@ -25,7 +25,7 @@ class Food: Codable {
 
 
 
-struct Category: Codable {
+struct FoodCategory: Codable {
     let id: String
     let name: String
 
