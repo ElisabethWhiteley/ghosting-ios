@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742F067725238B5400906E54 /* DeleteFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F067625238B5400906E54 /* DeleteFood.swift */; };
+		742F067825238B5400906E54 /* DeleteFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F067625238B5400906E54 /* DeleteFood.swift */; };
+		742F068225244F0A00906E54 /* ChangeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068125244F0A00906E54 /* ChangeRating.swift */; };
+		742F068325244F0A00906E54 /* ChangeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068125244F0A00906E54 /* ChangeRating.swift */; };
+		742F068D2524510B00906E54 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068C2524510B00906E54 /* FoodCell.swift */; };
+		742F068E2524510B00906E54 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068C2524510B00906E54 /* FoodCell.swift */; };
 		746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024EA250D57A600D38456 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E9250D57A600D38456 /* UserResponse.swift */; };
@@ -69,6 +75,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		742F067625238B5400906E54 /* DeleteFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFood.swift; sourceTree = "<group>"; };
+		742F068125244F0A00906E54 /* ChangeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRating.swift; sourceTree = "<group>"; };
+		742F068C2524510B00906E54 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		7446453525056FDD00648631 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		746024E3250D305E00D38456 /* GreenEggsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsClient.swift; sourceTree = "<group>"; };
 		746024E9250D57A600D38456 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
@@ -162,6 +171,7 @@
 				746C371F24FC0F2C007B76D4 /* Achievements.swift */,
 				74E5683E25000C4A00733C32 /* AddFood.swift */,
 				74E56841250026EA00733C32 /* Rating.swift */,
+				742F068125244F0A00906E54 /* ChangeRating.swift */,
 				7446453425056FDD00648631 /* Model.xcdatamodeld */,
 				746024E3250D305E00D38456 /* GreenEggsClient.swift */,
 				746024E9250D57A600D38456 /* UserResponse.swift */,
@@ -169,6 +179,8 @@
 				74696EE0251A8EB200BFF779 /* ChangeUser.swift */,
 				74696EE7251A8EBC00BFF779 /* DeleteUser.swift */,
 				74696F2C252129B100BFF779 /* AddAttempt.swift */,
+				742F067625238B5400906E54 /* DeleteFood.swift */,
+				742F068C2524510B00906E54 /* FoodCell.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -390,8 +402,11 @@
 				74696EE8251A8EBC00BFF779 /* DeleteUser.swift in Sources */,
 				746024EA250D57A600D38456 /* UserResponse.swift in Sources */,
 				746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */,
+				742F068225244F0A00906E54 /* ChangeRating.swift in Sources */,
+				742F067725238B5400906E54 /* DeleteFood.swift in Sources */,
 				746C371124FBC280007B76D4 /* Users.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				742F068D2524510B00906E54 /* FoodCell.swift in Sources */,
 				74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				74E56842250026EA00733C32 /* Rating.swift in Sources */,
@@ -415,8 +430,11 @@
 				746C370C24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
 				746C371224FBC280007B76D4 /* Users.swift in Sources */,
+				742F068325244F0A00906E54 /* ChangeRating.swift in Sources */,
+				742F067825238B5400906E54 /* DeleteFood.swift in Sources */,
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
+				742F068E2524510B00906E54 /* FoodCell.swift in Sources */,
 				74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				74E56843250026EA00733C32 /* Rating.swift in Sources */,
 				746024EB250D57A600D38456 /* UserResponse.swift in Sources */,
@@ -572,8 +590,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P435QGHYF5;
+				DEVELOPMENT_TEAM = 2SP8N682LA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -581,8 +600,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
 				PRODUCT_NAME = GreenEggs;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -594,8 +614,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P435QGHYF5;
+				DEVELOPMENT_TEAM = 2SP8N682LA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -603,8 +624,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
 				PRODUCT_NAME = GreenEggs;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

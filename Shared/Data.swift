@@ -12,15 +12,10 @@ import Combine
 class Data: ObservableObject {
     @Published var users: [User] = [] {
         didSet {
-            let awd = users
             objectWillChange.send()
         }
     }
-    @Published var currentUser: User? = nil {
-        didSet {
-            objectWillChange.send()
-        }
-    }
+
     @Published var categories: [FoodCategory] = [] {
         didSet {
             objectWillChange.send()

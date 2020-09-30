@@ -1,24 +1,25 @@
 //
-//  AddAttempt.swift
+//  DeleteFoodModalView.swift
 //  GreenEggs
 //
-//  Created by Elisabeth Whiteley on 27/09/2020.
+//  Created by Elisabeth Whiteley on 29/09/2020.
 //
 
 import SwiftUI
 
-struct AddAttempt: View {
+struct DeleteFood: View {
     @Binding var showModal: Bool
-    @State var attemptRegistered: Bool = false
-    @State var attemptResponseText: String = "Attempt recorded!"
-    var food: Food
+    @State var foodHasBeenDeleted: Bool = false
     @EnvironmentObject var data: Data
-    @State private var rating: Int = 0
+    var food: Food
+    @State var deletionText: String = "Food has been deleted."
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingDeleteAlert = false
     
     var body: some View {
-        if attemptRegistered {
+        if foodHasBeenDeleted {
             VStack {
-                Text(attemptResponseText)
+                Text(deletionText)
                     .padding()
                 HStack {
                     Spacer()
@@ -38,25 +39,14 @@ struct AddAttempt: View {
             }
         } else {
             VStack {
-                Text("New attempt")
+                Text("Are you sure you want to delete this food?")
                     .padding()
-                Form {
-                    Section {
-                        HStack {
-                            Text("Rate it:")
-                            Spacer()
-                            ChangeRating(rating: $rating)
-                        }
-                       
-                        
-                    }
-                }.frame(height: 200)
                 HStack {
                     Spacer()
                     Button(action: {
-                        updateAttempts()
+                        deleteFood()
                     }) {
-                        Text("Add attempt")
+                        Text("Yes, I'm sure")
                             .fontWeight(.bold)
                             .padding(.horizontal, 25)
                             .padding(.vertical, 15)
@@ -82,35 +72,23 @@ struct AddAttempt: View {
         }
     }
     
-    func updateAttempts() {
-        let updatedFood = food
-        updatedFood.attempts = food.attempts + 1
-        updatedFood.rating = rating
-        
+    func deleteFood() {
         if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
-            GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
-                DispatchQueue.main.async {
-                    var users = data.users
-                    let index = users.firstIndex(where: {$0.id == currentUser.id})
-                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
-                    
-                    users[index!].food[foodIndex!] = food
-                    data.users = users
-                    
-                    DispatchQueue.main.async {
-                        self.attemptResponseText = "Attempt recorded!"
-                        self.attemptRegistered = true
-                    }
-                }
-               
-            }, failure: { (error, _) in
-                DispatchQueue.main.async {
-                    self.attemptResponseText = "Failed to register attempt. Try again later."
-                    self.attemptRegistered = true
-                }
-            })
+            GreenEggsClient.deleteFood(food: food, userId: currentUser.id, success: {
+            DispatchQueue.main.async {
+                self.deletionText = "Food has been deleted."
+                self.foodHasBeenDeleted = true
+            }
+            
+        }, failure: { (error, _) in
+            DispatchQueue.main.async {
+                self.deletionText = "Failed to delete food. Try again later."
+                self.foodHasBeenDeleted = true
+            }
+        })
         }
+        
+        presentationMode.wrappedValue.dismiss()
     }
-    
 }
 

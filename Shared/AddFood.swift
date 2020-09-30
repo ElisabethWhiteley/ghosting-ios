@@ -58,7 +58,7 @@ struct AddFood: View {
                         HStack {
                             Text("Rate it:")
                             Spacer()
-                            Rating(rating: $rating)
+                            ChangeRating(rating: $rating)
                         }
                     }
                 }
@@ -106,7 +106,7 @@ struct AddFood: View {
                     var user = data.users[index!]
                     user.food.append(food)
                     data.users[index!] = user
-                    data.currentUser = user
+                    UserDefaults.standard.set(user.id, forKey: "CurrentUser")
                 }
                 
                   }, failure: { (error, _) in

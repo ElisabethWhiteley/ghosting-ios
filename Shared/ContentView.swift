@@ -63,8 +63,6 @@ struct ContentView: View {
         .onAppear(perform: getCategories)
         .onReceive(data.objectWillChange, perform: { _ in
                   dataState = data
-            let bla = dataState?.currentUser
-            let dwad = 123
                })
         .navigationBarTitle("Side Menu")
         
@@ -78,7 +76,6 @@ struct ContentView: View {
         GreenEggsClient.getUsers(success: { users in
             DispatchQueue.main.async {
                 data.users = users ?? []
-                data.currentUser = getCurrentUser()
                 dataState = data
             }
               }, failure: { (error, _) in

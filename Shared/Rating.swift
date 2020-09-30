@@ -8,45 +8,24 @@
 import SwiftUI
  
 struct Rating: View {
-    @Binding var rating: Int
-
-    var label = ""
-
-    var maximumRating = 5
-
-    var offImage: Image?
-    var onImage = Image(systemName: "star.fill")
-
-    var offColor = Color.gray
-    var onColor = Color.yellow
+    var food: Food?
     
     var body: some View {
         HStack {
-            if label.isEmpty == false {
-                Text(label)
-            }
-
-            ForEach(1..<maximumRating + 1) { number in
-                self.image(for: number)
-                    .foregroundColor(number > self.rating ? self.offColor : self.onColor)
-                    .onTapGesture {
-                        self.rating = number
-                    }
+            ForEach(0..<5) { starNumber in
+                let image = starNumber < (food?.rating ?? 100) ? "star.fill" : "star"
+                
+                Image(systemName: image).foregroundColor(.yellow)
+                    .frame(width: 12, height: 10, alignment: .leading)
             }
         }
     }
     
-    func image(for number: Int) -> Image {
-        if number > rating {
-            return offImage ?? onImage
-        } else {
-            return onImage
-        }
-    }
+   
 }
 
 struct Rating_Previews: PreviewProvider {
     static var previews: some View {
-        Rating(rating: .constant(4))
+        Rating(food: nil)
     }
 }

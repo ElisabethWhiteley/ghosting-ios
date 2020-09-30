@@ -14,8 +14,8 @@
             filePath = "Shared/Users.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "addUser(name:theme:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -247,8 +247,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -263,8 +263,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -279,8 +279,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "getUserData()"
             landmarkType = "7">
             <Locations>
@@ -327,8 +327,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -615,8 +615,8 @@
             filePath = "Shared/FoodDetails.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "updateAttempts()"
             landmarkType = "7">
          </BreakpointContent>
@@ -657,7 +657,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "66F095AC-69CC-4725-92C6-7A8EC214D07E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/AddFood.swift"
@@ -679,25 +679,9 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "getCurrentUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A8065323-A8D1-43B7-980E-2334B8176613"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "getUserData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -839,8 +823,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "getCategories()"
             landmarkType = "7">
          </BreakpointContent>
@@ -858,22 +842,6 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "getCategories(success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7D469FC7-7392-4A16-B5FE-1B3BD7A38B7C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "getCategoryIcon(categoryId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -903,8 +871,8 @@
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getCategories()"
             landmarkType = "7">
             <Locations>
@@ -960,116 +928,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3DF026D4-6A71-48FC-851C-B755D9165048"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getCategoryIcon(categoryId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3DF026D4-6A71-48FC-851C-B755D9165048 - b2ebaf41e11454fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GreenEggs.FoodList.getCategoryIcon(categoryId: Swift.String) -&gt; Swift.String"
-                  moduleName = "GreenEggs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "78">
-               </Location>
-               <Location
-                  uuid = "3DF026D4-6A71-48FC-851C-B755D9165048 - 7d68a55775a53fbf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (GreenEggs.Category) -&gt; Swift.Bool in GreenEggs.FoodList.getCategoryIcon(categoryId: Swift.String) -&gt; Swift.String"
-                  moduleName = "GreenEggs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "99879619-8103-4A94-B07E-4272B3547572"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "99879619-8103-4A94-B07E-4272B3547572 - d12e32f346128b62"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GreenEggs.FoodList.body.getter : some"
-                  moduleName = "GreenEggs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "1660">
-               </Location>
-               <Location
-                  uuid = "99879619-8103-4A94-B07E-4272B3547572 - fc72818c5be127d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Int) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;&gt;)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;&gt;, GreenEggs.FoodDetails&gt; in GreenEggs.FoodList.body.getter : some"
-                  moduleName = "GreenEggs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "490">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E6245932-EF63-432D-BF92-9E7E489FD457"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/DeleteUser.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "deleteUser()"
-            landmarkType = "7">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "E6245932-EF63-432D-BF92-9E7E489FD457 - 53bcf57ba5dae36"
+                  uuid = "E6245932-EF63-432D-BF92-9E7E489FD457 - 53bcf57ba5dad2e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1079,12 +951,12 @@
                   urlString = "file:///Users/whieli/Source/GreenEggs/Shared/DeleteUser.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
                   offsetFromSymbolStart = "135">
                </Location>
                <Location
-                  uuid = "E6245932-EF63-432D-BF92-9E7E489FD457 - fb651abeaae20ee1"
+                  uuid = "E6245932-EF63-432D-BF92-9E7E489FD457 - fb651abeaae273f9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1094,8 +966,8 @@
                   urlString = "file:///Users/whieli/Source/GreenEggs/Shared/DeleteUser.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
                   offsetFromSymbolStart = "22">
                </Location>
             </Locations>
@@ -1105,19 +977,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/DeleteUser.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "deleteUser()"
-            landmarkType = "7">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5 - 71a22879f7b646"
+                  uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5 - 71a22879f7cb5e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1127,12 +999,12 @@
                   urlString = "file:///Users/whieli/Source/GreenEggs/Shared/DeleteUser.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
                   offsetFromSymbolStart = "158">
                </Location>
                <Location
-                  uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5 - 3e9e1b7f420a8483"
+                  uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5 - 3e9e1b7f420af9ab"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1142,8 +1014,8 @@
                   urlString = "file:///Users/whieli/Source/GreenEggs/Shared/DeleteUser.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
                   offsetFromSymbolStart = "22">
                </Location>
             </Locations>
@@ -1153,7 +1025,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DB9C8D9C-E8AB-4AED-A506-EA790196C81B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/GreenEggsClient.swift"
@@ -1169,7 +1041,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C138CD23-4D90-49B7-95E0-3A05B2B9EEFD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/GreenEggsClient.swift"
@@ -1179,38 +1051,6 @@
             endingLineNumber = "158"
             landmarkName = "deleteUser(userId:success:failure:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FECCEA5F-6792-4745-92B3-CFB1AFE4D293"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/ChangeUser.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "changeCurrentUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9A2E0BB6-F880-424C-8B02-7C8AA3D22E7E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Users.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1239,41 +1079,9 @@
             filePath = "Shared/Data.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "users"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "84F849FE-BA0F-4D2D-AC02-3D8DAB1A02EF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Data.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "currentUser"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62FBECA1-962A-4990-8AF5-36486D40802D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Data.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "currentUser"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1287,8 +1095,8 @@
             filePath = "Shared/Data.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "categories"
             landmarkType = "24">
          </BreakpointContent>
@@ -1303,8 +1111,8 @@
             filePath = "Shared/Data.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "categories"
             landmarkType = "24">
          </BreakpointContent>
@@ -1328,81 +1136,207 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "49C7311E-B8EE-4A18-92E0-D43457FEB5C4"
+            uuid = "E137092B-059A-44F2-A672-0BB75DDBEEAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/FoodDetails.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "deleteFood()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21D864A6-7658-4AC3-BF40-F8DE0631147F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Users.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9F94B10-F66A-4B72-8FCB-A3CFF44F82D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/FoodList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C9F94B10-F66A-4B72-8FCB-A3CFF44F82D5 - 2a077afb69c02b98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;GreenEggs.FoodCell, GreenEggs.FoodDetails&gt;&gt;&gt;&gt;&gt; in GreenEggs.FoodList.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "546">
+               </Location>
+               <Location
+                  uuid = "C9F94B10-F66A-4B72-8FCB-A3CFF44F82D5 - 2a077afb69c02b98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;GreenEggs.FoodCell, GreenEggs.FoodDetails&gt;&gt;&gt;&gt;&gt; in GreenEggs.FoodList.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "2623">
+               </Location>
+               <Location
+                  uuid = "C9F94B10-F66A-4B72-8FCB-A3CFF44F82D5 - 209719f7e8ee76c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (GreenEggs.User) -&gt; Swift.Bool in closure #1 () -&gt; Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;GreenEggs.FoodCell, GreenEggs.FoodDetails&gt;&gt;&gt;&gt;&gt; in GreenEggs.FoodList.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "C9F94B10-F66A-4B72-8FCB-A3CFF44F82D5 - c55546624bb17d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (GreenEggs.Food) -&gt; Swift.Bool in closure #1 () -&gt; Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;GreenEggs.FoodCell, GreenEggs.FoodDetails&gt;&gt;&gt;&gt;&gt; in GreenEggs.FoodList.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/FoodList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD60B017-A268-4CB0-93C3-01F1F5A8509A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "FD60B017-A268-4CB0-93C3-01F1F5A8509A - 98b4f608b45c6bb4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenEggs.ContentView.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "447">
+               </Location>
+               <Location
+                  uuid = "FD60B017-A268-4CB0-93C3-01F1F5A8509A - 24e084b9e68f5e48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 () -&gt; () in implicit closure #1 (GreenEggs.ContentView) -&gt; () -&gt; () in GreenEggs.ContentView.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "718402A3-CE6A-458A-AFBA-DBA6A6179D82"
+            uuid = "59CB933C-4444-4C98-B427-38FE113CFC97"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5DE66672-C73B-4724-9A47-C1FE584336AC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B21B5FC6-40DF-4D92-AC72-697D9C1742CD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "667D2A12-605A-400D-9BD1-CA282C06858A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/FoodList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "body"
-            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "59CB933C-4444-4C98-B427-38FE113CFC97 - 98b4f608b45c6bd5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GreenEggs.ContentView.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "569">
+               </Location>
+               <Location
+                  uuid = "59CB933C-4444-4C98-B427-38FE113CFC97 - efb48001ffc367cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #4 () -&gt; () in implicit closure #3 (GreenEggs.ContentView) -&gt; () -&gt; () in GreenEggs.ContentView.body.getter : some"
+                  moduleName = "GreenEggs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/whieli/Source/GreenEggs/Shared/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

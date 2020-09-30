@@ -32,12 +32,28 @@ struct DeleteUser: View {
                     .padding()
                 HStack {
                     Spacer()
-                    Button("Yes, I'm sure") {
+                    Button(action: {
                         deleteUser()
+                    }) {
+                        Text("Yes, I'm sure")
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 25)
+                            .padding(.vertical, 15)
+                            .background(Color.green)
+                            .cornerRadius(40)
+                            .foregroundColor(.black)
                     }
                     Spacer()
-                    Button("Go back") {
+                    Button(action: {
                         self.showModal.toggle()
+                    }) {
+                        Text("Go back")
+                            .fontWeight(.bold)
+                            .padding(.horizontal, 25)
+                            .padding(.vertical, 15)
+                            .background(Color.green)
+                            .cornerRadius(40)
+                            .foregroundColor(.black)
                     }
                     Spacer()
                 }
@@ -48,7 +64,7 @@ struct DeleteUser: View {
     func deleteUser() {
         GreenEggsClient.deleteUser(userId: self.userId, success: {
             DispatchQueue.main.async {
-                self.deletionText = "User has been deleted woo"
+                self.deletionText = "User has been deleted "
                 self.userHasBeenDeleted = true
             }
             

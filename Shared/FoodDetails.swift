@@ -9,8 +9,12 @@ import SwiftUI
 
 struct FoodDetails: View {
     @EnvironmentObject var data: Data
-    var food: Food?
+    var food: Food
     @State private var showNewAttemptModal = false
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingDeleteAlert = false
+    @State var dataState: Data?
+    
     var body: some View {
       
         VStack {
@@ -19,7 +23,7 @@ struct FoodDetails: View {
             .frame(width: 100.0, height: 100.0)
                 .padding(.top, 20)
                 .padding(.bottom, 10)
-            Text(food?.name ?? "Apple").font(.largeTitle).bold()
+            Text(food.name).font(.largeTitle).bold()
             
             HStack {
                 Spacer()
@@ -42,10 +46,8 @@ struct FoodDetails: View {
                 }
                
                 Spacer()
-                
                 Button(action: {
-                    self.showNewAttemptModal.toggle()
-                    
+                self.showingDeleteAlert = true
                 }) {
                     VStack {
                         Image(systemName: "trash.circle.fill").foregroundColor(.red).font(.system(size: 53))
@@ -54,10 +56,6 @@ struct FoodDetails: View {
                             .foregroundColor(.black)
                     }.frame(width: 100.0, height: 100.0)
                     
-                }.sheet(isPresented: $showNewAttemptModal) {
-                    if let food = food {
-                        AddAttempt(showModal: self.$showNewAttemptModal, food: food)
-                    }
                 }
                 Spacer()
             }.padding(.bottom, 35)
@@ -67,7 +65,7 @@ struct FoodDetails: View {
                     .padding(.leading, 12)
                     .padding(.vertical, 16)
                 Spacer()
-                Text(String(food?.attempts ?? 0) + "/15")
+                Text(String(food.attempts ?? 0) + "/15")
                     .padding(.trailing, 24)
             }
             .background(Color("color-light-green"))
@@ -79,7 +77,7 @@ struct FoodDetails: View {
                 Spacer()
                 HStack {
                     ForEach(0..<5) { starNumber in
-                        let image = starNumber < food?.rating ?? 0 ? "star.fill" : "star"
+                        let image = starNumber < food.rating ?? 0 ? "star.fill" : "star"
                         
                         Image(systemName: image).foregroundColor(.yellow)
                             .frame(width: 12, height: 10, alignment: .leading)
@@ -98,22 +96,60 @@ struct FoodDetails: View {
             .background(Color("color-light-green"))
           Spacer()
         }.navigationBarTitle("Food Details", displayMode: .inline)
+        .onReceive(data.objectWillChange, perform: { _ in
+            dataState = data
+         })
+        .alert(isPresented: $showingDeleteAlert) {
+            Alert(title: Text("Delete food"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
+                    self.deleteFood()
+                }, secondaryButton: .cancel()
+            )
+        }
     }
     
     func getCategory() -> FoodCategory? {
-        if let food = food {
             if let category = data.categories.first(where: { $0.id == food.categoryId } ) {
                 return category
             }
-        }
         return nil
     }
+    
+    func deleteFood() {
+        if let currentUser = getCurrentUser() {
+            GreenEggsClient.deleteFood(food: food, userId: currentUser.id, success: {
+            DispatchQueue.main.async {
+             
+                var users = data.users
+                let index = users.firstIndex(where: {$0.id == currentUser.id})
+                let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
+                
+                users[index!].food.remove(at: foodIndex!)
+                data.users = users
+            }
+            
+        }, failure: { (error, _) in
+            DispatchQueue.main.async {
+              
+            }
+        })
+        }
+        
+        presentationMode.wrappedValue.dismiss()
+    }
+    
+    func getCurrentUser() -> User? {
+       let currentUserId = UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? data.users.first?.id ?? ""
+        if let index = data.users.firstIndex(where: {$0.id == currentUserId}) {
+            return data.users[index]
+        }
+        return data.users.first ?? nil
+    }
+    
     func updateAttempts() {
-        if let food = food {
             let updatedFood = food
             updatedFood.attempts = food.attempts + 1
             
-            if let currentUser = data.currentUser {
+        if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
                 GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
                     DispatchQueue.main.async {
                         var users = data.users
@@ -128,14 +164,7 @@ struct FoodDetails: View {
                 
                 })
             }
-        }
+         
        
-    }
-}
-
-
-struct FoodDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetails(food: nil)
     }
 }

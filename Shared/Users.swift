@@ -12,7 +12,9 @@ struct Users: View {
     @State private var name: String = ""
     @State private var theme: String = ""
     @State private var value = 0
-    @State private var showDeleteUserModal = false
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showingDeleteAlert = false
+    @State var dataState: Data?
     
     var body: some View {
         VStack {
@@ -24,13 +26,14 @@ struct Users: View {
                 Spacer()
             }
             
-            if (data.currentUser == nil) {
-                Text("No current user").font(.largeTitle).bold()
-            } else {
-                let currentUserName = data.currentUser!.name
+            if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
+                let currentUserName = currentUser.name
                 Text(currentUserName)
                     .font(.largeTitle)
                     .bold()
+               
+            } else {
+                Text("No current user").font(.largeTitle).bold()
             }
             
             HStack() {
@@ -59,8 +62,7 @@ struct Users: View {
                 Spacer()
                 
                 Button(action: {
-                    self.showDeleteUserModal.toggle()
-                    
+                    self.showingDeleteAlert = true
                 }) {
                     VStack {
                         Image(systemName: "person.crop.circle.fill.badge.xmark").foregroundColor(.red).font(.system(size: 53))
@@ -69,8 +71,6 @@ struct Users: View {
                             .foregroundColor(.black)
                     }.frame(width: 100.0, height: 100.0)
                     
-                }.sheet(isPresented: $showDeleteUserModal) {
-                    DeleteUser(showModal: self.$showDeleteUserModal, userId: data.currentUser!.id)
                 }
                 
                 
@@ -81,6 +81,33 @@ struct Users: View {
             
             Spacer()
         }.navigationBarTitle("User", displayMode: .inline)
+        .onReceive(data.objectWillChange, perform: { _ in
+            dataState = data
+         })
+        .alert(isPresented: $showingDeleteAlert) {
+            Alert(title: Text("Delete food"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
+                    self.deleteUser()
+                }, secondaryButton: .cancel()
+            )
+        }
+    }
+    
+    func deleteUser() {
+        if let userId =  UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" {
+            GreenEggsClient.deleteUser(userId: userId, success: {
+                DispatchQueue.main.async {
+                    var users = data.users
+                    users.removeAll(where: {$0.id == userId})
+                    data.users = users
+                    presentationMode.wrappedValue.dismiss()
+                }
+                
+            }, failure: { (error, _) in
+                DispatchQueue.main.async {
+                   
+                }
+            })
+        }
     }
     
     func addUser(name: String, theme: String) {

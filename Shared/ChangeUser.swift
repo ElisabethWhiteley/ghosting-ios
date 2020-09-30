@@ -49,9 +49,6 @@ struct ChangeUser: View {
     
     func changeCurrentUser() {
         UserDefaults.standard.set(userId, forKey: "CurrentUser")
-        let blerg = data.currentUser
-        data.currentUser = data.users.first(where: { $0.id == userId })
-        let bla = data.currentUser
-        let dwad = 2
+       
     }
 }
