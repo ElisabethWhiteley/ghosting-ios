@@ -24,11 +24,11 @@ struct FoodCell: View {
                     .font(.title)
                 Spacer()
                 Rating(food: food)
-            }.padding(.vertical, 6)
+            }.padding(.top, 6).padding(.bottom, 20)
             
             Spacer()
             Text(String(food?.attempts ?? 0) + "/15").padding(.trailing, 6)
-        }
+        }.padding(10)
     }
     func getCategoryIcon(categoryId: String) -> String {
         if let category = data.categories.first(where: { $0.id == categoryId } ) {

@@ -11,12 +11,25 @@ struct Achievements: View {
     
     var body: some View {
         VStack {
-            Text("awdaw").font(.largeTitle).bold().padding(.bottom, 1)
-          
-            Image(systemName: "plus.circle.fill").foregroundColor(.green)
-                .font(.system(size: 30))
-            Spacer()
-        }.navigationBarTitle("User", displayMode: .inline)
+            HStack {
+                Spacer()
+                Image(systemName: "star.circle").foregroundColor(.yellow)
+                    .font(.system(size: 100)).padding(.top, 20)
+                    .padding(.bottom, 10)
+                Spacer()
+            }
+            
+         
+            Text("950").font(.largeTitle).bold().padding(.bottom, 30)
+           
+            ScrollView {
+                LazyVStack {
+                    
+                }
+            }
+           Spacer()
+        
+        }.navigationBarTitle("Achievements", displayMode: .inline)
     }
     
 }

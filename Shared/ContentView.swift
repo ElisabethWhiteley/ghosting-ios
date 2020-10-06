@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
    init(){
-        UITableView.appearance().backgroundColor = .clear
+    UITableView.appearance().backgroundColor = UIColor(Color.clear)
     UITableView.appearance().separatorStyle = .none
     }
     @State var showMenu = false
-    //var greenEggsClient: GreenEggsClient!
     @EnvironmentObject var data: Data
     @State var dataState: Data?
+    @AppStorage("currentuserid") var currentUserId: String = ""
+    
+    
     var body: some View {
+        
     /*
         let drag = DragGesture()
             .onEnded {
@@ -27,7 +30,7 @@ struct ContentView: View {
                 }
             } */
         NavigationView {
-            Main()
+            Main(currentUserId: $currentUserId)
             /*
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
@@ -63,13 +66,11 @@ struct ContentView: View {
         .onAppear(perform: getCategories)
         .onReceive(data.objectWillChange, perform: { _ in
                   dataState = data
+            if currentUserId == "" {
+                currentUserId = data.users.first?.id ?? ""
+            }
                })
         .navigationBarTitle("Side Menu")
-        
-        
-        
-        
-        
     }
     
     func getUserData() {
@@ -77,6 +78,9 @@ struct ContentView: View {
             DispatchQueue.main.async {
                 data.users = users ?? []
                 dataState = data
+                if currentUserId == "" {
+                    currentUserId = data.users.first?.id ?? ""
+                }
             }
               }, failure: { (error, _) in
                  // do nothing like a putz
@@ -95,15 +99,6 @@ struct ContentView: View {
               })
         
     }
-    
-    func getCurrentUser() -> User? {
-       let currentUserId = UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? data.users.first?.id ?? ""
-        if let index = data.users.firstIndex(where: {$0.id == currentUserId}) {
-            return data.users[index]
-        }
-        return data.users.first ?? nil
-    }
-   
 }
 
 struct ContentView_Previews: PreviewProvider {

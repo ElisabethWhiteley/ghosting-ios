@@ -38,7 +38,7 @@ struct FoodCategory: Codable {
             return "category-icon-dessert"
         case "Dish":
             return "category-icon-dish"
-        case "Drinks":
+        case "Drink":
             return "category-icon-drink"
         case "Fish":
             return "category-icon-fish"

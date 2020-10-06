@@ -13,6 +13,8 @@
 		742F068325244F0A00906E54 /* ChangeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068125244F0A00906E54 /* ChangeRating.swift */; };
 		742F068D2524510B00906E54 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068C2524510B00906E54 /* FoodCell.swift */; };
 		742F068E2524510B00906E54 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F068C2524510B00906E54 /* FoodCell.swift */; };
+		742F0694252787FA00906E54 /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F0693252787FA00906E54 /* CashView.swift */; };
+		742F0695252787FA00906E54 /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F0693252787FA00906E54 /* CashView.swift */; };
 		746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E3250D305E00D38456 /* GreenEggsClient.swift */; };
 		746024EA250D57A600D38456 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746024E9250D57A600D38456 /* UserResponse.swift */; };
@@ -78,6 +80,7 @@
 		742F067625238B5400906E54 /* DeleteFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFood.swift; sourceTree = "<group>"; };
 		742F068125244F0A00906E54 /* ChangeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRating.swift; sourceTree = "<group>"; };
 		742F068C2524510B00906E54 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		742F0693252787FA00906E54 /* CashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashView.swift; sourceTree = "<group>"; };
 		7446453525056FDD00648631 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		746024E3250D305E00D38456 /* GreenEggsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsClient.swift; sourceTree = "<group>"; };
 		746024E9250D57A600D38456 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 				74696F2C252129B100BFF779 /* AddAttempt.swift */,
 				742F067625238B5400906E54 /* DeleteFood.swift */,
 				742F068C2524510B00906E54 /* FoodCell.swift */,
+				742F0693252787FA00906E54 /* CashView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -393,6 +397,7 @@
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
 				74E5683F25000C4A00733C32 /* AddFood.swift in Sources */,
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
+				742F0694252787FA00906E54 /* CashView.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				74F5AD54250EA34300D695FE /* Data.swift in Sources */,
 				746C371724FBF3A2007B76D4 /* Menu.swift in Sources */,
@@ -421,6 +426,7 @@
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
 				746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
+				742F0695252787FA00906E54 /* CashView.swift in Sources */,
 				74F5AD55250EA34300D695FE /* Data.swift in Sources */,
 				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
 				74FDB0CC250FFCA500A84805 /* AddUser.swift in Sources */,

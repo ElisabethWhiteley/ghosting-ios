@@ -123,7 +123,7 @@ class GreenEggsClient {
     }
     
     static func addUser(user: User,
-                        success: @escaping ([User]?) -> Void,
+                        success: @escaping (User?) -> Void,
                         failure: @escaping (Error?, String?) -> Void) {
         guard let url = URL(string: "https://olddp9jyu2.execute-api.eu-north-1.amazonaws.com/dev/api/persons/") else {
             return
@@ -135,7 +135,7 @@ class GreenEggsClient {
        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
-                if let userResponse = try? JSONDecoder().decode([User].self, from: data) {
+                if let userResponse = try? JSONDecoder().decode(User.self, from: data) {
                     success(userResponse)
                 } else {
                     failure(nil,

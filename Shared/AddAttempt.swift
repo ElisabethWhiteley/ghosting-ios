@@ -14,6 +14,7 @@ struct AddAttempt: View {
     var food: Food
     @EnvironmentObject var data: Data
     @State private var rating: Int = 0
+    @Binding var currentUserId: String
     
     var body: some View {
         if attemptRegistered {
@@ -47,7 +48,7 @@ struct AddAttempt: View {
                             Spacer()
                             ChangeRating(rating: $rating)
                         }
-                       
+                        
                         
                     }
                 }.frame(height: 200)
@@ -87,29 +88,27 @@ struct AddAttempt: View {
         updatedFood.attempts = food.attempts + 1
         updatedFood.rating = rating
         
-        if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
-            GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
+        GreenEggsClient.updateFood(food: updatedFood, userId: currentUserId, success: { food in
+            DispatchQueue.main.async {
+                var users = data.users
+                let index = users.firstIndex(where: {$0.id == currentUserId})
+                let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
+                
+                users[index!].food[foodIndex!] = food
+                data.users = users
+                
                 DispatchQueue.main.async {
-                    var users = data.users
-                    let index = users.firstIndex(where: {$0.id == currentUser.id})
-                    let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
-                    
-                    users[index!].food[foodIndex!] = food
-                    data.users = users
-                    
-                    DispatchQueue.main.async {
-                        self.attemptResponseText = "Attempt recorded!"
-                        self.attemptRegistered = true
-                    }
-                }
-               
-            }, failure: { (error, _) in
-                DispatchQueue.main.async {
-                    self.attemptResponseText = "Failed to register attempt. Try again later."
+                    self.attemptResponseText = "Attempt recorded!"
                     self.attemptRegistered = true
                 }
-            })
-        }
+            }
+            
+        }, failure: { (error, _) in
+            DispatchQueue.main.async {
+                self.attemptResponseText = "Failed to register attempt. Try again later."
+                self.attemptRegistered = true
+            }
+        })
     }
     
 }

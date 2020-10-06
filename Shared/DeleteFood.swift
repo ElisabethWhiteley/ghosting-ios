@@ -15,6 +15,7 @@ struct DeleteFood: View {
     @State var deletionText: String = "Food has been deleted."
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
+    @Binding var currentUserId: String
     
     var body: some View {
         if foodHasBeenDeleted {
@@ -73,8 +74,7 @@ struct DeleteFood: View {
     }
     
     func deleteFood() {
-        if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
-            GreenEggsClient.deleteFood(food: food, userId: currentUser.id, success: {
+        GreenEggsClient.deleteFood(food: food, userId: currentUserId, success: {
             DispatchQueue.main.async {
                 self.deletionText = "Food has been deleted."
                 self.foodHasBeenDeleted = true
@@ -86,8 +86,6 @@ struct DeleteFood: View {
                 self.foodHasBeenDeleted = true
             }
         })
-        }
-        
         presentationMode.wrappedValue.dismiss()
     }
 }

@@ -15,6 +15,7 @@ struct Users: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     @State var dataState: Data?
+    @Binding var currentUserId: String
     
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct Users: View {
                 Spacer()
             }
             
-            if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
+            if let currentUser = data.users.first(where: {$0.id == currentUserId }) {
                 let currentUserName = currentUser.name
                 Text(currentUserName)
                     .font(.largeTitle)
@@ -38,7 +39,7 @@ struct Users: View {
             
             HStack() {
                 Spacer()
-                NavigationLink(destination: AddUser()) {
+                NavigationLink(destination: AddUser(currentUserId: $currentUserId)) {
                     VStack {
                         Image(systemName: "person.crop.circle.fill.badge.plus").foregroundColor(.green).font(.system(size: 53))
                         Text("Add user")
@@ -48,7 +49,7 @@ struct Users: View {
                     
                 }
                 Spacer()
-                NavigationLink(destination: ChangeUser()) {
+                NavigationLink(destination: ChangeUser(currentUserId: $currentUserId)) {
                     VStack {
                         Image(systemName: "person.2.fill").foregroundColor(.white).font(.system(size: 30)).padding(.horizontal, 10)
                             .padding(.vertical, 16)
@@ -85,7 +86,7 @@ struct Users: View {
             dataState = data
          })
         .alert(isPresented: $showingDeleteAlert) {
-            Alert(title: Text("Delete food"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
+            Alert(title: Text("Delete user"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
                     self.deleteUser()
                 }, secondaryButton: .cancel()
             )
@@ -93,11 +94,10 @@ struct Users: View {
     }
     
     func deleteUser() {
-        if let userId =  UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" {
-            GreenEggsClient.deleteUser(userId: userId, success: {
+            GreenEggsClient.deleteUser(userId: currentUserId, success: {
                 DispatchQueue.main.async {
                     var users = data.users
-                    users.removeAll(where: {$0.id == userId})
+                    users.removeAll(where: {$0.id == currentUserId})
                     data.users = users
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -107,36 +107,6 @@ struct Users: View {
                    
                 }
             })
-        }
-    }
-    
-    func addUser(name: String, theme: String) {
-        var newUser = User()
-        newUser.name = name
-        newUser.theme = theme
         
-        GreenEggsClient.addUser(user: newUser, success: { users in
-            DispatchQueue.main.async {
-                data.users = users ?? []
-            }
-            
-        }, failure: { (error, _) in
-            
-            // do nothing like a putz
-        })
-    }
-}
-
-/*
- struct Users_Previews: PreviewProvider {
- static var previews: some View {
- Users()
- }
- }
- */
-
-struct Users_Previews: PreviewProvider {
-    static var previews: some View {
-        Users().environmentObject(Data())
     }
 }

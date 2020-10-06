@@ -43,7 +43,7 @@ struct Menu: View {
                             .foregroundColor(.gray)
                             .imageScale(.large)
                     }
-                    .padding(.top, 12)
+                    
                      
         Spacer()
         }.padding()

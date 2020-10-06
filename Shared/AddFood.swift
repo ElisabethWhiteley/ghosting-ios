@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AddFood: View {
     @EnvironmentObject var data: Data
+    @Binding var currentUserId: String
     
     var defaultCategories = ["Dairy", "Dessert", "Dish", "Drinks", "Fish", "Fruit", "Meat", "Snacks", "Vegetables", "Various"]
     /* var categories: Array<String> {
@@ -89,8 +90,8 @@ struct AddFood: View {
     }
    
     func addFood(name: String, selectedCategory: String, attempted: Bool, rating: Int) {
-        let currentUser = UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? ""
-        let index = data.users.firstIndex(where: {$0.id == currentUser})
+    
+        let index = data.users.firstIndex(where: {$0.id == currentUserId})
         
         if !(data.users[index!].food.contains(where: { $0.name == name })) {
             let newFood = Food()
@@ -100,26 +101,17 @@ struct AddFood: View {
             newFood.attempts = attempted ? 1 : 0
             newFood.rating = rating
             
-            GreenEggsClient.addFood(food: newFood, userId: currentUser, success: { food in
+            GreenEggsClient.addFood(food: newFood, userId: currentUserId, success: { food in
                 DispatchQueue.main.async {
                     
                     var user = data.users[index!]
                     user.food.append(food)
                     data.users[index!] = user
-                    UserDefaults.standard.set(user.id, forKey: "CurrentUser")
                 }
                 
                   }, failure: { (error, _) in
                      // do nothing like a putz
                   })
         }
-    }
-}
-
-
-
-struct AddFood_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFood()
     }
 }

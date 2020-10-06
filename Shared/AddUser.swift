@@ -12,6 +12,7 @@ struct AddUser: View {
     @State private var name: String = ""
     @State private var theme: String = ""
     @State private var makeCurrentUser: Bool = true
+    @Binding var currentUserId: String
     
     var body: some View {
         VStack {
@@ -34,7 +35,7 @@ struct AddUser: View {
             }.frame(height: 200)
             
             Button(action: {
-                addUser(name: name, theme: theme)
+                addUser()
             }) { HStack {
                 Image(systemName: "plus.circle.fill")
                     .font(.title)
@@ -57,25 +58,30 @@ struct AddUser: View {
         }.navigationBarTitle("Add User", displayMode: .inline)
     }
     
-    func addUser(name: String, theme: String) {
+    func addUser() {
         var newUser = User()
         newUser.name = name
         newUser.theme = theme
         
-        GreenEggsClient.addUser(user: newUser, success: { users in
-            DispatchQueue.main.async {
-                data.users = users ?? []
+        GreenEggsClient.addUser(user: newUser, success: { createdUser in
+            if let user = createdUser {
+                var users = data.users
+                
+                users.append(user)
+                if makeCurrentUser {
+                    var current = currentUserId
+                    var newid = newUser.id
+                    currentUserId = user.id
+                    var blwae = currentUserId
+                }
+                DispatchQueue.main.async {
+                    data.users = users
+                    
+                }
             }
-            
         }, failure: { (error, _) in
             
             // do nothing like a putz
         })
-    }
-}
-
-struct AddUser_Previews: PreviewProvider {
-    static var previews: some View {
-        AddUser()
     }
 }

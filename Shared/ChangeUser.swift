@@ -10,6 +10,7 @@ import SwiftUI
 struct ChangeUser: View {
     @EnvironmentObject var data: Data
     @State private var userId: String = ""
+    @Binding var currentUserId: String
     
     var body: some View {
         VStack {
@@ -19,7 +20,7 @@ struct ChangeUser: View {
                         ForEach(0..<data.users.count) { index in
                             Text(data.users[index].name).tag(data.users[index].id)
                         }
-                }
+                    }.pickerStyle(WheelPickerStyle())
                 }
             }.frame(height: 200)
             
@@ -48,7 +49,6 @@ struct ChangeUser: View {
     }
     
     func changeCurrentUser() {
-        UserDefaults.standard.set(userId, forKey: "CurrentUser")
-       
+      currentUserId = userId
     }
 }

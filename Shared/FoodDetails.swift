@@ -14,13 +14,14 @@ struct FoodDetails: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     @State var dataState: Data?
+    @Binding var currentUserId: String
     
     var body: some View {
-      
+        
         VStack {
             Image(getCategory()?.icon ?? "category-icon-various")
-            .resizable()
-            .frame(width: 100.0, height: 100.0)
+                .resizable()
+                .frame(width: 100.0, height: 100.0)
                 .padding(.top, 20)
                 .padding(.bottom, 10)
             Text(food.name).font(.largeTitle).bold()
@@ -41,13 +42,13 @@ struct FoodDetails: View {
                     
                 }.sheet(isPresented: $showNewAttemptModal) {
                     if let food = food {
-                        AddAttempt(showModal: self.$showNewAttemptModal, food: food)
+                        AddAttempt(showModal: self.$showNewAttemptModal, food: food, currentUserId: $currentUserId)
                     }
                 }
-               
+                
                 Spacer()
                 Button(action: {
-                self.showingDeleteAlert = true
+                    self.showingDeleteAlert = true
                 }) {
                     VStack {
                         Image(systemName: "trash.circle.fill").foregroundColor(.red).font(.system(size: 53))
@@ -65,7 +66,7 @@ struct FoodDetails: View {
                     .padding(.leading, 12)
                     .padding(.vertical, 16)
                 Spacer()
-                Text(String(food.attempts ?? 0) + "/15")
+                Text(String(food.attempts ) + "/15")
                     .padding(.trailing, 24)
             }
             .background(Color("color-light-green"))
@@ -77,14 +78,14 @@ struct FoodDetails: View {
                 Spacer()
                 HStack {
                     ForEach(0..<5) { starNumber in
-                        let image = starNumber < food.rating ?? 0 ? "star.fill" : "star"
+                        let image = starNumber < food.rating ? "star.fill" : "star"
                         
                         Image(systemName: image).foregroundColor(.yellow)
                             .frame(width: 12, height: 10, alignment: .leading)
                     }
                 } .padding(.trailing, 24)
             }
-           
+            
             HStack {
                 Text("Category:")
                     .padding(.leading, 12)
@@ -94,33 +95,32 @@ struct FoodDetails: View {
                     .padding(.trailing, 24)
             }
             .background(Color("color-light-green"))
-          Spacer()
+            Spacer()
         }.navigationBarTitle("Food Details", displayMode: .inline)
         .onReceive(data.objectWillChange, perform: { _ in
             dataState = data
-         })
+        })
         .alert(isPresented: $showingDeleteAlert) {
             Alert(title: Text("Delete food"), message: Text("Are you sure?"), primaryButton: .destructive(Text("Delete")) {
-                    self.deleteFood()
-                }, secondaryButton: .cancel()
+                self.deleteFood()
+            }, secondaryButton: .cancel()
             )
         }
     }
     
     func getCategory() -> FoodCategory? {
-            if let category = data.categories.first(where: { $0.id == food.categoryId } ) {
-                return category
-            }
+        if let category = data.categories.first(where: { $0.id == food.categoryId } ) {
+            return category
+        }
         return nil
     }
     
     func deleteFood() {
-        if let currentUser = getCurrentUser() {
-            GreenEggsClient.deleteFood(food: food, userId: currentUser.id, success: {
+        GreenEggsClient.deleteFood(food: food, userId: currentUserId, success: {
             DispatchQueue.main.async {
-             
+                
                 var users = data.users
-                let index = users.firstIndex(where: {$0.id == currentUser.id})
+                let index = users.firstIndex(where: {$0.id == currentUserId})
                 let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
                 
                 users[index!].food.remove(at: foodIndex!)
@@ -129,42 +129,28 @@ struct FoodDetails: View {
             
         }, failure: { (error, _) in
             DispatchQueue.main.async {
-              
+                
             }
         })
-        }
-        
         presentationMode.wrappedValue.dismiss()
     }
     
-    func getCurrentUser() -> User? {
-       let currentUserId = UserDefaults.standard.object(forKey:"CurrentUser") as? String ?? data.users.first?.id ?? ""
-        if let index = data.users.firstIndex(where: {$0.id == currentUserId}) {
-            return data.users[index]
-        }
-        return data.users.first ?? nil
-    }
-    
     func updateAttempts() {
-            let updatedFood = food
-            updatedFood.attempts = food.attempts + 1
-            
-        if let currentUser = data.users.first(where: {$0.id == UserDefaults.standard.object(forKey: "CurrentUser") as? String ?? "" }) {
-                GreenEggsClient.updateFood(food: updatedFood, userId: currentUser.id, success: { food in
-                    DispatchQueue.main.async {
-                        var users = data.users
-                        let index = users.firstIndex(where: {$0.id == currentUser.id})
-                        let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
-                        
-                        users[index!].food[foodIndex!] = food
-                        data.users = users
-                    }
-                   
-                }, failure: { (error, _) in
+        let updatedFood = food
+        updatedFood.attempts = food.attempts + 1
+        
+        GreenEggsClient.updateFood(food: updatedFood, userId: currentUserId, success: { food in
+            DispatchQueue.main.async {
+                var users = data.users
+                let index = users.firstIndex(where: {$0.id == currentUserId})
+                let foodIndex = users[index!].food.firstIndex(where: {$0.id == food.id})
                 
-                })
+                users[index!].food[foodIndex!] = food
+                data.users = users
             }
-         
-       
+            
+        }, failure: { (error, _) in
+            
+        })
     }
 }
