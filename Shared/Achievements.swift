@@ -8,6 +8,7 @@
 import SwiftUI
  
 struct Achievements: View {
+    @State private var tab = 0
     
     var body: some View {
         VStack {
@@ -18,13 +19,20 @@ struct Achievements: View {
                     .padding(.bottom, 10)
                 Spacer()
             }
-            
-         
+
             Text("950").font(.largeTitle).bold().padding(.bottom, 30)
            
+            
+            Picker(selection: $tab, label: Text("")) {
+                           Text("NEW").tag(0)
+                           Text("ALL").tag(1)
+                           Text("IN PROGRESS").tag(2)
+                       }.pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal, 10)
+            
             ScrollView {
                 LazyVStack {
-                    
+                    Achievement().padding()
                 }
             }
            Spacer()

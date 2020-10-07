@@ -39,6 +39,10 @@
 		746C371B24FBF61E007B76D4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371924FBF61E007B76D4 /* Main.swift */; };
 		746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371F24FC0F2C007B76D4 /* Achievements.swift */; };
 		746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C371F24FC0F2C007B76D4 /* Achievements.swift */; };
+		74752FCA252E24200020D687 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74752FC9252E24200020D687 /* Achievement.swift */; };
+		74752FCB252E24200020D687 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74752FC9252E24200020D687 /* Achievement.swift */; };
+		74752FE0252E32060020D687 /* SegmentedProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74752FDF252E32060020D687 /* SegmentedProgress.swift */; };
+		74752FE1252E32060020D687 /* SegmentedProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74752FDF252E32060020D687 /* SegmentedProgress.swift */; };
 		74ADA41424FAADD900E06479 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41324FAADD900E06479 /* Tests_iOS.swift */; };
 		74ADA41F24FAADD900E06479 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41E24FAADD900E06479 /* Tests_macOS.swift */; };
 		74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */; };
@@ -94,6 +98,8 @@
 		746C371624FBF3A2007B76D4 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		746C371924FBF61E007B76D4 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		746C371F24FC0F2C007B76D4 /* Achievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievements.swift; sourceTree = "<group>"; };
+		74752FC9252E24200020D687 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		74752FDF252E32060020D687 /* SegmentedProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgress.swift; sourceTree = "<group>"; };
 		74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsApp.swift; sourceTree = "<group>"; };
 		74ADA3F924FAADD800E06479 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74ADA3FA24FAADD800E06479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 				742F067625238B5400906E54 /* DeleteFood.swift */,
 				742F068C2524510B00906E54 /* FoodCell.swift */,
 				742F0693252787FA00906E54 /* CashView.swift */,
+				74752FC9252E24200020D687 /* Achievement.swift */,
+				74752FDF252E32060020D687 /* SegmentedProgress.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
 				74E5683F25000C4A00733C32 /* AddFood.swift in Sources */,
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
+				74752FE0252E32060020D687 /* SegmentedProgress.swift in Sources */,
 				742F0694252787FA00906E54 /* CashView.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				74F5AD54250EA34300D695FE /* Data.swift in Sources */,
@@ -412,6 +421,7 @@
 				746C371124FBC280007B76D4 /* Users.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				742F068D2524510B00906E54 /* FoodCell.swift in Sources */,
+				74752FCA252E24200020D687 /* Achievement.swift in Sources */,
 				74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				74E56842250026EA00733C32 /* Rating.swift in Sources */,
@@ -426,6 +436,7 @@
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
 				746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
+				74752FE1252E32060020D687 /* SegmentedProgress.swift in Sources */,
 				742F0695252787FA00906E54 /* CashView.swift in Sources */,
 				74F5AD55250EA34300D695FE /* Data.swift in Sources */,
 				746C370924FB9AAE007B76D4 /* Search.swift in Sources */,
@@ -441,6 +452,7 @@
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				742F068E2524510B00906E54 /* FoodCell.swift in Sources */,
+				74752FCB252E24200020D687 /* Achievement.swift in Sources */,
 				74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				74E56843250026EA00733C32 /* Rating.swift in Sources */,
 				746024EB250D57A600D38456 /* UserResponse.swift in Sources */,
