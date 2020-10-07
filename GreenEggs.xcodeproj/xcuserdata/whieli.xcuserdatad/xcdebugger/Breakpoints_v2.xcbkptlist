@@ -889,8 +889,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "E6245932-EF63-432D-BF92-9E7E489FD457 - 53bcf57ba5dad2e"
@@ -937,8 +937,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "53C5F802-AD20-43E8-8702-EEBD8BFD5CC5 - 71a22879f7cb5e"
@@ -1105,7 +1105,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21D864A6-7658-4AC3-BF40-F8DE0631147F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shared/Users.swift"
@@ -1545,6 +1545,38 @@
             endingLineNumber = "74"
             landmarkName = "addUser()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B5DDCFC-00BA-4528-8433-4B09520C2C7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B5B63FC-1676-4D99-85F5-2FD948D79AB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

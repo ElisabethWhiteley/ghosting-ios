@@ -10,9 +10,9 @@ import SwiftUI
 struct SegmentedProgressView: View {
   var value: Int = 4
   var maximum: Int = 10
-  var height: CGFloat = 20
-  var spacing: CGFloat = 4
-  var selectedColor: Color = .gray
+  var height: CGFloat = 12
+  var spacing: CGFloat = 3
+  var selectedColor: Color = .yellow
   var unselectedColor: Color = Color.secondary.opacity(0.3)
 var body: some View {
     HStack(spacing: spacing) {
@@ -22,6 +22,7 @@ var body: some View {
       }
     }
     .frame(maxHeight: height)
+    .frame(height: height)
     .clipShape(Capsule())
   }
 }

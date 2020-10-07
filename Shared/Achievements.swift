@@ -24,15 +24,20 @@ struct Achievements: View {
            
             
             Picker(selection: $tab, label: Text("")) {
-                           Text("NEW").tag(0)
-                           Text("ALL").tag(1)
+                           Text("ALL").tag(0)
+                           Text("DONE").tag(1)
                            Text("IN PROGRESS").tag(2)
                        }.pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal, 10)
             
             ScrollView {
                 LazyVStack {
-                    Achievement().padding()
+                    AchievementView(isInProgress: false).padding(6)
+                    AchievementView(isInProgress: true).padding(6)
+                    AchievementView(isInProgress: false).padding(6)
+                    AchievementView(isInProgress: true).padding(6)
+                    AchievementView(isInProgress: false).padding(6)
+                    AchievementView(isInProgress: false).padding(6)
                 }
             }
            Spacer()

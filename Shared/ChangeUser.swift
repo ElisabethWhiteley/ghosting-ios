@@ -20,7 +20,8 @@ struct ChangeUser: View {
                         ForEach(0..<data.users.count) { index in
                             Text(data.users[index].name).tag(data.users[index].id)
                         }
-                    }.pickerStyle(WheelPickerStyle())
+                    }.pickerStyle(WheelPickerStyle()).frame(width: 400)
+                    .clipped()
                 }
             }.frame(height: 200)
             

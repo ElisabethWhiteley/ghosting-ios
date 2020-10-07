@@ -34,11 +34,16 @@ struct Main: View {
                     }.padding(.top, 50)
                     
                     NavigationLink(destination: Users(currentUserId: $currentUserId)) {
-                        
-                        
-                        Image(systemName: "person.crop.circle.fill").foregroundColor(.blue).font(.system(size: 84))
-                        
-                    }
+                        VStack {
+                            Image(systemName: "person.crop.circle.fill").foregroundColor(.green).font(.system(size: 80))
+                            Text(data.users.first(where: {$0.id == currentUserId })?.name ?? "")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }.frame(maxWidth: 100)
                     
                     
                     NavigationLink(destination: Achievements()) {
@@ -64,20 +69,20 @@ struct Main: View {
                             .cornerRadius(40)
                             .foregroundColor(.black)
                         
-                    }.padding(.vertical, 10)
+                    }.padding(.vertical, 5)
                     Spacer()
                 }
                 
                 SearchBar(text: $searchText)
-                    .padding(.top, 10)
-                    .padding(.bottom, 12)
+                    .padding(.top, 6)
+                    .padding(.bottom, 8)
                 
-                if data.users.first != nil {
+                if hasCurrentUser() {
                     FoodList(searchText: searchText, currentUserId: $currentUserId)
                 } else {
                     Spacer()
                 }
-               
+                
                 
             }
             .navigationBarTitleDisplayMode(.large)
@@ -102,7 +107,18 @@ struct Main: View {
             )
         }
     }
+    
+    func hasCurrentUser() -> Bool {
+        if let user = data.users.first {
+            if data.users.first(where: {$0.id == currentUserId }) == nil {
+                currentUserId = user.id
+            }
+            return true
+        }
+        return false
+    }
 }
+
 struct Main_Previews : View {
     @State
     private var userId = ""
