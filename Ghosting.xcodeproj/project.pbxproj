@@ -61,6 +61,41 @@
 		74F5AD55250EA34300D695FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F5AD53250EA34300D695FE /* Data.swift */; };
 		74FDB0CB250FFCA500A84805 /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDB0CA250FFCA500A84805 /* AddUser.swift */; };
 		74FDB0CC250FFCA500A84805 /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDB0CA250FFCA500A84805 /* AddUser.swift */; };
+		A20FB3FE27930D60003DDDF7 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20FB3FD27930D60003DDDF7 /* BLEManager.swift */; };
+		A20FB40027934088003DDDF7 /* DIGITALDREAM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20FB3FF27934088003DDDF7 /* DIGITALDREAM.ttf */; };
+		A20FB4012794359C003DDDF7 /* DIGITALDREAM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20FB3FF27934088003DDDF7 /* DIGITALDREAM.ttf */; };
+		A20FB40327943799003DDDF7 /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20FB40227943799003DDDF7 /* digital-7.ttf */; };
+		A20FB40427943799003DDDF7 /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20FB40227943799003DDDF7 /* digital-7.ttf */; };
+		A20FB40627945CE8003DDDF7 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20FB40527945CE8003DDDF7 /* SpeechRecognitionManager.swift */; };
+		A20FB40727945CE8003DDDF7 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20FB40527945CE8003DDDF7 /* SpeechRecognitionManager.swift */; };
+		A20FB40C2794BF25003DDDF7 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20FB40B2794BF25003DDDF7 /* SoundManager.swift */; };
+		A20FB40D2794BF25003DDDF7 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20FB40B2794BF25003DDDF7 /* SoundManager.swift */; };
+		A20FB40F2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A20FB40E2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 */; };
+		A20FB4102794C0CE003DDDF7 /* SpiritBoxStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A20FB40E2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 */; };
+		A26B990D27973ABD00B38EEE /* SoundRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26B990C27973ABD00B38EEE /* SoundRecorder.swift */; };
+		A26B990E27973ABD00B38EEE /* SoundRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26B990C27973ABD00B38EEE /* SoundRecorder.swift */; };
+		A26B9913279B4D5800B38EEE /* NextToYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B990F279B4D5800B38EEE /* NextToYou.mp3 */; };
+		A26B9914279B4D5800B38EEE /* NextToYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B990F279B4D5800B38EEE /* NextToYou.mp3 */; };
+		A26B9915279B4D5800B38EEE /* ImClose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9910279B4D5800B38EEE /* ImClose.mp3 */; };
+		A26B9916279B4D5800B38EEE /* ImClose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9910279B4D5800B38EEE /* ImClose.mp3 */; };
+		A26B9917279B4D5800B38EEE /* ImBehindYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9911279B4D5800B38EEE /* ImBehindYou.mp3 */; };
+		A26B9918279B4D5800B38EEE /* ImBehindYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9911279B4D5800B38EEE /* ImBehindYou.mp3 */; };
+		A26B9919279B4D5800B38EEE /* Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9912279B4D5800B38EEE /* Attack.mp3 */; };
+		A26B991A279B4D5800B38EEE /* Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9912279B4D5800B38EEE /* Attack.mp3 */; };
+		A26B991C279C06C400B38EEE /* SpiritBoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26B991B279C06C400B38EEE /* SpiritBoxManager.swift */; };
+		A26B991D279C06C400B38EEE /* SpiritBoxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26B991B279C06C400B38EEE /* SpiritBoxManager.swift */; };
+		A26B9924279C558100B38EEE /* Static.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B991E279C558000B38EEE /* Static.mp3 */; };
+		A26B9925279C558100B38EEE /* Static.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B991E279C558000B38EEE /* Static.mp3 */; };
+		A26B9926279C558100B38EEE /* ImHereWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B991F279C558000B38EEE /* ImHereWoman.mp3 */; };
+		A26B9927279C558100B38EEE /* ImHereWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B991F279C558000B38EEE /* ImHereWoman.mp3 */; };
+		A26B9928279C558100B38EEE /* OldWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9920279C558000B38EEE /* OldWoman.mp3 */; };
+		A26B9929279C558100B38EEE /* OldWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9920279C558000B38EEE /* OldWoman.mp3 */; };
+		A26B992A279C558100B38EEE /* BehindYouWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9921279C558000B38EEE /* BehindYouWoman.mp3 */; };
+		A26B992B279C558100B38EEE /* BehindYouWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9921279C558000B38EEE /* BehindYouWoman.mp3 */; };
+		A26B992C279C558100B38EEE /* AwayWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9922279C558000B38EEE /* AwayWoman.mp3 */; };
+		A26B992D279C558100B38EEE /* AwayWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9922279C558000B38EEE /* AwayWoman.mp3 */; };
+		A26B992E279C558100B38EEE /* ImCloseWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9923279C558000B38EEE /* ImCloseWoman.mp3 */; };
+		A26B992F279C558100B38EEE /* ImCloseWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26B9923279C558000B38EEE /* ImCloseWoman.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +138,9 @@
 		74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsApp.swift; sourceTree = "<group>"; };
 		74ADA3F924FAADD800E06479 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74ADA3FA24FAADD800E06479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		74ADA3FF24FAADD800E06479 /* GreenEggs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenEggs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ADA3FF24FAADD800E06479 /* Ghosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ADA40224FAADD800E06479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74ADA40724FAADD800E06479 /* GreenEggs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenEggs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74ADA40724FAADD800E06479 /* Ghosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74ADA40924FAADD800E06479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74ADA40A24FAADD800E06479 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		74ADA40F24FAADD900E06479 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +153,24 @@
 		74E56841250026EA00733C32 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		74F5AD53250EA34300D695FE /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		74FDB0CA250FFCA500A84805 /* AddUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUser.swift; sourceTree = "<group>"; };
+		A20FB3FD27930D60003DDDF7 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		A20FB3FF27934088003DDDF7 /* DIGITALDREAM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DIGITALDREAM.ttf; path = "../../../Downloads/digital-dream/DIGITALDREAM.ttf"; sourceTree = "<group>"; };
+		A20FB40227943799003DDDF7 /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "digital-7.ttf"; path = "../../../Downloads/digital-7/digital-7.ttf"; sourceTree = "<group>"; };
+		A20FB40527945CE8003DDDF7 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
+		A20FB40B2794BF25003DDDF7 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A20FB40E2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SpiritBoxStatic.mp3; path = ../../../Downloads/SpiritBoxStatic.mp3; sourceTree = "<group>"; };
+		A26B990C27973ABD00B38EEE /* SoundRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecorder.swift; sourceTree = "<group>"; };
+		A26B990F279B4D5800B38EEE /* NextToYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = NextToYou.mp3; path = ../../../Downloads/NextToYou.mp3; sourceTree = "<group>"; };
+		A26B9910279B4D5800B38EEE /* ImClose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ImClose.mp3; path = ../../../Downloads/ImClose.mp3; sourceTree = "<group>"; };
+		A26B9911279B4D5800B38EEE /* ImBehindYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ImBehindYou.mp3; path = ../../../Downloads/ImBehindYou.mp3; sourceTree = "<group>"; };
+		A26B9912279B4D5800B38EEE /* Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Attack.mp3; path = ../../../Downloads/Attack.mp3; sourceTree = "<group>"; };
+		A26B991B279C06C400B38EEE /* SpiritBoxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritBoxManager.swift; sourceTree = "<group>"; };
+		A26B991E279C558000B38EEE /* Static.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Static.mp3; path = ../../../Downloads/Static.mp3; sourceTree = "<group>"; };
+		A26B991F279C558000B38EEE /* ImHereWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ImHereWoman.mp3; path = ../../../Downloads/ImHereWoman.mp3; sourceTree = "<group>"; };
+		A26B9920279C558000B38EEE /* OldWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = OldWoman.mp3; path = ../../../Downloads/OldWoman.mp3; sourceTree = "<group>"; };
+		A26B9921279C558000B38EEE /* BehindYouWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BehindYouWoman.mp3; path = ../../../Downloads/BehindYouWoman.mp3; sourceTree = "<group>"; };
+		A26B9922279C558000B38EEE /* AwayWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AwayWoman.mp3; path = ../../../Downloads/AwayWoman.mp3; sourceTree = "<group>"; };
+		A26B9923279C558000B38EEE /* ImCloseWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ImCloseWoman.mp3; path = ../../../Downloads/ImCloseWoman.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +220,7 @@
 		74ADA3F724FAADD800E06479 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A20FB3FD27930D60003DDDF7 /* BLEManager.swift */,
 				74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */,
 				74ADA3F924FAADD800E06479 /* ContentView.swift */,
 				74ADA3FA24FAADD800E06479 /* Assets.xcassets */,
@@ -181,18 +235,35 @@
 				74E5683E25000C4A00733C32 /* AddFood.swift */,
 				74E56841250026EA00733C32 /* Rating.swift */,
 				742F068125244F0A00906E54 /* ChangeRating.swift */,
+				A20FB40E2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 */,
 				7446453425056FDD00648631 /* Model.xcdatamodeld */,
 				746024E3250D305E00D38456 /* GreenEggsClient.swift */,
 				746024E9250D57A600D38456 /* UserResponse.swift */,
 				74F5AD53250EA34300D695FE /* Data.swift */,
 				74696EE0251A8EB200BFF779 /* ChangeUser.swift */,
 				74696EE7251A8EBC00BFF779 /* DeleteUser.swift */,
+				A20FB40227943799003DDDF7 /* digital-7.ttf */,
 				74696F2C252129B100BFF779 /* AddAttempt.swift */,
 				742F067625238B5400906E54 /* DeleteFood.swift */,
+				A26B9912279B4D5800B38EEE /* Attack.mp3 */,
+				A26B9911279B4D5800B38EEE /* ImBehindYou.mp3 */,
+				A26B9910279B4D5800B38EEE /* ImClose.mp3 */,
+				A26B9922279C558000B38EEE /* AwayWoman.mp3 */,
+				A26B9921279C558000B38EEE /* BehindYouWoman.mp3 */,
+				A26B9923279C558000B38EEE /* ImCloseWoman.mp3 */,
+				A26B991F279C558000B38EEE /* ImHereWoman.mp3 */,
+				A26B9920279C558000B38EEE /* OldWoman.mp3 */,
+				A26B991E279C558000B38EEE /* Static.mp3 */,
+				A26B990F279B4D5800B38EEE /* NextToYou.mp3 */,
 				742F068C2524510B00906E54 /* FoodCell.swift */,
 				742F0693252787FA00906E54 /* CashView.swift */,
 				74752FC9252E24200020D687 /* Achievement.swift */,
+				A20FB3FF27934088003DDDF7 /* DIGITALDREAM.ttf */,
 				74752FDF252E32060020D687 /* SegmentedProgress.swift */,
+				A20FB40527945CE8003DDDF7 /* SpeechRecognitionManager.swift */,
+				A20FB40B2794BF25003DDDF7 /* SoundManager.swift */,
+				A26B990C27973ABD00B38EEE /* SoundRecorder.swift */,
+				A26B991B279C06C400B38EEE /* SpiritBoxManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -200,8 +271,8 @@
 		74ADA40024FAADD800E06479 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74ADA3FF24FAADD800E06479 /* GreenEggs.app */,
-				74ADA40724FAADD800E06479 /* GreenEggs.app */,
+				74ADA3FF24FAADD800E06479 /* Ghosting.app */,
+				74ADA40724FAADD800E06479 /* Ghosting.app */,
 				74ADA40F24FAADD900E06479 /* Tests iOS.xctest */,
 				74ADA41A24FAADD900E06479 /* Tests macOS.xctest */,
 			);
@@ -246,9 +317,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74ADA3FE24FAADD800E06479 /* GreenEggs (iOS) */ = {
+		74ADA3FE24FAADD800E06479 /* Ghosting (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74ADA42924FAADD900E06479 /* Build configuration list for PBXNativeTarget "GreenEggs (iOS)" */;
+			buildConfigurationList = 74ADA42924FAADD900E06479 /* Build configuration list for PBXNativeTarget "Ghosting (iOS)" */;
 			buildPhases = (
 				74ADA3FB24FAADD800E06479 /* Sources */,
 				74ADA3FC24FAADD800E06479 /* Frameworks */,
@@ -258,14 +329,14 @@
 			);
 			dependencies = (
 			);
-			name = "GreenEggs (iOS)";
+			name = "Ghosting (iOS)";
 			productName = "GreenEggs (iOS)";
-			productReference = 74ADA3FF24FAADD800E06479 /* GreenEggs.app */;
+			productReference = 74ADA3FF24FAADD800E06479 /* Ghosting.app */;
 			productType = "com.apple.product-type.application";
 		};
-		74ADA40624FAADD800E06479 /* GreenEggs (macOS) */ = {
+		74ADA40624FAADD800E06479 /* Ghosting (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74ADA42C24FAADD900E06479 /* Build configuration list for PBXNativeTarget "GreenEggs (macOS)" */;
+			buildConfigurationList = 74ADA42C24FAADD900E06479 /* Build configuration list for PBXNativeTarget "Ghosting (macOS)" */;
 			buildPhases = (
 				74ADA40324FAADD800E06479 /* Sources */,
 				74ADA40424FAADD800E06479 /* Frameworks */,
@@ -275,9 +346,9 @@
 			);
 			dependencies = (
 			);
-			name = "GreenEggs (macOS)";
+			name = "Ghosting (macOS)";
 			productName = "GreenEggs (macOS)";
-			productReference = 74ADA40724FAADD800E06479 /* GreenEggs.app */;
+			productReference = 74ADA40724FAADD800E06479 /* Ghosting.app */;
 			productType = "com.apple.product-type.application";
 		};
 		74ADA40E24FAADD900E06479 /* Tests iOS */ = {
@@ -341,7 +412,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 74ADA3F624FAADD800E06479 /* Build configuration list for PBXProject "GreenEggs" */;
+			buildConfigurationList = 74ADA3F624FAADD800E06479 /* Build configuration list for PBXProject "Ghosting" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -354,8 +425,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74ADA3FE24FAADD800E06479 /* GreenEggs (iOS) */,
-				74ADA40624FAADD800E06479 /* GreenEggs (macOS) */,
+				74ADA3FE24FAADD800E06479 /* Ghosting (iOS) */,
+				74ADA40624FAADD800E06479 /* Ghosting (macOS) */,
 				74ADA40E24FAADD900E06479 /* Tests iOS */,
 				74ADA41924FAADD900E06479 /* Tests macOS */,
 			);
@@ -367,8 +438,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26B9915279B4D5800B38EEE /* ImClose.mp3 in Resources */,
+				A26B992C279C558100B38EEE /* AwayWoman.mp3 in Resources */,
+				A26B9926279C558100B38EEE /* ImHereWoman.mp3 in Resources */,
 				74B7D1A2250814C1002E138C /* Model.xcdatamodeld in Resources */,
+				A26B9917279B4D5800B38EEE /* ImBehindYou.mp3 in Resources */,
 				74ADA42524FAADD900E06479 /* Assets.xcassets in Resources */,
+				A26B992A279C558100B38EEE /* BehindYouWoman.mp3 in Resources */,
+				A26B9913279B4D5800B38EEE /* NextToYou.mp3 in Resources */,
+				A26B9919279B4D5800B38EEE /* Attack.mp3 in Resources */,
+				A20FB40027934088003DDDF7 /* DIGITALDREAM.ttf in Resources */,
+				A20FB40F2794C0CE003DDDF7 /* SpiritBoxStatic.mp3 in Resources */,
+				A26B9924279C558100B38EEE /* Static.mp3 in Resources */,
+				A26B992E279C558100B38EEE /* ImCloseWoman.mp3 in Resources */,
+				A20FB40327943799003DDDF7 /* digital-7.ttf in Resources */,
+				A26B9928279C558100B38EEE /* OldWoman.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,8 +460,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26B9916279B4D5800B38EEE /* ImClose.mp3 in Resources */,
+				A26B992D279C558100B38EEE /* AwayWoman.mp3 in Resources */,
+				A26B9927279C558100B38EEE /* ImHereWoman.mp3 in Resources */,
 				74DAE6D5250E4EBA0054EFD6 /* Model.xcdatamodeld in Resources */,
+				A26B9918279B4D5800B38EEE /* ImBehindYou.mp3 in Resources */,
 				74ADA42624FAADD900E06479 /* Assets.xcassets in Resources */,
+				A26B992B279C558100B38EEE /* BehindYouWoman.mp3 in Resources */,
+				A26B9914279B4D5800B38EEE /* NextToYou.mp3 in Resources */,
+				A26B991A279B4D5800B38EEE /* Attack.mp3 in Resources */,
+				A20FB4012794359C003DDDF7 /* DIGITALDREAM.ttf in Resources */,
+				A20FB4102794C0CE003DDDF7 /* SpiritBoxStatic.mp3 in Resources */,
+				A26B9925279C558100B38EEE /* Static.mp3 in Resources */,
+				A26B992F279C558100B38EEE /* ImCloseWoman.mp3 in Resources */,
+				A20FB40427943799003DDDF7 /* digital-7.ttf in Resources */,
+				A26B9929279C558100B38EEE /* OldWoman.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,8 +504,10 @@
 				746C370824FB9AAE007B76D4 /* Search.swift in Sources */,
 				74752FE0252E32060020D687 /* SegmentedProgress.swift in Sources */,
 				742F0694252787FA00906E54 /* CashView.swift in Sources */,
+				A26B990D27973ABD00B38EEE /* SoundRecorder.swift in Sources */,
 				746C370E24FBB990007B76D4 /* FoodDetails.swift in Sources */,
 				74F5AD54250EA34300D695FE /* Data.swift in Sources */,
+				A20FB40627945CE8003DDDF7 /* SpeechRecognitionManager.swift in Sources */,
 				746C371724FBF3A2007B76D4 /* Menu.swift in Sources */,
 				746C370B24FB9C46007B76D4 /* FoodList.swift in Sources */,
 				74FDB0CB250FFCA500A84805 /* AddUser.swift in Sources */,
@@ -418,12 +517,15 @@
 				746024E4250D305E00D38456 /* GreenEggsClient.swift in Sources */,
 				742F068225244F0A00906E54 /* ChangeRating.swift in Sources */,
 				742F067725238B5400906E54 /* DeleteFood.swift in Sources */,
+				A20FB40C2794BF25003DDDF7 /* SoundManager.swift in Sources */,
 				746C371124FBC280007B76D4 /* Users.swift in Sources */,
+				A20FB3FE27930D60003DDDF7 /* BLEManager.swift in Sources */,
 				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
 				742F068D2524510B00906E54 /* FoodCell.swift in Sources */,
 				74752FCA252E24200020D687 /* Achievement.swift in Sources */,
 				74696EE1251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* Achievements.swift in Sources */,
+				A26B991C279C06C400B38EEE /* SpiritBoxManager.swift in Sources */,
 				74E56842250026EA00733C32 /* Rating.swift in Sources */,
 				74696F2D252129B100BFF779 /* AddAttempt.swift in Sources */,
 			);
@@ -435,6 +537,7 @@
 			files = (
 				746C371B24FBF61E007B76D4 /* Main.swift in Sources */,
 				746024E5250D305E00D38456 /* GreenEggsClient.swift in Sources */,
+				A26B990E27973ABD00B38EEE /* SoundRecorder.swift in Sources */,
 				74E5684025000C4A00733C32 /* AddFood.swift in Sources */,
 				74752FE1252E32060020D687 /* SegmentedProgress.swift in Sources */,
 				742F0695252787FA00906E54 /* CashView.swift in Sources */,
@@ -448,10 +551,13 @@
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
 				746C371224FBC280007B76D4 /* Users.swift in Sources */,
 				742F068325244F0A00906E54 /* ChangeRating.swift in Sources */,
+				A26B991D279C06C400B38EEE /* SpiritBoxManager.swift in Sources */,
 				742F067825238B5400906E54 /* DeleteFood.swift in Sources */,
 				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				A20FB40D2794BF25003DDDF7 /* SoundManager.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* Achievements.swift in Sources */,
 				742F068E2524510B00906E54 /* FoodCell.swift in Sources */,
+				A20FB40727945CE8003DDDF7 /* SpeechRecognitionManager.swift in Sources */,
 				74752FCB252E24200020D687 /* Achievement.swift in Sources */,
 				74696EE2251A8EB200BFF779 /* ChangeUser.swift in Sources */,
 				74E56843250026EA00733C32 /* Rating.swift in Sources */,
@@ -481,12 +587,12 @@
 /* Begin PBXTargetDependency section */
 		74ADA41124FAADD900E06479 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74ADA3FE24FAADD800E06479 /* GreenEggs (iOS) */;
+			target = 74ADA3FE24FAADD800E06479 /* Ghosting (iOS) */;
 			targetProxy = 74ADA41024FAADD900E06479 /* PBXContainerItemProxy */;
 		};
 		74ADA41C24FAADD900E06479 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74ADA40624FAADD800E06479 /* GreenEggs (macOS) */;
+			target = 74ADA40624FAADD800E06479 /* Ghosting (macOS) */;
 			targetProxy = 74ADA41B24FAADD900E06479 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -619,7 +725,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
-				PRODUCT_NAME = GreenEggs;
+				PRODUCT_NAME = Ghosting;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -643,7 +749,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
-				PRODUCT_NAME = GreenEggs;
+				PRODUCT_NAME = Ghosting;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -668,7 +774,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
-				PRODUCT_NAME = GreenEggs;
+				PRODUCT_NAME = Ghosting;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -690,7 +796,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
-				PRODUCT_NAME = GreenEggs;
+				PRODUCT_NAME = Ghosting;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -784,7 +890,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		74ADA3F624FAADD800E06479 /* Build configuration list for PBXProject "GreenEggs" */ = {
+		74ADA3F624FAADD800E06479 /* Build configuration list for PBXProject "Ghosting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74ADA42724FAADD900E06479 /* Debug */,
@@ -793,7 +899,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74ADA42924FAADD900E06479 /* Build configuration list for PBXNativeTarget "GreenEggs (iOS)" */ = {
+		74ADA42924FAADD900E06479 /* Build configuration list for PBXNativeTarget "Ghosting (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74ADA42A24FAADD900E06479 /* Debug */,
@@ -802,7 +908,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74ADA42C24FAADD900E06479 /* Build configuration list for PBXNativeTarget "GreenEggs (macOS)" */ = {
+		74ADA42C24FAADD900E06479 /* Build configuration list for PBXNativeTarget "Ghosting (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74ADA42D24FAADD900E06479 /* Debug */,

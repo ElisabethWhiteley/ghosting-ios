@@ -17,7 +17,6 @@ struct ContentView: View {
     @State var dataState: Data?
     @AppStorage("currentuserid") var currentUserId: String = ""
     
-    
     var body: some View {
         
     /*

@@ -14,98 +14,39 @@ struct Main: View {
     @State private var searchText = ""
     @EnvironmentObject var data: Data
     @Binding var currentUserId: String
+
     
     var body: some View {
+        Color.black
+               .ignoresSafeArea()
+            .overlay(
+            
         HStack() {
             VStack(alignment: .center) {
                 
                 
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     
-                    NavigationLink(destination: CashView(currentUserId: $currentUserId, amount: "")) {
-                        HStack {
-                            Image(systemName: "coloncurrencysign.circle")
-                            Text("60").fontWeight(.bold).padding(.leading, -5)
-                        }
-                        .frame(width: 60, height: 60)
-                        .foregroundColor(Color.black)
-                        .background(Color.green)
-                        .clipShape(Circle())
-                    }.padding(.top, 50)
-                    
-                    NavigationLink(destination: Users(currentUserId: $currentUserId)) {
-                        VStack {
-                            Image(systemName: "person.crop.circle.fill").foregroundColor(.green).font(.system(size: 80))
-                            Text(data.users.first(where: {$0.id == currentUserId })?.name ?? "")
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.black)
-                                .multilineTextAlignment(.center)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                    }.frame(maxWidth: 100)
-                    
                     
                     NavigationLink(destination: Achievements()) {
                         HStack {
-                            Image(systemName: "star.circle")
-                            Text("950").fontWeight(.bold).padding(.leading, -5)
+                            Image("icon-spirit-box")
+                                .resizable()
+                                .frame(width: 80.0, height: 80.0)
                         }
-                        .frame(width: 60, height: 60)
-                        .foregroundColor(Color.black)
-                        .background(Color.yellow)
+                        .frame(width: 84, height: 84)
+                        .foregroundColor(Color.black).cornerRadius(12)
                         .clipShape(Circle())
+                        .shadow(radius: 10)
+                        .overlay(Circle().stroke(Color("color-spiritbox-screen"), lineWidth: 4))
                     }.padding(.top, 50)
                 }.padding(.top, -50)
                 
-                HStack {
                     Spacer()
-                    NavigationLink(destination: AddFood(currentUserId: $currentUserId)) {
-                        Text("I've tasted something new!")
-                            .fontWeight(.bold)
-                            .padding(.horizontal, 25)
-                            .padding(.vertical, 15)
-                            .background(Color.orange)
-                            .cornerRadius(40)
-                            .foregroundColor(.black)
-                        
-                    }.padding(.vertical, 5)
-                    Spacer()
-                }
-                
-                SearchBar(text: $searchText)
-                    .padding(.top, 6)
-                    .padding(.bottom, 8)
-                
-                if hasCurrentUser() {
-                    FoodList(searchText: searchText, currentUserId: $currentUserId)
-                } else {
-                    Spacer()
-                }
-                
-                
             }
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    HStack {
-                        Image("icon-greeneggs")
-                            .resizable()
-                            .frame(width: 42.0, height: 42.0)
-                        
-                        Text("Green Eggs").font(.largeTitle)
-                    }
-                }
-            }
-            .navigationBarItems(trailing:
-                                    NavigationLink(destination: Users(currentUserId: $currentUserId)) {
-                                        
-                                        Image(systemName: "line.horizontal.3")
-                                            .foregroundColor(.green).font(.system(size: 36))
-                                        
-                                    }
-            )
         }
+        )
     }
     
     func hasCurrentUser() -> Bool {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreBluetooth
 
 struct ChangeRating: View {
     @Binding var rating: Int
