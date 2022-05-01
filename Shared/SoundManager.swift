@@ -30,7 +30,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
     private var engine: AVAudioEngine!
      private var mixerNode: AVAudioMixerNode!
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    let request = SFSpeechAudioBufferRecognitionRequest()
+    private var request: SFSpeechAudioBufferRecognitionRequest
     var recognitionTask: SFSpeechRecognitionTask?
      private var state: RecordingState = .stopped
     private var audioPlayer = AVAudioPlayerNode()
@@ -58,6 +58,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
     let fiveWordPhrases = ["can you speak to us", "is there anyone with me", "would you like to talk", "are you male or female", "can you make a sound", "can you speak to us"]
     
     override init() {
+        self.request = SFSpeechAudioBufferRecognitionRequest()
         super.init()
        setupSession()
        setupEngine()
@@ -120,20 +121,15 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         
         
         let ghostResponsePaths: [String] = [
-            Bundle.main.path(forResource: "AwayWoman.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "AwayWoman.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "BehindYouWoman.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "ImHereWoman.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "ImCloseWoman.mp3", ofType: nil)!]
+            Bundle.main.path(forResource: "womanAway.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "womanAway.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "womanBehindYou2.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "womanImHere.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "womanImClose.mp3", ofType: nil)!]
         
         for i in 0...4
                     {
-            print("APPENDing all the other stuff")
-            print(i)
-            print("GHOSTRESPONSEPATHS:")
-            print(ghostResponsePaths.count)
             ghostSoundsFileURL.append(URL(fileURLWithPath: ghostResponsePaths[i]))
-            print(i)
                         // Read the corresponding url into the audio file
                         try! ghostSoundsAudioFile.append(AVAudioFile(forReading: ghostSoundsFileURL[i]))
 
@@ -156,7 +152,6 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         
         for i in 0...4
                     {
-            print("in attachmennt phase")
                         engine.attach(ghostResponsePlayer[i])
 
                         engine.connect(ghostResponsePlayer[i], to: mainMixerNode, fromBus: 0, toBus: (i+1), format: ghostSoundsAudioFileBuffer[i].format)
@@ -172,25 +167,22 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
            print("Start Recording!")
         self.bluetoothManager.startScanning()
          isRecording = true
-         let tapNode: AVAudioNode = mixerNode
-         let format = tapNode.outputFormat(forBus: 0)
-
-        
-          
-         tapNode.installTap(onBus: 0, bufferSize: 4096, format: format, block: {
-           (buffer, time) in
+        let tapNode: AVAudioNode = mixerNode
+        let format = tapNode.outputFormat(forBus: 0)
+        tapNode.installTap(onBus: 0, bufferSize: 4096, format: format, block: {
+          (buffer, time) in
             self.request.append(buffer)
-         })
+        })
+          
+         
        
          
         do {
          try engine.start()
-            print("IS STARTING AUDIOENGINE")
             
         }
         catch
         {
-            print("cant start ------------------------")
         }
            audioPlayer.play()
          state = .recording
@@ -204,9 +196,21 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         }
         startSpeechRecognition()
        }
-       
-       
+
+ 
     func startSpeechRecognition() {
+        
+        // Cancel the previous task if it's running.
+            if let recognitionTask = recognitionTask {
+                recognitionTask.cancel()
+
+                self.recognitionTask = nil
+            }
+        
+       
+        request = SFSpeechAudioBufferRecognitionRequest()
+      
+        
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { (result, error) in
                if result != nil { // check to see if result is empty (i.e. no speech found)
                    if let result = result {
@@ -255,6 +259,13 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
                }
 
            })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 55.0) { [weak self] in
+            print("after 55 seconds")
+           
+            self?.startSpeechRecognition()
+            print("started")
+        }
     }
     
     
@@ -297,7 +308,7 @@ print("PLAYING GHOST SOUND FINAL")
        pauseRecording()
     }
     
-    
+   
        func resumeRecording() throws {
          try engine.start()
          state = .recording

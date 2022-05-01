@@ -10,12 +10,6 @@ import SwiftUI
 
 struct Main: View {
     
-    // @Binding var showMenu: Bool
-    @State private var searchText = ""
-    @EnvironmentObject var data: Data
-    @Binding var currentUserId: String
-
-    
     var body: some View {
         Color.black
                .ignoresSafeArea()
@@ -24,39 +18,76 @@ struct Main: View {
         HStack() {
             VStack(alignment: .center) {
                 
-                
+                Text("Phantasm").font(Font.custom("Raven Song", size: 64)).foregroundColor(Color.white).padding(.bottom, 24)
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
                     
-                    
-                    NavigationLink(destination: Achievements()) {
+                   Spacer()
+                    NavigationLink(destination: SpiritBoxView()) {
                         HStack {
                             Image("icon-spirit-box")
                                 .resizable()
                                 .frame(width: 80.0, height: 80.0)
+                                .cornerRadius(6)
                         }
                         .frame(width: 84, height: 84)
-                        .foregroundColor(Color.black).cornerRadius(12)
-                        .clipShape(Circle())
-                        .shadow(radius: 10)
-                        .overlay(Circle().stroke(Color("color-spiritbox-screen"), lineWidth: 4))
-                    }.padding(.top, 50)
+                    }.padding(.top, 50).padding(.leading, 10)
+                    Spacer()
+                    NavigationLink(destination: VideoCameraView()) {
+                        HStack {
+                            Image("icon-video-camera")
+                                .resizable()
+                                .frame(width: 60.0, height: 60.0)
+                        }
+                        .frame(width: 84, height: 84)
+                        .foregroundColor(Color.black)
+                        .background(Color.white)
+                        .cornerRadius(6)
+                    }.padding(.top, 50).padding(.trailing, 10)
+                Spacer()
                 }.padding(.top, -50)
                 
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                    Spacer()
+                NavigationLink(destination: JournalView()) {
+                    HStack {
+                        Image("icon-journal")
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0)
+                    }
+                    .frame(width: 84, height: 84)
+                    .foregroundColor(Color.black)
+                    .background(Color.white)
+                    .cornerRadius(6)
+                }.padding(.top, 50).padding(.leading, 10)
+                Spacer()
+                NavigationLink(destination: NotesView()) {
+                    HStack {
+                        Image("icon-notes")
+                            .resizable()
+                            .frame(width: 55.0, height: 65.0)
+                    }
+                    .frame(width: 84, height: 84)
+                    .foregroundColor(Color.black)
+                    .background(Color.white)
+                    .cornerRadius(6)
+                }.padding(.top, 50).padding(.leading, 10)
+                Spacer()
+                }
+                NavigationLink(destination: PeripheralScan()) {
+                    HStack {
+                        Image("icon-spirit-box")
+                            .resizable()
+                            .frame(width: 80.0, height: 80.0)
+                    }
+                    .frame(width: 84, height: 84)
+                    .foregroundColor(Color.black).cornerRadius(12)
+                    .cornerRadius(6)
+                }.padding(.top, 50)
                     Spacer()
             }
             .navigationBarTitleDisplayMode(.large)
         }
         )
-    }
-    
-    func hasCurrentUser() -> Bool {
-        if let user = data.users.first {
-            if data.users.first(where: {$0.id == currentUserId }) == nil {
-                currentUserId = user.id
-            }
-            return true
-        }
-        return false
     }
 }
 
@@ -65,7 +96,7 @@ struct Main_Previews : View {
     private var userId = ""
     
     var body: some View {
-        Main(currentUserId: $userId)
+        Main()
     }
 }
 

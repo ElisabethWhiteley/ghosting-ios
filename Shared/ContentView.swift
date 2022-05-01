@@ -12,10 +12,6 @@ struct ContentView: View {
     UITableView.appearance().backgroundColor = UIColor(Color.clear)
     UITableView.appearance().separatorStyle = .none
     }
-    @State var showMenu = false
-    @EnvironmentObject var data: Data
-    @State var dataState: Data?
-    @AppStorage("currentuserid") var currentUserId: String = ""
     
     var body: some View {
         
@@ -29,7 +25,7 @@ struct ContentView: View {
                 }
             } */
         NavigationView {
-            Main(currentUserId: $currentUserId)
+            Main()
             /*
             return GeometryReader { geometry in
                 ZStack(alignment: .leading) {
@@ -61,47 +57,12 @@ struct ContentView: View {
           //  } .navigationBarTitle("Side Menu", displayMode: .inline)
            
         }
-        .onAppear(perform: getUserData)
-        .onAppear(perform: getCategories)
-        .onReceive(data.objectWillChange, perform: { _ in
-                  dataState = data
-            if currentUserId == "" {
-                currentUserId = data.users.first?.id ?? ""
-            }
-               })
-        .navigationBarTitle("Side Menu")
     }
     
-    func getUserData() {
-        GreenEggsClient.getUsers(success: { users in
-            DispatchQueue.main.async {
-                data.users = users ?? []
-                dataState = data
-                if currentUserId == "" {
-                    currentUserId = data.users.first?.id ?? ""
-                }
-            }
-              }, failure: { (error, _) in
-                 // do nothing like a putz
-              })
-        
-    }
-    
-    func getCategories() {
-        GreenEggsClient.getCategories(success: { categories in
-            DispatchQueue.main.async {
-                data.categories = categories
-                dataState?.categories = categories
-            }
-              }, failure: { (error, _) in
-                 // do nothing like a putz
-              })
-        
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Data())
+        ContentView()
     }
 }

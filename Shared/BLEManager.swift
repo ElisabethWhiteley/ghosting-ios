@@ -12,13 +12,15 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate {
 
     var myCentral: CBCentralManager!
     @Published var macPeripheral = Peripheral(id: 1, identifier: "String", name: "Unknown", rssi: 1)
+    @Published var peripherals: [Peripheral]
     @Published var isSwitchedOn = false
     @Published var isGhostInRange = false
     
     
     override init() {
+        self.peripherals = []
         super.init()
-
+       
         myCentral = CBCentralManager(delegate: self, queue: nil)
         myCentral.delegate = self
     }
@@ -35,13 +37,14 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
       
         // print("PERIPHEEAL DATA")
-        //print(peripheral.name)
-        //print(peripheral.identifier)
+      //  print("peripheral.name: ", peripheral.name)
+      //  print("peripheral.identifier: ", peripheral.identifier)
+      //  print("advertisementdata: ", advertisementData)
        
-            let newPeripheral = Peripheral(id: 1, identifier: peripheral.identifier.uuidString, name: peripheral.name ?? "Uknown", rssi: RSSI.intValue)
+        let newPeripheral = Peripheral(id: peripherals.count+1, identifier: peripheral.identifier.uuidString, name: peripheral.name ?? "Unknown", rssi: RSSI.intValue)
              
               
-        
+        peripherals.append(newPeripheral)
        
       //  print(self.peripherals)
         if peripheral.name == "Elisabeths MacBook Pro" {
