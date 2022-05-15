@@ -13,6 +13,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     var lastKnownLocation: CLLocationCoordinate2D?
     var lastKnownHeading: CLLocationDirection?
     var lastKnownBearing: Double?
+    var latitude = 60.4340887
+    var longitude = 5.309672
     @Published var angleToGhost = 0.0
     @Published var isInGhostLocation = false
 
@@ -35,7 +37,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastKnownLocation = locations.first?.coordinate
       //  print("LOCATION: ", lastKnownLocation)
-        lastKnownBearing = getBearingBetweenTwoPoints(point1: locations.first, point2: CLLocation(latitude: 60.4340887, longitude: 5.309672))
+        lastKnownBearing = getBearingBetweenTwoPoints(point1: locations.first, point2: CLLocation(latitude: latitude, longitude: longitude))
         angleToGhost = getAngleToGhost()
         print("angle to ghost: ", angleToGhost)
 
@@ -77,7 +79,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func isThisGhostLocation() -> Bool {
         let epsilon = 0.000045 // 0.000045
         if (lastKnownLocation != nil) {
-            let isSameLocation = fabs(lastKnownLocation!.latitude - 60.4340887) <= epsilon && fabs(lastKnownLocation!.longitude - 5.309672) <= epsilon
+            let isSameLocation = fabs(lastKnownLocation!.latitude - latitude) <= epsilon && fabs(lastKnownLocation!.longitude - longitude) <= epsilon
            print("IS IN GHOST LOCATION: ", isSameLocation)
             
             return isSameLocation

@@ -8,6 +8,7 @@
 import SwiftUI
  
 struct DowsingRodView: View {
+    
     @ObservedObject var locationManager = LocationManager()
     
     var body: some View {
@@ -17,23 +18,17 @@ struct DowsingRodView: View {
                         Image("dowsing-rod")
                             .resizable()
                             .frame(width: 100.0, height: 700.0)
-                          //  .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                           // .background(Color.gray)
-                           //  .rotationEffect(.degrees(9))
+                            .foregroundColor(Color("color-divingrod"))
                             .rotationEffect(.degrees(Double(9 + (locationManager.isInGhostLocation ? 16.0 : (locationManager.angleToGhost == 0.0 ? -8.0 : locationManager.angleToGhost)))))
                             .animation(.easeIn)
-                           // .padding(.trailing, -80)
                             .padding(.trailing, CGFloat(locationManager.isInGhostLocation ? 600.0 : locationManager.angleToGhost == 0.0 ? -4.0 : locationManager.angleToGhost)*(-10))
                             .offset(x: -100)
                         Image("dowsing-rod")
                             .resizable()
                             .frame(width: 100.0, height: 700.0)
-                        //    .background(Color.green)
-                           // .rotationEffect(.degrees(9))
-                          //  .rotationEffect(.degrees(3.0))
+                            .foregroundColor(Color("color-divingrod"))
                             .rotationEffect(.degrees(Double(9 + (locationManager.isInGhostLocation ? -16.0 : (locationManager.angleToGhost == 0.0 ? 8.0 : locationManager.angleToGhost)))))
                             .animation(.easeIn)
-                           // .padding(.trailing, -80)
                             .padding(.trailing, CGFloat(locationManager.isInGhostLocation ? -14.0 : locationManager.angleToGhost == 0.0 ? 8.0 : locationManager.angleToGhost)*(-10))
                             .offset(x: 100)
                           
