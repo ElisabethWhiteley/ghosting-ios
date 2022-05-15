@@ -68,26 +68,9 @@ struct SpiritBoxDisplayView: View {
                         }.fixedSize().frame(width: 250, height: 100, alignment: .leading).font(Font.custom("digital-7", size: 94)).padding(.leading, 0).padding(.bottom, -4).padding(.top, -14).padding(.trailing, 0).fixedSize(horizontal: true, vertical: true)
                 
                     VStack {
-                        HStack {
-                            Text("MHz").padding(.top, -20).padding(.leading, 6)
+                
+                        Text("MHz").padding(.trailing, 8)
                            Spacer()
-                        }
-                      
-                        HStack {
-                            Spacer()
-                            Image("cross")
-                                .resizable()
-                                .frame(width: 28.0, height: 28.0)
-                                .opacity(showX ? 1.0 : 0.1)
-                            Spacer()
-                            Spacer()
-                            Image("ghost")
-                                .resizable()
-                                .frame(width: 36.0, height: 36.0)
-                                .opacity(showGhost ? 1.0 : 0.1)
-                            Spacer()
-                        }
-                        
                     }
                     
                 }

@@ -15,8 +15,8 @@
 		74752FCB252E24200020D687 /* SpiritBoxDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74752FC9252E24200020D687 /* SpiritBoxDisplayView.swift */; };
 		74ADA41424FAADD900E06479 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41324FAADD900E06479 /* Tests_iOS.swift */; };
 		74ADA41F24FAADD900E06479 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA41E24FAADD900E06479 /* Tests_macOS.swift */; };
-		74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */; };
-		74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */; };
+		74ADA42124FAADD900E06479 /* GhostingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GhostingApp.swift */; };
+		74ADA42224FAADD900E06479 /* GhostingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F824FAADD800E06479 /* GhostingApp.swift */; };
 		74ADA42324FAADD900E06479 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F924FAADD800E06479 /* ContentView.swift */; };
 		74ADA42424FAADD900E06479 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADA3F924FAADD800E06479 /* ContentView.swift */; };
 		74ADA42524FAADD900E06479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74ADA3FA24FAADD800E06479 /* Assets.xcassets */; };
@@ -74,6 +74,8 @@
 		A2A6B0A2281ED4B9002B876E /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A1281ED4B9002B876E /* NotesView.swift */; };
 		A2A6B0A3281ED4B9002B876E /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A1281ED4B9002B876E /* NotesView.swift */; };
 		A2A6B0A5281EF124002B876E /* Mousedrawn.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B0A4281EF124002B876E /* Mousedrawn.otf */; };
+		A2A6B0A72826E745002B876E /* DowsingRodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A62826E745002B876E /* DowsingRodView.swift */; };
+		A2A6B0A92827EE8E002B876E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A82827EE8E002B876E /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +100,7 @@
 		746C371924FBF61E007B76D4 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		746C371F24FC0F2C007B76D4 /* SpiritBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritBoxView.swift; sourceTree = "<group>"; };
 		74752FC9252E24200020D687 /* SpiritBoxDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritBoxDisplayView.swift; sourceTree = "<group>"; };
-		74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenEggsApp.swift; sourceTree = "<group>"; };
+		74ADA3F824FAADD800E06479 /* GhostingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostingApp.swift; sourceTree = "<group>"; };
 		74ADA3F924FAADD800E06479 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		74ADA3FA24FAADD800E06479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74ADA3FF24FAADD800E06479 /* Ghosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,8 @@
 		A2A6B09D281EC3B5002B876E /* DIGITALDREAM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DIGITALDREAM.ttf; sourceTree = "<group>"; };
 		A2A6B0A1281ED4B9002B876E /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		A2A6B0A4281EF124002B876E /* Mousedrawn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mousedrawn.otf; path = ../../../../Downloads/mousedrawn/Mousedrawn.otf; sourceTree = "<group>"; };
+		A2A6B0A62826E745002B876E /* DowsingRodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingRodView.swift; sourceTree = "<group>"; };
+		A2A6B0A82827EE8E002B876E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A20FB3FD27930D60003DDDF7 /* BLEManager.swift */,
-				74ADA3F824FAADD800E06479 /* GreenEggsApp.swift */,
+				74ADA3F824FAADD800E06479 /* GhostingApp.swift */,
 				74ADA3F924FAADD800E06479 /* ContentView.swift */,
 				746C371924FBF61E007B76D4 /* Main.swift */,
 				746C371F24FC0F2C007B76D4 /* SpiritBoxView.swift */,
@@ -218,6 +222,8 @@
 				A26C94A527B82BE600A53462 /* VideoCameraView.swift */,
 				A2A6B076281EBDD6002B876E /* JournalView.swift */,
 				A2A6B0A1281ED4B9002B876E /* NotesView.swift */,
+				A2A6B0A82827EE8E002B876E /* LocationManager.swift */,
+				A2A6B0A62826E745002B876E /* DowsingRodView.swift */,
 				A2A6B09A281EC374002B876E /* Fonts */,
 				A2A6B079281EC16B002B876E /* MP3Files */,
 				74ADA3FA24FAADD800E06479 /* Assets.xcassets */,
@@ -489,13 +495,14 @@
 				74E5683F25000C4A00733C32 /* PeripheralScan.swift in Sources */,
 				A26B990D27973ABD00B38EEE /* SoundRecorder.swift in Sources */,
 				A20FB40627945CE8003DDDF7 /* SpeechRecognitionManager.swift in Sources */,
+				A2A6B0A72826E745002B876E /* DowsingRodView.swift in Sources */,
 				74ADA42324FAADD900E06479 /* ContentView.swift in Sources */,
 				A2A6B077281EBDD6002B876E /* JournalView.swift in Sources */,
 				A20FB40C2794BF25003DDDF7 /* SoundManager.swift in Sources */,
 				A26C94A027B82B5D00A53462 /* FilterController.swift in Sources */,
 				A20FB3FE27930D60003DDDF7 /* BLEManager.swift in Sources */,
 				A26C94A627B82BE600A53462 /* VideoCameraView.swift in Sources */,
-				74ADA42124FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				74ADA42124FAADD900E06479 /* GhostingApp.swift in Sources */,
 				A26C949A27B82B0700A53462 /* Combine+SelfBindings.swift in Sources */,
 				74752FCA252E24200020D687 /* SpiritBoxDisplayView.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* SpiritBoxView.swift in Sources */,
@@ -505,6 +512,7 @@
 				A26C94A927B82EC500A53462 /* OrientationObserver.swift in Sources */,
 				A26B991C279C06C400B38EEE /* SpiritBoxManager.swift in Sources */,
 				A26B9937279C7CD500B38EEE /* Resnet50.mlmodel in Sources */,
+				A2A6B0A92827EE8E002B876E /* LocationManager.swift in Sources */,
 				A26C949D27B82B2D00A53462 /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +531,7 @@
 				74ADA42424FAADD900E06479 /* ContentView.swift in Sources */,
 				A26C94A727B82BE600A53462 /* VideoCameraView.swift in Sources */,
 				A26B991D279C06C400B38EEE /* SpiritBoxManager.swift in Sources */,
-				74ADA42224FAADD900E06479 /* GreenEggsApp.swift in Sources */,
+				74ADA42224FAADD900E06479 /* GhostingApp.swift in Sources */,
 				A20FB40D2794BF25003DDDF7 /* SoundManager.swift in Sources */,
 				A26C949B27B82B0700A53462 /* Combine+SelfBindings.swift in Sources */,
 				746C372124FC0F2C007B76D4 /* SpiritBoxView.swift in Sources */,
@@ -694,7 +702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.GhostingApp;
 				PRODUCT_NAME = Ghosting;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -718,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.GhostingApp;
 				PRODUCT_NAME = Ghosting;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -743,7 +751,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.Ghosting;
 				PRODUCT_NAME = Ghosting;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -765,7 +773,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wylie.GreenEggs;
+				PRODUCT_BUNDLE_IDENTIFIER = wylie.Ghosting;
 				PRODUCT_NAME = Ghosting;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -789,7 +797,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "GreenEggs (iOS)";
+				TEST_TARGET_NAME = "Ghosting (iOS)";
 			};
 			name = Debug;
 		};
@@ -810,7 +818,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "GreenEggs (iOS)";
+				TEST_TARGET_NAME = "Ghosting (iOS)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -832,7 +840,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "GreenEggs (macOS)";
+				TEST_TARGET_NAME = "Ghosting (macOS)";
 			};
 			name = Debug;
 		};
@@ -853,7 +861,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "GreenEggs (macOS)";
+				TEST_TARGET_NAME = "Ghosting (macOS)";
 			};
 			name = Release;
 		};
