@@ -63,7 +63,6 @@ class CameraController {
                 defaultVideoDevice = frontCameraDevice
             }
             guard let videoDevice = defaultVideoDevice else {
-                assertionFailure("Default video device is unavailable.")
                 return
             }
             let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
@@ -134,7 +133,7 @@ private class PreviewPixelBufferDelegate: NSObject, AVCaptureVideoDataOutputSamp
         
         guard let model = try? VNCoreMLModel(for: Resnet50().model) else {return}
         var firstOb = ""
-        var viewingObject = true;
+        var viewingObject = false;
             let request = VNCoreMLRequest(model: model) {
             (finishedReq, err) in
             // check error
@@ -143,8 +142,11 @@ private class PreviewPixelBufferDelegate: NSObject, AVCaptureVideoDataOutputSamp
             guard let results = finishedReq.results as? [VNClassificationObservation] else {return}
              //   print("RESULTS: ", results)
                 guard let firstObservation = results.first else {return}
+            //    print("i am checkign what stuff is", firstObservation)
                     results.forEach { result in
-                        if result.identifier == "banana" && result.confidence > 0.001 {
+                      
+                        if result.identifier == "apple" || result.identifier == "Granny Smith" && result.confidence > 0.001 {
+                            print("ITS AN APPLE")
                             viewingObject = true;
                         print(result.identifier, result.confidence)
                         }
@@ -160,6 +162,7 @@ private class PreviewPixelBufferDelegate: NSObject, AVCaptureVideoDataOutputSamp
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
         DispatchQueue.main.async {
+           //  print("is viewing object: ", viewingObject)
             self.previewPixelBufferProvider.previewPixelBuffer = (pixelBuffer, viewingObject)
         }
     }

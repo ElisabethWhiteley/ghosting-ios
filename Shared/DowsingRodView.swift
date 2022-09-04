@@ -13,7 +13,6 @@ struct DowsingRodView: View {
     
     var body: some View {
                 VStack(alignment: .leading) {
-                  
                     ZStack() {
                         Image("dowsing-rod")
                             .resizable()

@@ -10,6 +10,8 @@ import Speech
 
 
 class SpeechRecognitionManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
+    
+    /*
     let audioEngine = AVAudioEngine()
     let mixerNode = AVAudioMixerNode()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -65,7 +67,7 @@ class SpeechRecognitionManager: NSObject, ObservableObject, SFSpeechRecognizerDe
         
           audioEngine.connect(mixerNode, to: mainMixerNode, format: mixerFormat)
 
-          let path = Bundle.main.path(forResource: "SpiritBoxStatic.mp3", ofType:nil)!
+          let path = Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType:nil)!
           let url = URL(fileURLWithPath: path)
           let file = try! AVAudioFile(forReading: url)
     let audioFileBuffer = AVAudioPCMBuffer(pcmFormat: file.processingFormat, frameCapacity: AVAudioFrameCount(file.length))
@@ -166,7 +168,7 @@ class SpeechRecognitionManager: NSObject, ObservableObject, SFSpeechRecognizerDe
 
            })
         
-       /* recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+       recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             result?.bestTranscription.segments.forEach { segment in
             }
             print("SPEECH RECOG RESULT ")
@@ -203,8 +205,8 @@ class SpeechRecognitionManager: NSObject, ObservableObject, SFSpeechRecognizerDe
              //   self.sendAlert(title: "Speech Recognizer Error", message: "There has been a speech recognition error.")
                 print(error)
             }
-        })*/
+        })
     }
     
-
+     */
 }

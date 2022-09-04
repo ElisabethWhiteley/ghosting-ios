@@ -50,6 +50,8 @@
 		A26C94A727B82BE600A53462 /* VideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A527B82BE600A53462 /* VideoCameraView.swift */; };
 		A26C94A927B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
 		A26C94AA27B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
+		A28EF9E028BA30F8004738C6 /* HelpMeWhisper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */; };
+		A28EF9E228BA33A9004738C6 /* RadioStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */; };
 		A2A6B077281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
 		A2A6B078281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
 		A2A6B08A281EC2EC002B876E /* Static.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07C281EC196002B876E /* Static.mp3 */; };
@@ -76,6 +78,7 @@
 		A2A6B0A5281EF124002B876E /* Mousedrawn.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B0A4281EF124002B876E /* Mousedrawn.otf */; };
 		A2A6B0A72826E745002B876E /* DowsingRodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A62826E745002B876E /* DowsingRodView.swift */; };
 		A2A6B0A92827EE8E002B876E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A82827EE8E002B876E /* LocationManager.swift */; };
+		A2B93F8F287B0B2C00E31AAF /* ARVideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +131,8 @@
 		A26C94A227B82B8500A53462 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		A26C94A527B82BE600A53462 /* VideoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraView.swift; sourceTree = "<group>"; };
 		A26C94A827B82EC500A53462 /* OrientationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationObserver.swift; sourceTree = "<group>"; };
+		A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = HelpMeWhisper.mp3; path = ../../../../Documents/HelpMeWhisper.mp3; sourceTree = "<group>"; };
+		A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RadioStatic.mp3; path = ../../../../Documents/RadioStatic.mp3; sourceTree = "<group>"; };
 		A2A6B076281EBDD6002B876E /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		A2A6B07A281EC196002B876E /* womanAway.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanAway.mp3; sourceTree = "<group>"; };
 		A2A6B07B281EC196002B876E /* AwayWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AwayWoman.mp3; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		A2A6B0A4281EF124002B876E /* Mousedrawn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mousedrawn.otf; path = ../../../../Downloads/mousedrawn/Mousedrawn.otf; sourceTree = "<group>"; };
 		A2A6B0A62826E745002B876E /* DowsingRodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingRodView.swift; sourceTree = "<group>"; };
 		A2A6B0A82827EE8E002B876E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVideoCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +233,7 @@
 				A2A6B09A281EC374002B876E /* Fonts */,
 				A2A6B079281EC16B002B876E /* MP3Files */,
 				74ADA3FA24FAADD800E06479 /* Assets.xcassets */,
+				A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -282,8 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				A2A6B088281EC1B9002B876E /* NextToYou.mp3 */,
+				A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */,
 				A2A6B089281EC1C0002B876E /* SpiritBoxStatic.mp3 */,
 				A2A6B07D281EC196002B876E /* Attack.mp3 */,
+				A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */,
 				A2A6B083281EC196002B876E /* ImBehindYou.mp3 */,
 				A2A6B082281EC196002B876E /* ImClose.mp3 */,
 				A2A6B07B281EC196002B876E /* AwayWoman.mp3 */,
@@ -328,6 +337,8 @@
 			dependencies = (
 			);
 			name = "Ghosting (iOS)";
+			packageProductDependencies = (
+			);
 			productName = "GreenEggs (iOS)";
 			productReference = 74ADA3FF24FAADD800E06479 /* Ghosting.app */;
 			productType = "com.apple.product-type.application";
@@ -419,6 +430,8 @@
 				Base,
 			);
 			mainGroup = 74ADA3F224FAADD800E06479;
+			packageReferences = (
+			);
 			productRefGroup = 74ADA40024FAADD800E06479 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,6 +453,7 @@
 				74B7D1A2250814C1002E138C /* Model.xcdatamodeld in Resources */,
 				A2A6B099281EC34B002B876E /* NextToYou.mp3 in Resources */,
 				A2A6B08C281EC325002B876E /* womanImHere.mp3 in Resources */,
+				A28EF9E228BA33A9004738C6 /* RadioStatic.mp3 in Resources */,
 				A2A6B093281EC339002B876E /* BehindYouWoman.mp3 in Resources */,
 				A2A6B09F281EC3C1002B876E /* Raven Song.ttf in Resources */,
 				A2A6B08E281EC32A002B876E /* womanBehindYou2.mp3 in Resources */,
@@ -451,6 +465,7 @@
 				A2A6B08F281EC32D002B876E /* womanBehindYou.mp3 in Resources */,
 				A2A6B091281EC333002B876E /* ImHereWoman.mp3 in Resources */,
 				A2A6B096281EC341002B876E /* ImBehindYou.mp3 in Resources */,
+				A28EF9E028BA30F8004738C6 /* HelpMeWhisper.mp3 in Resources */,
 				A2A6B08A281EC2EC002B876E /* Static.mp3 in Resources */,
 				A2A6B0A5281EF124002B876E /* Mousedrawn.otf in Resources */,
 				A2A6B08D281EC328002B876E /* womanImClose.mp3 in Resources */,
@@ -491,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B93F8F287B0B2C00E31AAF /* ARVideoCameraView.swift in Sources */,
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
 				74E5683F25000C4A00733C32 /* PeripheralScan.swift in Sources */,
 				A26B990D27973ABD00B38EEE /* SoundRecorder.swift in Sources */,

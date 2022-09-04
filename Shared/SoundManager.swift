@@ -10,7 +10,7 @@ import AVFoundation
 import Speech
 
 
-extension StringProtocol { // for Swift 4 you need to add the constrain `where Index == String.Index`
+extension StringProtocol {
     var byWords: [SubSequence] {
         var byWords: [SubSequence] = []
         enumerateSubstrings(in: startIndex..., options: .byWords) { _, range, _, _ in
@@ -51,11 +51,13 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
     @Published var responseState: SpiritBoxResponseState = .notRecognized
     @Published var macPeripheral = Peripheral(id: 1, identifier: "String", name: "Unknown", rssi: 1)
      
-    let threeWordPhrases = ["are you here", "can you speak", "can we speak", "are you waiting", "are you happy", "shall we leave", "where are you"]
+    let threeWordPhrases = ["are you here", "where are you", "are you angry", "are you ok"]
     
-    let fourWordPhrases = ["are there any ghosts", "may i ask you", "can i ask you", "is this your home", "give us a sign", "do something"]
+    let fourWordPhrases = ["are there any ghosts", "are there any spirits", "is this your home",]
     
-    let fiveWordPhrases = ["can you speak to us", "is there anyone with me", "would you like to talk", "are you male or female", "can you make a sound", "can you speak to us"]
+    let fiveWordPhrases = ["can you speak to us", "is there anyone with me", "would you like to talk", ]
+    
+    
     
     override init() {
         self.request = SFSpeechAudioBufferRecognitionRequest()
@@ -109,7 +111,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
          engine.connect(mixerNode, to: mainMixerNode, format: mixerFormat)
 
         
-         let path = Bundle.main.path(forResource: "Static.mp3", ofType:nil)!
+         let path = Bundle.main.path(forResource: "RadioStatic.mp3", ofType:nil)!
          let url = URL(fileURLWithPath: path)
          let file = try! AVAudioFile(forReading: url)
         
@@ -121,11 +123,11 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         
         
         let ghostResponsePaths: [String] = [
-            Bundle.main.path(forResource: "womanAway.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "womanAway.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "womanBehindYou2.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "womanImHere.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "womanImClose.mp3", ofType: nil)!]
+            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
+            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!]
         
         for i in 0...4
                     {
