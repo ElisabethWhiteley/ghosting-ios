@@ -32,7 +32,7 @@ struct Main: View {
                         .frame(width: 84, height: 84)
                     }.padding(.top, 50).padding(.leading, 10)
                     Spacer()
-                    NavigationLink(destination: VideoCameraView()) {
+                    NavigationLink(destination: ARVideoCameraView()) {
                         HStack {
                             Image("icon-video-camera")
                                 .resizable()

@@ -50,8 +50,11 @@
 		A26C94A727B82BE600A53462 /* VideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A527B82BE600A53462 /* VideoCameraView.swift */; };
 		A26C94A927B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
 		A26C94AA27B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
+		A274E86128E0B67600585D0E /* tulipscolored.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A274E86028E0B67600585D0E /* tulipscolored.rcproject */; };
 		A28EF9E028BA30F8004738C6 /* HelpMeWhisper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */; };
 		A28EF9E228BA33A9004738C6 /* RadioStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */; };
+		A29969E628E086BE00521EE3 /* DistortionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29969E528E086BE00521EE3 /* DistortionFilter.swift */; };
+		A29969E828E0AE5400521EE3 /* tulips.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A29969E728E0AE5400521EE3 /* tulips.rcproject */; };
 		A2A6B077281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
 		A2A6B078281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
 		A2A6B08A281EC2EC002B876E /* Static.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07C281EC196002B876E /* Static.mp3 */; };
@@ -131,8 +134,11 @@
 		A26C94A227B82B8500A53462 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		A26C94A527B82BE600A53462 /* VideoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraView.swift; sourceTree = "<group>"; };
 		A26C94A827B82EC500A53462 /* OrientationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationObserver.swift; sourceTree = "<group>"; };
+		A274E86028E0B67600585D0E /* tulipscolored.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = tulipscolored.rcproject; path = ../../../Downloads/tulipscolored.rcproject; sourceTree = "<group>"; };
 		A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = HelpMeWhisper.mp3; path = ../../../../Documents/HelpMeWhisper.mp3; sourceTree = "<group>"; };
 		A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RadioStatic.mp3; path = ../../../../Documents/RadioStatic.mp3; sourceTree = "<group>"; };
+		A29969E528E086BE00521EE3 /* DistortionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionFilter.swift; sourceTree = "<group>"; };
+		A29969E728E0AE5400521EE3 /* tulips.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = tulips.rcproject; path = ../../../Downloads/tulips.rcproject; sourceTree = "<group>"; };
 		A2A6B076281EBDD6002B876E /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		A2A6B07A281EC196002B876E /* womanAway.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanAway.mp3; sourceTree = "<group>"; };
 		A2A6B07B281EC196002B876E /* AwayWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AwayWoman.mp3; sourceTree = "<group>"; };
@@ -217,12 +223,14 @@
 				A26B9936279C7CD500B38EEE /* Resnet50.mlmodel */,
 				74752FC9252E24200020D687 /* SpiritBoxDisplayView.swift */,
 				A20FB40527945CE8003DDDF7 /* SpeechRecognitionManager.swift */,
+				A29969E728E0AE5400521EE3 /* tulips.rcproject */,
 				A20FB40B2794BF25003DDDF7 /* SoundManager.swift */,
 				A26B990C27973ABD00B38EEE /* SoundRecorder.swift */,
 				A26B991B279C06C400B38EEE /* SpiritBoxManager.swift */,
 				A26B9930279C5E6D00B38EEE /* VideoCamera.swift */,
 				A26C949927B82B0700A53462 /* Combine+SelfBindings.swift */,
 				A26C949C27B82B2D00A53462 /* CameraController.swift */,
+				A274E86028E0B67600585D0E /* tulipscolored.rcproject */,
 				A26C949F27B82B5D00A53462 /* FilterController.swift */,
 				A26C94A227B82B8500A53462 /* PreviewView.swift */,
 				A26C94A527B82BE600A53462 /* VideoCameraView.swift */,
@@ -234,6 +242,7 @@
 				A2A6B079281EC16B002B876E /* MP3Files */,
 				74ADA3FA24FAADD800E06479 /* Assets.xcassets */,
 				A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */,
+				A29969E528E086BE00521EE3 /* DistortionFilter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -506,7 +515,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29969E628E086BE00521EE3 /* DistortionFilter.swift in Sources */,
+				A29969E828E0AE5400521EE3 /* tulips.rcproject in Sources */,
 				A2B93F8F287B0B2C00E31AAF /* ARVideoCameraView.swift in Sources */,
+				A274E86128E0B67600585D0E /* tulipscolored.rcproject in Sources */,
 				746C371A24FBF61E007B76D4 /* Main.swift in Sources */,
 				74E5683F25000C4A00733C32 /* PeripheralScan.swift in Sources */,
 				A26B990D27973ABD00B38EEE /* SoundRecorder.swift in Sources */,

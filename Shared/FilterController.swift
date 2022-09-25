@@ -183,13 +183,19 @@ class FilterController {
                       ])?
                       .outputImage
                     
+                    
+                    let vhs = VHSTrackingLines();
+            
+                    vhs.inputImage = inputImage
+                    
+                    return (vhs.outputImage, true)
                   //  print("IA ME JKEJ K")
-                    return (inputImage?.applyingFilter(
+                  /*  return (inputImage?.applyingFilter(
                       "CIBlendWithMask",
                       parameters: [
                         kCIInputBackgroundImageKey: sunGenerate as Any,
                         kCIInputMaskImageKey: noir as Any
-                      ]), true)
+                      ]), true) */
                 }
                 // 2
               // print("I AM HERE")
