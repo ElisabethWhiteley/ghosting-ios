@@ -51,28 +51,22 @@
 		A26C94A927B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
 		A26C94AA27B82EC500A53462 /* OrientationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26C94A827B82EC500A53462 /* OrientationObserver.swift */; };
 		A274E86128E0B67600585D0E /* tulipscolored.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A274E86028E0B67600585D0E /* tulipscolored.rcproject */; };
-		A28EF9E028BA30F8004738C6 /* HelpMeWhisper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */; };
-		A28EF9E228BA33A9004738C6 /* RadioStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */; };
+		A284183528F9C5D3009B7702 /* radiostaticBest.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183428F9C5D3009B7702 /* radiostaticBest.wav */; };
+		A284183728F9C7B8009B7702 /* ComeHereWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183628F9C7B8009B7702 /* ComeHereWhisper20db.wav */; };
+		A284183928F9C7CA009B7702 /* HelpMeWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183828F9C7CA009B7702 /* HelpMeWhisper20db.wav */; };
+		A284183B28F9C7F6009B7702 /* GetOutWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183A28F9C7F6009B7702 /* GetOutWhisper20db.wav */; };
+		A284183D28F9C7FF009B7702 /* LeaveMeAloneWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183C28F9C7FF009B7702 /* LeaveMeAloneWhisper20db.wav */; };
+		A284183F28F9C810009B7702 /* PleaseHelpMeWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284183E28F9C810009B7702 /* PleaseHelpMeWhisper20db.wav */; };
+		A284184128F9C819009B7702 /* NoWhsiper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184028F9C819009B7702 /* NoWhsiper20db.wav */; };
+		A284184328F9C824009B7702 /* StopWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184228F9C824009B7702 /* StopWhisper20db.wav */; };
+		A284184528F9C82B009B7702 /* YouShouldNotHaveComeHere20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184428F9C82B009B7702 /* YouShouldNotHaveComeHere20db.wav */; };
+		A284184728F9C833009B7702 /* CreepyHiss20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184628F9C833009B7702 /* CreepyHiss20db.wav */; };
+		A284184928F9C83D009B7702 /* ComeCloserWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184828F9C83D009B7702 /* ComeCloserWhisper20db.wav */; };
+		A284184B28F9C847009B7702 /* DontYouDare20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184A28F9C847009B7702 /* DontYouDare20db.wav */; };
 		A29969E628E086BE00521EE3 /* DistortionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29969E528E086BE00521EE3 /* DistortionFilter.swift */; };
 		A29969E828E0AE5400521EE3 /* tulips.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A29969E728E0AE5400521EE3 /* tulips.rcproject */; };
 		A2A6B077281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
 		A2A6B078281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
-		A2A6B08A281EC2EC002B876E /* Static.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07C281EC196002B876E /* Static.mp3 */; };
-		A2A6B08B281EC321002B876E /* OldWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B084281EC196002B876E /* OldWoman.mp3 */; };
-		A2A6B08C281EC325002B876E /* womanImHere.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07E281EC196002B876E /* womanImHere.mp3 */; };
-		A2A6B08D281EC328002B876E /* womanImClose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B087281EC196002B876E /* womanImClose.mp3 */; };
-		A2A6B08E281EC32A002B876E /* womanBehindYou2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B086281EC196002B876E /* womanBehindYou2.mp3 */; };
-		A2A6B08F281EC32D002B876E /* womanBehindYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B085281EC196002B876E /* womanBehindYou.mp3 */; };
-		A2A6B090281EC330002B876E /* womanAway.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07A281EC196002B876E /* womanAway.mp3 */; };
-		A2A6B091281EC333002B876E /* ImHereWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B080281EC196002B876E /* ImHereWoman.mp3 */; };
-		A2A6B092281EC335002B876E /* ImCloseWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B081281EC196002B876E /* ImCloseWoman.mp3 */; };
-		A2A6B093281EC339002B876E /* BehindYouWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07F281EC196002B876E /* BehindYouWoman.mp3 */; };
-		A2A6B094281EC33C002B876E /* AwayWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07B281EC196002B876E /* AwayWoman.mp3 */; };
-		A2A6B095281EC33E002B876E /* ImClose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B082281EC196002B876E /* ImClose.mp3 */; };
-		A2A6B096281EC341002B876E /* ImBehindYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B083281EC196002B876E /* ImBehindYou.mp3 */; };
-		A2A6B097281EC344002B876E /* Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B07D281EC196002B876E /* Attack.mp3 */; };
-		A2A6B098281EC347002B876E /* SpiritBoxStatic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B089281EC1C0002B876E /* SpiritBoxStatic.mp3 */; };
-		A2A6B099281EC34B002B876E /* NextToYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B088281EC1B9002B876E /* NextToYou.mp3 */; };
 		A2A6B09E281EC3BE002B876E /* DIGITALDREAM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B09D281EC3B5002B876E /* DIGITALDREAM.ttf */; };
 		A2A6B09F281EC3C1002B876E /* Raven Song.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B09B281EC38F002B876E /* Raven Song.ttf */; };
 		A2A6B0A0281EC3C4002B876E /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B09C281EC38F002B876E /* digital-7.ttf */; };
@@ -81,6 +75,12 @@
 		A2A6B0A5281EF124002B876E /* Mousedrawn.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2A6B0A4281EF124002B876E /* Mousedrawn.otf */; };
 		A2A6B0A72826E745002B876E /* DowsingRodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A62826E745002B876E /* DowsingRodView.swift */; };
 		A2A6B0A92827EE8E002B876E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B0A82827EE8E002B876E /* LocationManager.swift */; };
+		A2B3B3B228FAADBF002B80E5 /* BehindYouWoman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3B128FAADBE002B80E5 /* BehindYouWoman.mp3 */; };
+		A2B3B3B428FAADDF002B80E5 /* Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3B328FAADDE002B80E5 /* Attack.mp3 */; };
+		A2B3B3B628FAAF53002B80E5 /* radiostaticBest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3B528FAAF53002B80E5 /* radiostaticBest.mp3 */; };
+		A2B3B3B828FAAFBA002B80E5 /* radiostaticJoint.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3B728FAAFBA002B80E5 /* radiostaticJoint.mp3 */; };
+		A2B3B3BA28FAB242002B80E5 /* radiostatic.wav in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3B928FAB242002B80E5 /* radiostatic.wav */; };
+		A2B3B3BC28FAB498002B80E5 /* radiostaticTest2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2B3B3BB28FAB498002B80E5 /* radiostaticTest2.mp3 */; };
 		A2B93F8F287B0B2C00E31AAF /* ARVideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,27 +135,21 @@
 		A26C94A527B82BE600A53462 /* VideoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraView.swift; sourceTree = "<group>"; };
 		A26C94A827B82EC500A53462 /* OrientationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationObserver.swift; sourceTree = "<group>"; };
 		A274E86028E0B67600585D0E /* tulipscolored.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = tulipscolored.rcproject; path = ../../../Downloads/tulipscolored.rcproject; sourceTree = "<group>"; };
-		A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = HelpMeWhisper.mp3; path = ../../../../Documents/HelpMeWhisper.mp3; sourceTree = "<group>"; };
-		A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = RadioStatic.mp3; path = ../../../../Documents/RadioStatic.mp3; sourceTree = "<group>"; };
+		A284183428F9C5D3009B7702 /* radiostaticBest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = radiostaticBest.wav; path = ../../../../AndroidStudioProjects/Phantasms/app/build/intermediates/packaged_res/debug/raw/radiostaticBest.wav; sourceTree = "<group>"; };
+		A284183628F9C7B8009B7702 /* ComeHereWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ComeHereWhisper20db.wav; path = ../../../../Documents/ComeHereWhisper20db.wav; sourceTree = "<group>"; };
+		A284183828F9C7CA009B7702 /* HelpMeWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = HelpMeWhisper20db.wav; path = ../../../../Documents/HelpMeWhisper20db.wav; sourceTree = "<group>"; };
+		A284183A28F9C7F6009B7702 /* GetOutWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = GetOutWhisper20db.wav; path = ../../../../Documents/GetOutWhisper20db.wav; sourceTree = "<group>"; };
+		A284183C28F9C7FF009B7702 /* LeaveMeAloneWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = LeaveMeAloneWhisper20db.wav; path = ../../../../Documents/LeaveMeAloneWhisper20db.wav; sourceTree = "<group>"; };
+		A284183E28F9C810009B7702 /* PleaseHelpMeWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = PleaseHelpMeWhisper20db.wav; path = ../../../../Documents/PleaseHelpMeWhisper20db.wav; sourceTree = "<group>"; };
+		A284184028F9C819009B7702 /* NoWhsiper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = NoWhsiper20db.wav; path = ../../../../Documents/NoWhsiper20db.wav; sourceTree = "<group>"; };
+		A284184228F9C824009B7702 /* StopWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = StopWhisper20db.wav; path = ../../../../Documents/StopWhisper20db.wav; sourceTree = "<group>"; };
+		A284184428F9C82B009B7702 /* YouShouldNotHaveComeHere20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = YouShouldNotHaveComeHere20db.wav; path = ../../../../Documents/YouShouldNotHaveComeHere20db.wav; sourceTree = "<group>"; };
+		A284184628F9C833009B7702 /* CreepyHiss20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CreepyHiss20db.wav; path = ../../../../Documents/CreepyHiss20db.wav; sourceTree = "<group>"; };
+		A284184828F9C83D009B7702 /* ComeCloserWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ComeCloserWhisper20db.wav; path = ../../../../Documents/ComeCloserWhisper20db.wav; sourceTree = "<group>"; };
+		A284184A28F9C847009B7702 /* DontYouDare20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = DontYouDare20db.wav; path = ../../../../Documents/DontYouDare20db.wav; sourceTree = "<group>"; };
 		A29969E528E086BE00521EE3 /* DistortionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionFilter.swift; sourceTree = "<group>"; };
 		A29969E728E0AE5400521EE3 /* tulips.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = tulips.rcproject; path = ../../../Downloads/tulips.rcproject; sourceTree = "<group>"; };
 		A2A6B076281EBDD6002B876E /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
-		A2A6B07A281EC196002B876E /* womanAway.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanAway.mp3; sourceTree = "<group>"; };
-		A2A6B07B281EC196002B876E /* AwayWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AwayWoman.mp3; sourceTree = "<group>"; };
-		A2A6B07C281EC196002B876E /* Static.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Static.mp3; sourceTree = "<group>"; };
-		A2A6B07D281EC196002B876E /* Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Attack.mp3; sourceTree = "<group>"; };
-		A2A6B07E281EC196002B876E /* womanImHere.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanImHere.mp3; sourceTree = "<group>"; };
-		A2A6B07F281EC196002B876E /* BehindYouWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BehindYouWoman.mp3; sourceTree = "<group>"; };
-		A2A6B080281EC196002B876E /* ImHereWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ImHereWoman.mp3; sourceTree = "<group>"; };
-		A2A6B081281EC196002B876E /* ImCloseWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ImCloseWoman.mp3; sourceTree = "<group>"; };
-		A2A6B082281EC196002B876E /* ImClose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ImClose.mp3; sourceTree = "<group>"; };
-		A2A6B083281EC196002B876E /* ImBehindYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ImBehindYou.mp3; sourceTree = "<group>"; };
-		A2A6B084281EC196002B876E /* OldWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OldWoman.mp3; sourceTree = "<group>"; };
-		A2A6B085281EC196002B876E /* womanBehindYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanBehindYou.mp3; sourceTree = "<group>"; };
-		A2A6B086281EC196002B876E /* womanBehindYou2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanBehindYou2.mp3; sourceTree = "<group>"; };
-		A2A6B087281EC196002B876E /* womanImClose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = womanImClose.mp3; sourceTree = "<group>"; };
-		A2A6B088281EC1B9002B876E /* NextToYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NextToYou.mp3; sourceTree = "<group>"; };
-		A2A6B089281EC1C0002B876E /* SpiritBoxStatic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SpiritBoxStatic.mp3; sourceTree = "<group>"; };
 		A2A6B09B281EC38F002B876E /* Raven Song.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raven Song.ttf"; sourceTree = "<group>"; };
 		A2A6B09C281EC38F002B876E /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		A2A6B09D281EC3B5002B876E /* DIGITALDREAM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DIGITALDREAM.ttf; sourceTree = "<group>"; };
@@ -163,6 +157,12 @@
 		A2A6B0A4281EF124002B876E /* Mousedrawn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mousedrawn.otf; path = ../../../../Downloads/mousedrawn/Mousedrawn.otf; sourceTree = "<group>"; };
 		A2A6B0A62826E745002B876E /* DowsingRodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowsingRodView.swift; sourceTree = "<group>"; };
 		A2A6B0A82827EE8E002B876E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A2B3B3B128FAADBE002B80E5 /* BehindYouWoman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BehindYouWoman.mp3; path = ../../../../.Trash/BehindYouWoman.mp3; sourceTree = "<group>"; };
+		A2B3B3B328FAADDE002B80E5 /* Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Attack.mp3; path = ../../../../.Trash/Attack.mp3; sourceTree = "<group>"; };
+		A2B3B3B528FAAF53002B80E5 /* radiostaticBest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = radiostaticBest.mp3; path = ../../../../Documents/radiostaticBest.mp3; sourceTree = "<group>"; };
+		A2B3B3B728FAAFBA002B80E5 /* radiostaticJoint.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = radiostaticJoint.mp3; path = ../../../../Documents/radiostaticJoint.mp3; sourceTree = "<group>"; };
+		A2B3B3B928FAB242002B80E5 /* radiostatic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = radiostatic.wav; path = ../../../../AndroidStudioProjects/Phantasms/app/src/main/res/raw/radiostatic.wav; sourceTree = "<group>"; };
+		A2B3B3BB28FAB498002B80E5 /* radiostaticTest2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = radiostaticTest2.mp3; path = ../../../../Documents/radiostaticTest2.mp3; sourceTree = "<group>"; };
 		A2B93F8E287B0B2B00E31AAF /* ARVideoCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVideoCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,24 +297,24 @@
 		A2A6B079281EC16B002B876E /* MP3Files */ = {
 			isa = PBXGroup;
 			children = (
-				A2A6B088281EC1B9002B876E /* NextToYou.mp3 */,
-				A28EF9DF28BA30F8004738C6 /* HelpMeWhisper.mp3 */,
-				A2A6B089281EC1C0002B876E /* SpiritBoxStatic.mp3 */,
-				A2A6B07D281EC196002B876E /* Attack.mp3 */,
-				A28EF9E128BA33A9004738C6 /* RadioStatic.mp3 */,
-				A2A6B083281EC196002B876E /* ImBehindYou.mp3 */,
-				A2A6B082281EC196002B876E /* ImClose.mp3 */,
-				A2A6B07B281EC196002B876E /* AwayWoman.mp3 */,
-				A2A6B07F281EC196002B876E /* BehindYouWoman.mp3 */,
-				A2A6B081281EC196002B876E /* ImCloseWoman.mp3 */,
-				A2A6B080281EC196002B876E /* ImHereWoman.mp3 */,
-				A2A6B07A281EC196002B876E /* womanAway.mp3 */,
-				A2A6B085281EC196002B876E /* womanBehindYou.mp3 */,
-				A2A6B086281EC196002B876E /* womanBehindYou2.mp3 */,
-				A2A6B087281EC196002B876E /* womanImClose.mp3 */,
-				A2A6B07E281EC196002B876E /* womanImHere.mp3 */,
-				A2A6B084281EC196002B876E /* OldWoman.mp3 */,
-				A2A6B07C281EC196002B876E /* Static.mp3 */,
+				A284183C28F9C7FF009B7702 /* LeaveMeAloneWhisper20db.wav */,
+				A284183E28F9C810009B7702 /* PleaseHelpMeWhisper20db.wav */,
+				A284184628F9C833009B7702 /* CreepyHiss20db.wav */,
+				A2B3B3B528FAAF53002B80E5 /* radiostaticBest.mp3 */,
+				A2B3B3BB28FAB498002B80E5 /* radiostaticTest2.mp3 */,
+				A2B3B3B928FAB242002B80E5 /* radiostatic.wav */,
+				A284184028F9C819009B7702 /* NoWhsiper20db.wav */,
+				A2B3B3B728FAAFBA002B80E5 /* radiostaticJoint.mp3 */,
+				A2B3B3B128FAADBE002B80E5 /* BehindYouWoman.mp3 */,
+				A2B3B3B328FAADDE002B80E5 /* Attack.mp3 */,
+				A284184A28F9C847009B7702 /* DontYouDare20db.wav */,
+				A284184828F9C83D009B7702 /* ComeCloserWhisper20db.wav */,
+				A284184428F9C82B009B7702 /* YouShouldNotHaveComeHere20db.wav */,
+				A284183A28F9C7F6009B7702 /* GetOutWhisper20db.wav */,
+				A284184228F9C824009B7702 /* StopWhisper20db.wav */,
+				A284183828F9C7CA009B7702 /* HelpMeWhisper20db.wav */,
+				A284183628F9C7B8009B7702 /* ComeHereWhisper20db.wav */,
+				A284183428F9C5D3009B7702 /* radiostaticBest.wav */,
 			);
 			path = MP3Files;
 			sourceTree = "<group>";
@@ -458,30 +458,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A6B092281EC335002B876E /* ImCloseWoman.mp3 in Resources */,
+				A2B3B3B228FAADBF002B80E5 /* BehindYouWoman.mp3 in Resources */,
 				74B7D1A2250814C1002E138C /* Model.xcdatamodeld in Resources */,
-				A2A6B099281EC34B002B876E /* NextToYou.mp3 in Resources */,
-				A2A6B08C281EC325002B876E /* womanImHere.mp3 in Resources */,
-				A28EF9E228BA33A9004738C6 /* RadioStatic.mp3 in Resources */,
-				A2A6B093281EC339002B876E /* BehindYouWoman.mp3 in Resources */,
+				A284183B28F9C7F6009B7702 /* GetOutWhisper20db.wav in Resources */,
+				A2B3B3BC28FAB498002B80E5 /* radiostaticTest2.mp3 in Resources */,
 				A2A6B09F281EC3C1002B876E /* Raven Song.ttf in Resources */,
-				A2A6B08E281EC32A002B876E /* womanBehindYou2.mp3 in Resources */,
-				A2A6B090281EC330002B876E /* womanAway.mp3 in Resources */,
 				74ADA42524FAADD900E06479 /* Assets.xcassets in Resources */,
+				A284183528F9C5D3009B7702 /* radiostaticBest.wav in Resources */,
+				A284184728F9C833009B7702 /* CreepyHiss20db.wav in Resources */,
+				A284184928F9C83D009B7702 /* ComeCloserWhisper20db.wav in Resources */,
+				A284184B28F9C847009B7702 /* DontYouDare20db.wav in Resources */,
+				A2B3B3B828FAAFBA002B80E5 /* radiostaticJoint.mp3 in Resources */,
 				A2A6B09E281EC3BE002B876E /* DIGITALDREAM.ttf in Resources */,
+				A284183928F9C7CA009B7702 /* HelpMeWhisper20db.wav in Resources */,
+				A284184128F9C819009B7702 /* NoWhsiper20db.wav in Resources */,
+				A284183728F9C7B8009B7702 /* ComeHereWhisper20db.wav in Resources */,
+				A2B3B3BA28FAB242002B80E5 /* radiostatic.wav in Resources */,
+				A2B3B3B628FAAF53002B80E5 /* radiostaticBest.mp3 in Resources */,
+				A284184528F9C82B009B7702 /* YouShouldNotHaveComeHere20db.wav in Resources */,
+				A284183D28F9C7FF009B7702 /* LeaveMeAloneWhisper20db.wav in Resources */,
 				A2A6B0A0281EC3C4002B876E /* digital-7.ttf in Resources */,
-				A2A6B08B281EC321002B876E /* OldWoman.mp3 in Resources */,
-				A2A6B08F281EC32D002B876E /* womanBehindYou.mp3 in Resources */,
-				A2A6B091281EC333002B876E /* ImHereWoman.mp3 in Resources */,
-				A2A6B096281EC341002B876E /* ImBehindYou.mp3 in Resources */,
-				A28EF9E028BA30F8004738C6 /* HelpMeWhisper.mp3 in Resources */,
-				A2A6B08A281EC2EC002B876E /* Static.mp3 in Resources */,
+				A2B3B3B428FAADDF002B80E5 /* Attack.mp3 in Resources */,
+				A284184328F9C824009B7702 /* StopWhisper20db.wav in Resources */,
+				A284183F28F9C810009B7702 /* PleaseHelpMeWhisper20db.wav in Resources */,
 				A2A6B0A5281EF124002B876E /* Mousedrawn.otf in Resources */,
-				A2A6B08D281EC328002B876E /* womanImClose.mp3 in Resources */,
-				A2A6B095281EC33E002B876E /* ImClose.mp3 in Resources */,
-				A2A6B098281EC347002B876E /* SpiritBoxStatic.mp3 in Resources */,
-				A2A6B094281EC33C002B876E /* AwayWoman.mp3 in Resources */,
-				A2A6B097281EC344002B876E /* Attack.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

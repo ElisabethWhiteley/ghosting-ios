@@ -12,7 +12,7 @@ class VHSTrackingLines: CIFilter
     var inputImage: CIImage?
     var inputTime: CGFloat = 0
     var inputSpacing: CGFloat = 50
-    var inputStripeHeight: CGFloat = 0.4
+    var inputStripeHeight: CGFloat = 0.7
     var inputBackgroundNoise: CGFloat = 0.1
     
     override func setDefaults()

@@ -12,37 +12,91 @@ import RealityKit
 
 
 struct RealityKitView: UIViewRepresentable {
-    let imagePublisher: AnyPublisher<(CIImage?, Bool?), Never>
+
+    @State var filterBackgroundNoise: CGFloat = 0.1
+    @State var filterinputSpacing: CGFloat = 50
+       
+    @State var time: TimeInterval = 0
+    @State var ghostTime: Int = 0
+    @State var ghostIsVisible: Bool = false
+        
+    @State private var ciContext: CIContext?
+    
+    @State var variableName: Bool = false
+    @State var ghostInRange: Bool = false
+    
+    var bluetoothManager: BLEManager
+    
+    func setupCoreImage(device: MTLDevice) {
+        // Create a CIContext and store it in a property.
+        self.ciContext = CIContext(mtlDevice: device)
+   
+        ghostTime = Int.random(in: 4...9)
+        print("setting up core image", ghostTime)
+      
+        // Do other expensive tasks, like loading images, here.
+    }
+    
     
 
-
-    func makeUIView(context: Context) -> ARView {
-       let view = ARView()
-        func postProcessWithCoreImage(context: ARView.PostProcessContext) {
-
-            // Create and configure the Core Image filter.
-            let filter = CIFilter.falseColor()
-            filter.color0 = CIColor.blue
-            filter.color1 = CIColor.yellow
-
-            // Convert the frame buffer from a Metal texture to a CIImage, and
-            // set the CIImage as the filter's input image.
+    @available(iOS 15.0, *)
+    func postProcessWithCoreImage(context: ARView.PostProcessContext) {
+        
+  //    print("variablename: ", variableName)
+    /*
+  
+        if (Int(time) > ghostTime) {
+            ghostTime = 0
+            variableName = true
+        }
+        */
+        ghostInRange = self.bluetoothManager.isGhostInRange
             guard let input = CIImage(mtlTexture: context.sourceColorTexture) else {
                 fatalError("Unable to create a CIImage from sourceColorTexture.")
             }
-            filter.setValue(input, forKey: kCIInputImageKey)
+     
+            
+            let vhs = VHSTrackingLines();
+           
+                vhs.inputBackgroundNoise = vhs.inputBackgroundNoise + CGFloat(Float.random(in: -0.8...0.12))
+                vhs.inputSpacing = 50 + CGFloat(Float.random(in: -15...15))
 
-            // Get a reference to the filter's output image.
-            guard let output = filter.outputImage else {
-                fatalError("Error applying filter.")
-            }
-
-            // Create a render destination and render the filter to the context's command buffer.
-            let destination = CIRenderDestination(mtlTexture: context.compatibleTargetTexture,
-                                                  commandBuffer: context.commandBuffer)
+         
+            
+          
+            
+          
+            time = context.time
+          //  vhs.inputStripeHeight = vhs.inputStripeHeight + CGFloat(iteration) * CGFloat(Float.random(in: -0.8...0.2))
+            vhs.inputImage = input
+            let output = vhs.outputImage
+     
+            let destination = CIRenderDestination(mtlTexture: context.targetColorTexture,
+                                                     commandBuffer: context.commandBuffer)
             destination.isFlipped = false
-            _ = try? self.ciContext.startTask(toRender: output, to: destination)
+
+    _ = try? self.ciContext?.startTask(toRender: variableName ? (output ?? CIImage()) : input, to: destination)
+    
+       
+    }
+    
+ 
+
+    func makeUIView(context: Context) -> ARView {
+       let view = ARView()
+        if #available(iOS 15.0, *) {
+            view.renderCallbacks.prepareWithDevice = setupCoreImage
+            view.renderCallbacks.postProcess = postProcessWithCoreImage
+            
+  
+            
+        print("making ui view, ghosttime: ", ghostTime)
+            
+        } else {
+            // Fallback on earlier versions
         }
+        
+     
         // Start AR session
         let session = view.session
         let config = ARWorldTrackingConfiguration()
@@ -65,6 +119,7 @@ struct RealityKitView: UIViewRepresentable {
         context.coordinator.view = view
         session.delegate = context.coordinator
          
+        
         // Handle taps
         view.addGestureRecognizer(
             UITapGestureRecognizer(
@@ -72,20 +127,69 @@ struct RealityKitView: UIViewRepresentable {
                 action: #selector(Coordinator.handleTap)
             )
         )
-        view.publisher(self.imagePublisher)
+        
        return view
     }
     
+    
+ 
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(variableName: self.$variableName, ghostInRange: self.$ghostInRange)
     }
+    
+    
     
     class Coordinator: NSObject, ARSessionDelegate {
         weak var view: ARView?
+        @Binding var variableName: Bool
+        @Binding var ghostInRange: Bool
+        var isGhostVis: Bool = false
+        var hasFloorAnchor: Bool = false
+      
+        init(variableName: Binding<Bool>, ghostInRange: Binding<Bool>) {
+                  _variableName = variableName
+                  _ghostInRange = ghostInRange
+               }
 
+        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+            guard let view = self.view else { return }
+           // debugPrint("Anchors added to the scene: ", anchors)
+            print("did update coordinator", variableName)
+            print("isghostinrange", ghostInRange)
+            if (!isGhostVis && hasFloorAnchor && !variableName && ghostInRange) {
+                isGhostVis = true
+                variableName = true
+                print("adding ghost")
+                guard let modelScene =  try? Entity.loadAnchor(named: "tulipscolored") else { return; }
+          
+                  view.scene.anchors.append(modelScene)
+                }
+     
+         
+        }
+        
+        
         func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
             guard let view = self.view else { return }
-            debugPrint("Anchors added to the scene: ", anchors)
+           // debugPrint("Anchors added to the scene: ", anchors)
+            print("vari: ", variableName)
+      
+            
+            
+            if (!anchors.isEmpty) {
+               let anchor = anchors[0] as? ARPlaneAnchor
+                if #available(iOS 16.0, *) {
+                    if (anchor?.classification == .floor) {
+                        hasFloorAnchor = true
+                        print("has floor anchor")
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            
+     
+         
         }
         
         
@@ -95,9 +199,9 @@ struct RealityKitView: UIViewRepresentable {
 
             // Create a new anchor to add content to
            // let anchor = AnchorEntity()
-            guard let modelScene =  try? Entity.loadAnchor(named: "tulipscolored") else { return; }
+         //   guard let modelScene =  try? Entity.loadAnchor(named: "tulipscolored") else { return; }
         
-            view.scene.anchors.append(modelScene)
+        //    view.scene.anchors.append(modelScene)
             print("IT EXISTS")
             // Add a Box entity with a blue material
            /*  let box = MeshResource.generateBox(size: 0.5, cornerRadius: 0.05)
@@ -110,8 +214,37 @@ struct RealityKitView: UIViewRepresentable {
            //  anchor.addChild(diceEntity)
         }
     }
+    
+  
 
     func updateUIView(_ view: ARView, context: Context) {
+        print("updateuiview")
+        var hasFloorAnchor = false
+        let anchors = view.scene.anchors
+    
+        print("ANCHORS: ", anchors)
+        if (!anchors.isEmpty) {
+            let bla =  anchors[0]
+            print("Anchor: ", bla)
+            if #available(iOS 16.0, *) {
+               // if (bla.classification == .floor) {
+               //     print("Anchor floor: ", bla)
+              //      hasFloorAnchor = true
+             //   }
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
+        /*
+        if (ghostIsVisible && hasFloorAnchor) {
+            print("removed", ghostTime)
+            view.scene.anchors.removeAll()
+       
+        }
+        */
+   
+       
     }
 }
 
@@ -128,6 +261,9 @@ struct ARVideoCameraView: View {
     @State var minutes = 0
     @State var seconds = 0
     @State var milliseconds = 0
+    @State var iteration = 0
+    @ObservedObject var bluetoothManager = BLEManager()
+    
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     init() {
@@ -140,7 +276,11 @@ struct ARVideoCameraView: View {
         ZStack {
             Color.black
                        .edgesIgnoringSafeArea(.all)
-            RealityKitView()
+            RealityKitView(bluetoothManager: bluetoothManager).onDisappear {
+                bluetoothManager.stopScanning()
+            }.onAppear{
+                bluetoothManager.startScanning()
+            }
             VStack {
                 HStack {
                     Text("REC").foregroundColor(Color.red).bold().padding(.leading, 30)
@@ -150,14 +290,16 @@ struct ARVideoCameraView: View {
                     
                     Text("00:\(leadingMinuteZero)\(minutes):\(leadingSecondZero)\(seconds):\(milliseconds)0").foregroundColor(Color.white).bold()
                         .onReceive(timer) { _ in
-                     
+                            
                                 if milliseconds < 9 {
                                     milliseconds += 1
                                 } else {
                                     milliseconds = 0
                                     if seconds < 59 {
                                         seconds += 1
+                                        iteration += 1
                                         if seconds > 9 {
+                                            iteration += 1
                                             leadingSecondZero = ""
                                         }
                                     } else {
@@ -197,7 +339,14 @@ struct ARVideoCameraView: View {
        
             .onAppear {
                 AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeRight
-                UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+             
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                if #available(iOS 16.0, *) {
+                    windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .landscapeRight))
+                } else {
+                    // Fallback on earlier versions
+                }
+             
                 UIViewController.attemptRotationToDeviceOrientation()
                 self.cameraController.startCapturing()
 
@@ -206,7 +355,14 @@ struct ARVideoCameraView: View {
             .onDisappear {
                 self.cameraController.stopCapturing()
                 AppDelegate.orientationLock = .all
-                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                if #available(iOS 16.0, *) {
+                    windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
+                } else {
+                    // Fallback on earlier versions
+                }
+             
+                UIViewController.attemptRotationToDeviceOrientation()
                
             }
     }

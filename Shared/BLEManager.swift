@@ -36,8 +36,8 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
       
-        print("PERIPHEEAL DATA" ,peripheral)
-        print("adv data: ", advertisementData)
+     //   print("PERIPHEEAL DATA" ,peripheral)
+      //  print("adv data: ", advertisementData)
       //  print("peripheral.name: ", peripheral.name)
       //  print("peripheral.identifier: ", peripheral.identifier)
       //  print("advertisementdata: ", advertisementData)

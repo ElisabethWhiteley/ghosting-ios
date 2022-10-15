@@ -147,7 +147,14 @@ struct SpiritBoxView: View {
             
             Spacer()
         }.background(Color.black)
+            .onDisappear {
+                isPoweredOn = false
+                soundManager.stopSpiritBox()
+               
+            }
     )}
+       
+        
     
 }
 

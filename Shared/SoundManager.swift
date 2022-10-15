@@ -82,10 +82,12 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
          mixerNode.volume = 0
 
          engine.attach(mixerNode)
+          
         engine.attach(audioPlayer)
         for i in 0...4
         {
             ghostResponsePlayer.append(AVAudioPlayerNode())
+            ghostResponsePlayer[i].volume = 60
             engine.attach(ghostResponsePlayer[i])
             // audioEngine code
         }
@@ -111,7 +113,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
          engine.connect(mixerNode, to: mainMixerNode, format: mixerFormat)
 
         
-         let path = Bundle.main.path(forResource: "RadioStatic.mp3", ofType:nil)!
+         let path = Bundle.main.path(forResource: "radiostaticTest2.mp3", ofType:nil)!
          let url = URL(fileURLWithPath: path)
          let file = try! AVAudioFile(forReading: url)
         
@@ -119,16 +121,15 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
        try! file.read(into: audioFileBuffer!, frameCount: AVAudioFrameCount(file.length))
         audioPlayer.scheduleBuffer(audioFileBuffer!, at: nil, options:.loops, completionHandler: nil)
        
-        
-        
-        
-        let ghostResponsePaths: [String] = [
-            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!,
-            Bundle.main.path(forResource: "HelpMeWhisper.mp3", ofType: nil)!]
-        
+
+           let ghostResponsePaths: [String] = [
+                    Bundle.main.path(forResource: "HelpMeWhisper20db.wav", ofType: nil)!,
+                    Bundle.main.path(forResource: "PleaseHelpMeWhisper20db.wav", ofType: nil)!,
+                    Bundle.main.path(forResource: "CreepyHiss20db.wav", ofType: nil)!,
+                    Bundle.main.path(forResource: "ComeCloserWhisper20db.wav", ofType: nil)!,
+                    Bundle.main.path(forResource: "ComeHereWhisper20db.wav", ofType: nil)!]
+              
+           
         for i in 0...4
                     {
             ghostSoundsFileURL.append(URL(fileURLWithPath: ghostResponsePaths[i]))
@@ -199,7 +200,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         startSpeechRecognition()
        }
 
- 
+    
     func startSpeechRecognition() {
         
         // Cancel the previous task if it's running.
@@ -264,9 +265,11 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 55.0) { [weak self] in
             print("after 55 seconds")
+            if (self?.state == .recording) {
+                self?.startSpeechRecognition()
+                print("started")
+            }
            
-            self?.startSpeechRecognition()
-            print("started")
         }
     }
     
