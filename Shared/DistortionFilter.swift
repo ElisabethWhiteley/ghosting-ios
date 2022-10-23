@@ -15,6 +15,7 @@ class VHSTrackingLines: CIFilter
     var inputStripeHeight: CGFloat = 0.7
     var inputBackgroundNoise: CGFloat = 0.1
     
+    
     override func setDefaults()
     {
         inputSpacing = 50
@@ -27,41 +28,41 @@ class VHSTrackingLines: CIFilter
         return [
             kCIAttributeFilterDisplayName: "VHS Tracking Lines",
             "inputImage": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "CIImage",
-                kCIAttributeDisplayName: "Image",
-                kCIAttributeType: kCIAttributeTypeImage],
+                              kCIAttributeClass: "CIImage",
+                        kCIAttributeDisplayName: "Image",
+                               kCIAttributeType: kCIAttributeTypeImage],
             "inputTime": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 8,
-                kCIAttributeDisplayName: "Time",
-                kCIAttributeMin: 0,
-                kCIAttributeSliderMin: 0,
-                kCIAttributeSliderMax: 2048,
-                kCIAttributeType: kCIAttributeTypeScalar],
+                             kCIAttributeClass: "NSNumber",
+                           kCIAttributeDefault: 8,
+                       kCIAttributeDisplayName: "Time",
+                               kCIAttributeMin: 0,
+                         kCIAttributeSliderMin: 0,
+                         kCIAttributeSliderMax: 2048,
+                              kCIAttributeType: kCIAttributeTypeScalar],
             "inputSpacing": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 50,
-                kCIAttributeDisplayName: "Spacing",
-                kCIAttributeMin: 20,
-                kCIAttributeSliderMin: 20,
-                kCIAttributeSliderMax: 200,
-                kCIAttributeType: kCIAttributeTypeScalar],
+                                kCIAttributeClass: "NSNumber",
+                              kCIAttributeDefault: 50,
+                          kCIAttributeDisplayName: "Spacing",
+                                  kCIAttributeMin: 20,
+                            kCIAttributeSliderMin: 20,
+                            kCIAttributeSliderMax: 200,
+                                 kCIAttributeType: kCIAttributeTypeScalar],
             "inputStripeHeight": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 0.5,
-                kCIAttributeDisplayName: "Stripe Height",
-                kCIAttributeMin: 0,
-                kCIAttributeSliderMin: 0,
-                kCIAttributeSliderMax: 1,
-                kCIAttributeType: kCIAttributeTypeScalar],
+                                     kCIAttributeClass: "NSNumber",
+                                   kCIAttributeDefault: 0.5,
+                               kCIAttributeDisplayName: "Stripe Height",
+                                       kCIAttributeMin: 0,
+                                 kCIAttributeSliderMin: 0,
+                                 kCIAttributeSliderMax: 1,
+                                      kCIAttributeType: kCIAttributeTypeScalar],
             "inputBackgroundNoise": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 0.05,
-                kCIAttributeDisplayName: "Background Noise",
-                kCIAttributeMin: 0,
-                kCIAttributeSliderMin: 0,
-                kCIAttributeSliderMax: 0.25,
-                kCIAttributeType: kCIAttributeTypeScalar]
+                                        kCIAttributeClass: "NSNumber",
+                                      kCIAttributeDefault: 0.05,
+                                  kCIAttributeDisplayName: "Background Noise",
+                                          kCIAttributeMin: 0,
+                                    kCIAttributeSliderMin: 0,
+                                    kCIAttributeSliderMax: 0.25,
+                                         kCIAttributeType: kCIAttributeTypeScalar]
         ]
     }
     
@@ -90,15 +91,15 @@ class VHSTrackingLines: CIFilter
         
         
         let kernel = CIColorKernel(source:
-            "kernel vec4 thresholdFilter(__sample image, __sample noise, float time, float spacing, float stripeHeight, float backgroundNoise)" +
-                "{" +
-                "   vec2 uv = destCoord();" +
-                
-                "   float stripe = smoothstep(1.0 - stripeHeight, 1.0, sin((time + uv.y) / spacing)); " +
-                
-                "   return image + (noise * noise * stripe) + (noise * backgroundNoise);" +
-            "}"
-            )!
+                                    "kernel vec4 thresholdFilter(__sample image, __sample noise, float time, float spacing, float stripeHeight, float backgroundNoise)" +
+                                   "{" +
+                                   "   vec2 uv = destCoord();" +
+                                   
+                                   "   float stripe = smoothstep(1.0 - stripeHeight, 1.0, sin((time + uv.y) / spacing)); " +
+                                   
+                                   "   return image + (noise * noise * stripe) + (noise * backgroundNoise);" +
+                                   "}"
+        )!
         
         
         let extent = inputImage.extent
@@ -111,157 +112,106 @@ class VHSTrackingLines: CIFilter
     }
 }
 
-class CRTFilter: CIFilter
+
+
+class GhostOrbFilter: CIFilter
 {
-    var inputImage : CIImage?
-    var inputPixelWidth: CGFloat = 8
-    var inputPixelHeight: CGFloat = 12
-    var inputBend: CGFloat = 3.2
+    var inputImage: CIImage?
+   private var iteration: CGFloat = 1.0
+   private var orbPosition: CIVector = CIVector(x: 700, y: -10)
+    var ghostInRange: Bool?
     
-    override var attributes: [String : Any]
-    {
-        return [
-            kCIAttributeFilterDisplayName: "CRT Filter",
-            "inputImage": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "CIImage",
-                kCIAttributeDisplayName: "Image",
-                kCIAttributeType: kCIAttributeTypeImage],
-            "inputPixelWidth": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 8,
-                kCIAttributeDisplayName: "Pixel Width",
-                kCIAttributeMin: 0,
-                kCIAttributeSliderMin: 0,
-                kCIAttributeSliderMax: 20,
-                kCIAttributeType: kCIAttributeTypeScalar],
-            "inputPixelHeight": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 12,
-                kCIAttributeDisplayName: "Pixel Height",
-                kCIAttributeMin: 0,
-                kCIAttributeSliderMin: 0,
-                kCIAttributeSliderMax: 20,
-                kCIAttributeType: kCIAttributeTypeScalar],
-            "inputBend": [kCIAttributeIdentity: 0,
-                kCIAttributeClass: "NSNumber",
-                kCIAttributeDefault: 3.2,
-                kCIAttributeDisplayName: "Bend",
-                kCIAttributeMin: 0.5,
-                kCIAttributeSliderMin: 0.5,
-                kCIAttributeSliderMax: 10,
-                kCIAttributeType: kCIAttributeTypeScalar]
-        ]
-    }
     
-    let crtWarpFilter = CRTWarpFilter()
-    let crtColorFilter = CRTColorFilter()
-    
-    let vignette = CIFilter(name: "CIVignette",
-                            parameters: [
-            kCIInputIntensityKey: 1.5,
-            kCIInputRadiusKey: 2])!
-    
-    override func setDefaults()
-    {
-        inputPixelWidth = 8
-        inputPixelHeight = 12
-        inputBend = 3.2
-    }
-    
-    override var outputImage: CIImage!
+    override var outputImage: CIImage?
     {
         guard let inputImage = inputImage else
         {
             return nil
         }
         
-        crtColorFilter.pixelHeight = inputPixelHeight
-        crtColorFilter.pixelWidth = inputPixelWidth
-        crtWarpFilter.bend =  inputBend
+        if orbPosition.x <= 0.0 && orbPosition.y <= 0.0 {
+          //  print("I AM LESS THAN 2 ------------------------")
+            
         
-        crtColorFilter.inputImage = inputImage
-        vignette.setValue(crtColorFilter.outputImage,
-            forKey: kCIInputImageKey)
-        crtWarpFilter.inputImage = vignette.outputImage
+                orbPosition =  CIVector(
+                    x: (inputImage.extent.width ) - (inputImage.extent.width ) / 4,
+                    y: (inputImage.extent.height ) - (inputImage.extent.height ) / 7)
+                print("orb x: ", orbPosition.x)
+                print("orb y: ", orbPosition.y)
+            
         
-        return crtWarpFilter.outputImage
-    }
-    
-    class CRTColorFilter: CIFilter
-    {
-        var inputImage : CIImage?
-        
-        var pixelWidth: CGFloat = 8.0
-        var pixelHeight: CGFloat = 12.0
-        
-        let crtColorKernel = CIColorKernel(source:
-            "kernel vec4 crtColor(__sample image, float pixelWidth, float pixelHeight) \n" +
-                "{ \n" +
+            
+            
+           // print("------first Orb position width----------: ", orbPosition.x)
+         //   print("----first Orb position height---------: ", orbPosition.y)
+        } else {
+            // print("iteration: ", iteration)
+          //  print("orb x: ", orbPosition.x)
+          //  print("orb y: ", orbPosition.y)
+            if (iteration > 1000) {
+                iteration = 1
                 
-                "   int columnIndex = int(mod(samplerCoord(image).x / pixelWidth, 3.0)); \n" +
-                "   int rowIndex = int(mod(samplerCoord(image).y, pixelHeight)); \n" +
+               orbPosition = CIVector(x: 700, y: -10)
                 
-                "   float scanlineMultiplier = (rowIndex == 0 || rowIndex == 1) ? 0.3 : 1.0;" +
                 
-                "   float red = (columnIndex == 0) ? image.r : image.r * ((columnIndex == 2) ? 0.3 : 0.2); " +
-                "   float green = (columnIndex == 1) ? image.g : image.g * ((columnIndex == 2) ? 0.3 : 0.2); " +
-                "   float blue = (columnIndex == 2) ? image.b : image.b * 0.2; " +
-                
-                "   return vec4(red * scanlineMultiplier, green * scanlineMultiplier, blue * scanlineMultiplier, 1.0); \n" +
-            "}"
-        )
-        
-        
-        override var outputImage: CIImage!
-        {
-            if let inputImage = inputImage,
-               let crtColorKernel = crtColorKernel
-            {
-                let dod = inputImage.extent
-                let args = [inputImage, pixelWidth, pixelHeight] as [Any]
-                return crtColorKernel.apply(extent: dod, arguments: args)
             }
-            return nil
+          //  print("------first Orb position width----------: ", orbPosition.x)
+            switch iteration {
+            case _ where iteration < 200:
+                orbPosition = CIVector(x: orbPosition.x - 4.5, y: orbPosition.y + 5 * ((100 - iteration) / 100))
+            case _ where iteration < 400:
+                orbPosition = CIVector(x: orbPosition.x - 5, y: orbPosition.y - 4 * ((iteration - 100) / 200))
+            case _ where iteration < 600:
+                orbPosition = CIVector(x: orbPosition.x - 1, y: orbPosition.y - 3 * ((iteration - 100) / 300))
+            case _ where iteration < 700:
+                orbPosition = CIVector(x: orbPosition.x + 0.5, y: orbPosition.y - 2 * ((iteration - 100) / 350))
+            case _ where iteration < 725:
+                orbPosition = CIVector(x: orbPosition.x + 1.5, y: orbPosition.y - 2 * ((iteration - 100) / 350))
+            case _ where iteration < 750:
+                orbPosition = CIVector(x: orbPosition.x + 4, y: orbPosition.y - 1.5 * ((iteration - 100) / 350))
+            case _ where iteration < 800:
+                orbPosition = CIVector(x: orbPosition.x + 5, y: orbPosition.y - 1 * ((iteration - 100) / 400))
+            case _ where iteration < 1000:
+                orbPosition = CIVector(x: orbPosition.x + 4.5, y: orbPosition.y - 0.5 * ((iteration - 100) / 550))
+            case _ where iteration < 1100:
+                orbPosition = CIVector(x: orbPosition.x + 3, y: orbPosition.y + 0.5 * ((iteration - 100) / 600))
+            case _ where iteration < 1200:
+                orbPosition = CIVector(x: orbPosition.x + 2, y: orbPosition.y + 2 * ((iteration - 100) / 650))
+            case _ where iteration < 1400:
+                orbPosition = CIVector(x: orbPosition.x + 0.5, y: orbPosition.y + 3 * ((iteration - 100) / 700))
+          
+            default:
+                orbPosition = CIVector(x: orbPosition.x - 4, y: orbPosition.y + 3 * ((iteration - 100) / 800))
+            }
         }
-    }
+        
+        iteration = iteration + 2
+        /*
+        let noir = CIFilter(
+           name: "CIPhotoEffectNoir",
+           parameters: ["inputImage": inputImage]
+         )?.outputImage
+        */
+        let sunGenerate = CIFilter(
+          name: "CISunbeamsGenerator",
+          parameters: [
+            "inputStriationStrength": 3,
+            "inputSunRadius": 1,
+            "inputMaxStriationRadius": 8,
+            "inputColor": CIColor(red: 255, green: 0, blue: 255, alpha: 0.2),
+            "inputCenter": ghostInRange ?? false ? orbPosition : CIVector(x: -10, y: -10)
+          ])?
+          .outputImage
+        
+        
     
-    class CRTWarpFilter: CIFilter
-    {
-        var inputImage : CIImage?
-        var bend: CGFloat = 3.2
+      //  print("IA ME JKEJ K")
+        return inputImage.applyingFilter(
+          "CIBlendWithMask",
+          parameters: [
+            kCIInputBackgroundImageKey: sunGenerate as Any,
+            kCIInputMaskImageKey: inputImage as Any
+          ])
         
-        let crtWarpKernel = CIWarpKernel(source:
-            "kernel vec2 crtWarp(vec2 extent, float bend)" +
-                "{" +
-                "   vec2 coord = ((destCoord() / extent) - 0.5) * 2.0;" +
-                
-                "   coord.x *= 1.0 + pow((abs(coord.y) / bend), 2.0);" +
-                "   coord.y *= 1.0 + pow((abs(coord.x) / bend), 2.0);" +
-                
-                "   coord  = ((coord / 2.0) + 0.5) * extent;" +
-                
-                "   return coord;" +
-            "}"
-        )
-        
-        override var outputImage : CIImage!
-            {
-                if let inputImage = inputImage,
-                   let crtWarpKernel = crtWarpKernel
-                {
-                    let arguments = [CIVector(x: inputImage.extent.size.width, y: inputImage.extent.size.height), bend] as [Any]
-                    let extent = inputImage.extent.insetBy(dx: -1, dy: -1)
-                    
-                    return crtWarpKernel.apply(extent: extent,
-                                               roiCallback:
-                                                {
-                                                    (index, rect) in
-                                                    return rect
-                                                },
-                                               image: inputImage,
-                        arguments: arguments)
-                }
-                return nil
-        }
     }
 }

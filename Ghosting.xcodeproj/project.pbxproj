@@ -63,6 +63,7 @@
 		A284184728F9C833009B7702 /* CreepyHiss20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184628F9C833009B7702 /* CreepyHiss20db.wav */; };
 		A284184928F9C83D009B7702 /* ComeCloserWhisper20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184828F9C83D009B7702 /* ComeCloserWhisper20db.wav */; };
 		A284184B28F9C847009B7702 /* DontYouDare20db.wav in Resources */ = {isa = PBXBuildFile; fileRef = A284184A28F9C847009B7702 /* DontYouDare20db.wav */; };
+		A288D99628FC3FCC00EF291D /* NotesWhatWeKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A288D99528FC3FCC00EF291D /* NotesWhatWeKnow.swift */; };
 		A29969E628E086BE00521EE3 /* DistortionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29969E528E086BE00521EE3 /* DistortionFilter.swift */; };
 		A29969E828E0AE5400521EE3 /* tulips.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = A29969E728E0AE5400521EE3 /* tulips.rcproject */; };
 		A2A6B077281EBDD6002B876E /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A6B076281EBDD6002B876E /* JournalView.swift */; };
@@ -147,6 +148,7 @@
 		A284184628F9C833009B7702 /* CreepyHiss20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CreepyHiss20db.wav; path = ../../../../Documents/CreepyHiss20db.wav; sourceTree = "<group>"; };
 		A284184828F9C83D009B7702 /* ComeCloserWhisper20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ComeCloserWhisper20db.wav; path = ../../../../Documents/ComeCloserWhisper20db.wav; sourceTree = "<group>"; };
 		A284184A28F9C847009B7702 /* DontYouDare20db.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = DontYouDare20db.wav; path = ../../../../Documents/DontYouDare20db.wav; sourceTree = "<group>"; };
+		A288D99528FC3FCC00EF291D /* NotesWhatWeKnow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWhatWeKnow.swift; sourceTree = "<group>"; };
 		A29969E528E086BE00521EE3 /* DistortionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistortionFilter.swift; sourceTree = "<group>"; };
 		A29969E728E0AE5400521EE3 /* tulips.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; name = tulips.rcproject; path = ../../../Downloads/tulips.rcproject; sourceTree = "<group>"; };
 		A2A6B076281EBDD6002B876E /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				A26C94A527B82BE600A53462 /* VideoCameraView.swift */,
 				A2A6B076281EBDD6002B876E /* JournalView.swift */,
 				A2A6B0A1281ED4B9002B876E /* NotesView.swift */,
+				A288D99528FC3FCC00EF291D /* NotesWhatWeKnow.swift */,
 				A2A6B0A82827EE8E002B876E /* LocationManager.swift */,
 				A2A6B0A62826E745002B876E /* DowsingRodView.swift */,
 				A2A6B09A281EC374002B876E /* Fonts */,
@@ -535,6 +538,7 @@
 				74752FCA252E24200020D687 /* SpiritBoxDisplayView.swift in Sources */,
 				746C372024FC0F2C007B76D4 /* SpiritBoxView.swift in Sources */,
 				A2A6B0A2281ED4B9002B876E /* NotesView.swift in Sources */,
+				A288D99628FC3FCC00EF291D /* NotesWhatWeKnow.swift in Sources */,
 				A26C94A327B82B8500A53462 /* PreviewView.swift in Sources */,
 				A26B9931279C5E6D00B38EEE /* VideoCamera.swift in Sources */,
 				A26C94A927B82EC500A53462 /* OrientationObserver.swift in Sources */,

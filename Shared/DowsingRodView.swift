@@ -10,9 +10,11 @@ import SwiftUI
 struct DowsingRodView: View {
     
     @ObservedObject var locationManager = LocationManager()
+    @EnvironmentObject private var ghostSettings: GhostSettings
     
     var body: some View {
                 VStack(alignment: .leading) {
+                  
                     ZStack() {
                         Image("dowsing-rod")
                             .resizable()
@@ -34,7 +36,11 @@ struct DowsingRodView: View {
                     }.padding(.bottom, -90)
                 
                 }.onAppear {
+                    print("locationmanager starting")
+                    locationManager.latitude = ghostSettings.latitude
+                    locationManager.longitude = ghostSettings.longitude
                     self.locationManager.start()
+                  
                 }
                 .onDisappear {
                     self.locationManager.stop()

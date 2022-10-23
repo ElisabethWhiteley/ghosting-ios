@@ -16,17 +16,18 @@ class SpiritBoxManager: NSObject, ObservableObject {
     private var bluetoothManager = BLEManager()
     @Published var isSpiritBoxOn = false
     @Published var responseState: SpiritBoxResponseState = .notRecognized
+
     
-    
-    func togglePowerButton() {
+    func togglePowerButton(ghostObject: String) {
         if isSpiritBoxOn {
             isSpiritBoxOn = false
             bluetoothManager.stopScanning()
             soundManager.stopSpiritBox()
         } else {
             isSpiritBoxOn = true
+            bluetoothManager.ghostObject = ghostObject
             bluetoothManager.startScanning()
-            soundManager.startSpiritBox()
+            soundManager.startSpiritBox(ghostObject: ghostObject)
         }
     }
 }

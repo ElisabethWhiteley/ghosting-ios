@@ -76,28 +76,28 @@ struct Main: View {
                 
                 HStack(alignment: .center) {
                     Spacer()
+                    NavigationLink(destination: DowsingRodView()) {
+                        HStack {
+                            Image("dowsing-rod")
+                                .resizable()
+                                .frame(width: 55.0, height: 65.0)
+                        }
+                        .frame(width: 84, height: 84)
+                        .foregroundColor(Color.black)
+                        .background(Color.white)
+                        .cornerRadius(6)
+                    }.padding(.top, 50).padding(.leading, 10)
+                    Spacer()
                     NavigationLink(destination: PeripheralScan()) {
                         HStack {
-                            Image("icon-spirit-box")
+                            Image("icon-lock")
                                 .resizable()
                                 .frame(width: 80.0, height: 80.0)
                         }
                         .frame(width: 84, height: 84)
-                        .foregroundColor(Color.black).cornerRadius(12)
+                        .foregroundColor(Color.black).background(Color.white).cornerRadius(12)
                         .cornerRadius(6)
                     }.padding(.top, 50)
-                Spacer()
-                NavigationLink(destination: DowsingRodView()) {
-                    HStack {
-                        Image("dowsing-rod")
-                            .resizable()
-                            .frame(width: 55.0, height: 65.0)
-                    }
-                    .frame(width: 84, height: 84)
-                    .foregroundColor(Color.black)
-                    .background(Color.white)
-                    .cornerRadius(6)
-                }.padding(.top, 50).padding(.leading, 10)
                 Spacer()
                 }
                 

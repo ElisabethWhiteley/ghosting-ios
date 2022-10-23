@@ -9,7 +9,8 @@ import SwiftUI
  
 struct SpiritBoxView: View {
     @State private var isPoweredOn = false
-  
+    @EnvironmentObject private var ghostSettings: GhostSettings
+
     @ObservedObject var soundManager = SoundManager()
     
     var body: some View {
@@ -119,7 +120,7 @@ struct SpiritBoxView: View {
                             }
                            else {
                                 isPoweredOn = true
-                               self.soundManager.startSpiritBox()
+                               self.soundManager.startSpiritBox(ghostObject: ghostSettings.ghostBluetoothObject)
                             
                             }
                         }) {

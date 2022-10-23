@@ -27,6 +27,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
     enum SpiritBoxResponseState {
       case notRecognized, recognized, responding
     }
+
     private var engine: AVAudioEngine!
      private var mixerNode: AVAudioMixerNode!
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -52,12 +53,8 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
     @Published var macPeripheral = Peripheral(id: 1, identifier: "String", name: "Unknown", rssi: 1)
      
     let threeWordPhrases = ["are you here", "where are you", "are you angry", "are you ok"]
-    
-    let fourWordPhrases = ["are there any ghosts", "are there any spirits", "is this your home",]
-    
-    let fiveWordPhrases = ["can you speak to us", "is there anyone with me", "would you like to talk", ]
-    
-    
+    let fourWordPhrases = ["are there any ghosts", "are there any spirits", "is this your home", "what is your name", "is there anyone here"]
+    let fiveWordPhrases = ["can you speak to us", "is there anyone with me", "would you like to talk"]
     
     override init() {
         self.request = SFSpeechAudioBufferRecognitionRequest()
@@ -166,7 +163,7 @@ class SoundManager: NSObject, ObservableObject, SFSpeechRecognizerDelegate {
        
        
        //MARK: Start Recording Function
-       func startRecording() {
+    func startRecording() {
            print("Start Recording!")
         self.bluetoothManager.startScanning()
          isRecording = true
@@ -295,7 +292,8 @@ print("PLAYING GHOST SOUND FINAL")
     
        //MARK: Other recording functions
    
-    func startSpiritBox() {
+    func startSpiritBox(ghostObject: String) {
+        self.bluetoothManager.ghostObject = ghostObject
         self.bluetoothManager.startScanning()
         if state == .paused {
             do { try resumeRecording() }

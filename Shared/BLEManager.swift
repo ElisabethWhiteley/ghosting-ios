@@ -15,7 +15,7 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     @Published var peripherals: [Peripheral]
     @Published var isSwitchedOn = false
     @Published var isGhostInRange = false
-    
+    var ghostObject = "Elisabeths MacBook Pro"
     
     override init() {
         self.peripherals = []
@@ -48,7 +48,7 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         peripherals.append(newPeripheral)
        
       //  print(self.peripherals)
-        if peripheral.name == "Elisabeths MacBook Pro" {
+        if peripheral.name == ghostObject {
             macPeripheral = newPeripheral
           //  print(RSSI.intValue)
             

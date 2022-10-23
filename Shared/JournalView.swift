@@ -10,27 +10,37 @@ import SwiftUI
 struct JournalView: View {
     @State private var page = 1
     
-    private var pageTitle = ["Ghost hunting for dummies", "Equipment", "Locating ghosts", "Determining animosity level", "Methods of extraction"]
+    private var pageTitle = ["Ghost hunting for dummies", "Why hunt ghosts?", "Locating ghosts", "Gathering evidence"]
     private var pageContent = [
         "",
-        "\n DIVINING RODS \n You can use divining rods to locate ghosts from quite a distance. They are however unreliable in buildings with multiple floors, as they work by sensing where the ghosts essence has sunk into the earth. Holding the rods in front of you horizontally, the rods will move in the direction of the nearest ghostly essenceba. When the rods point inwards in opposite directions (like an X), it means the spirit is at, underneath or above this point. \n \n  SPIRIT BOX \n A spirit box is used to communicate with ghosts. When in close proximity to the ghost, turn the spirit box on and try asking some questions. Most ghosts will answer when you talk directly to them, however, if a ghost talks through the spirit box without being prompted, it may indicate it is an agitated spirit.",
-        "\n Ghosts may roam, but tend to be tethered to a small area, e.g. a specific room within a house. \n However, the more powerful ghosts may be able to move further.You can use several methods for determining the location of the ghost. \n Besides checking your ghost hunting equipment within each area for any kind of paranormal activity, divining rods are useful for trying to find the direction of the nearest ghost from long distances.",
-        "\n A ghosts power is tied to its level of animosity/anger. \n It is important to determine how powerful the ghost is to get the ghost to move on without angering it further. Using too harsh a method on a ghost will make it more active and anger it, while being too careful is likely to provoke an attack.\n The more angry a ghost is, the more powerful it becomes, and the more it will be able to interact with its environment. Look for clues to how powerful the ghost is by using your equipment in the area where the ghost resides.",
-        "\n 1. Ask the ghost to leave. Be nice, and not demanding. Tell them things such as ‘its time to go’, ‘you should move on, ‘its ok’, ‘go be at peace’. Be polite, use words such as please often. \n \n 2. Cleanse the area with sage. Be clear about your intentions by stating them as you go ‘I am cleansing this place. All negative spirits must leave’ be firm but don’t threaten. \n 3. Demand that the ghost leave. Use its relatives against it  (e.g for kids: ‘your mommy would be so dissappointed in you’, for men/women, threaten to bring their spouse to chastise them). Try to use a latin invocation: ‘Inquietum spiritum invocamus, vos relinquemus’. \n \n 4. Demonic exorcism: ‘Exorcizamus te, maligne spiritus, ad infernum ubi es’ \n Warning: will provoke the ghost. Stay safe"]
+        "Some ghosts are unable to move on and be at peace, and will end up haunting the area where they died. These ghosts will have to be eliminated, which is done by burning their corpse. However, if you try burning the corpse of a ghost which is not haunting, it is more closely tied to its corpse and will attack you. Thats why we need to be sure which ghost is haunting a place before we go trying to burn corpses all willy nilly. Its your job to figure out which ghost we are dealing with, and we will burn the bones on your order. Use the notes we gave you to compare evidence against the bio of each potential ghost, but first you will have to find the exact place it is haunting.",
+        "\n DIVINING RODS \n You can use divining rods to locate ghosts from quite a distance. They are however unreliable in buildings with multiple floors, as they work by sensing where the ghosts essence has sunk into the earth. Holding the rods in front of you horizontally, the rods will move in the direction of the nearest ghostly essence. When the rods point inwards in opposite directions (like an X), it means the spirit is at, underneath or above this point. \n \n  SPIRIT BOX \n A spirit box is used to communicate with ghosts to gain evidence as to their identity. However, it can also be useful for finding the ghost, as it will only questions when in close proximity.  \n \n  EMF METER \n An EMF meter may register some ghost activity when the ghost is nearby, however, it is a truly unreliable piece of equipment, as it will trigger from so many other electrical sources as well.",
+        " \n SPIRIT BOX \n The spirit box is not only useful for finding the ghost, but also for determining the ghosts disposition. If it was an angry person, it will likely be very loud. If it was content in life it will be more likely to whisper. Additionally, you can hear if it is male or female, and in some cases if its very old or very young as well. \n \n VIDEO CAMERA \n The video camera is definitely your best bet at finding evidence. Once you know the ghosts location, look for ghost orbs through the camera. Although ghosts can show themselves in human form, the ghost orb is their essence. A large ghost orb indicates that the person has not been a ghost for very long, while a small one means it has been dead for well over a century at least. If you are lucky, the ghost will even appear to you in human form in the camera. This is a treasure trove of evidence as you can tell the ghosts sex, age range, and time period (by looking at the clothing). In addition, when the ghost appears there may be some distortion in the camera. More distortion indicates the ghost had a more violent death. \n "
+       ]
       
     var body: some View {
         GeometryReader { proxy in
         Image("background-journal").resizable()
                .ignoresSafeArea()
             .overlay(
+                ScrollViewReader { reader in
+                    
                 
                 VStack(alignment: .center) {
                     Text(pageTitle[Int(page) - 1]).font(Font.custom("Mousedrawn", size: page == 1 ? 64 : 30)).padding(.bottom, 0.5).multilineTextAlignment(.center)
                     
                     if page != 1 {
+                        
+                        
                         ScrollView {
-                            Text(pageContent[page - 1])
-                                .multilineTextAlignment(.leading)
+                            ScrollViewReader { value in
+                                Text("").id(1)
+                                Text(pageContent[page - 1])
+                                    .multilineTextAlignment(.leading)
+                                
+                            }
+                          
+                              
                                          
                         }
                           }
@@ -42,8 +52,10 @@ struct JournalView: View {
                         Spacer()
                         Spacer()
                     Button(action: {
+                      
                         if (page > 1) {
                             page = page - 1;
+                           
                         }
                     }) {
                         
@@ -55,6 +67,7 @@ struct JournalView: View {
                     }
                         Spacer()
                         Button(action: {
+                          
                             if (page < pageTitle.count) {
                                 page = page + 1;
                             }
@@ -75,7 +88,7 @@ struct JournalView: View {
             maxHeight: .infinity,
             alignment: .top
           )
-       
+                }
     )
         Spacer()
         }
